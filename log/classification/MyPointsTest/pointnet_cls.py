@@ -12,7 +12,6 @@ class get_model(nn.Module):
             channel = 3
         self.feat = PointNetEncoder(global_feat=True, feature_transform=True, channel=channel)
         self.fc1 = nn.Linear(1024, 512)
-
         self.fc2 = nn.Linear(512, 256)
         self.fc2_ = nn.Linear(256, 256)
         self.fc2__ = nn.Linear(256, 256)
