@@ -31,7 +31,7 @@ def parse_args():
     parser.add_argument('--gpu', type=str, default='0', help='specify gpu device')
     parser.add_argument('--batch_size', type=int, default=2, help='batch size in training')
     parser.add_argument('--model', default='pointnet_cls', help='model name [default: pointnet_cls]')
-    parser.add_argument('--num_category', default=70, type=int, help='training on ModelNet10/40')
+    parser.add_argument('--num_category', default=10, type=int, help='training on ModelNet10/40')
     parser.add_argument('--epoch', default=500, type=int, help='number of epoch in training')
     parser.add_argument('--learning_rate', default=0.001, type=float, help='learning rate in training')
     # parser.add_argument('--num_point', type=int, default=1024, help='Point Number')
@@ -279,24 +279,31 @@ def main(args):
                 #             z = z.cpu().numpy()
                 #             f.write(str(x) + ' ' + str(y) + ' ' + str(z) + '\n')
                 #         f.write("\n")
-                pred_ = pred.view(batch_size, 10, 7)
-                center = pred_[:, :, 0:3]
-                normal = pred_[:, :, 3:6]
-                radis = pred_[:, :, 6]
+                pred_ = pred.view(batch_size, 10)
+                # center = pred_[:, :, 0:3]
+                # normal = pred_[:, :, 3:6]
+                # radis = pred_[:, :, 6]
                 for i in range(batch_size):
                     for j in range(10):
-                        center_ = center[i, j, :]
-                        normal_ = normal[i, j, :]
-                        normal_ = normal_ / normal_.norm()
-                        radis_ = radis[i, j]
+                        # center_ = center[i, j, :]
+                        # normal_ = normal[i, j, :]
+                        # normal_ = normal_ / normal_.norm()
+                        # radis_ = radis[i, j]
+                        center_ = torch.tensor([0.04, 0, 0], requires_grad=True).cuda()
+                        center_[1] = 0.15 * j - 0.7
+                        normal_ = torch.tensor([0.0, 1, 0], requires_grad=True).cuda()
+                        radis_ = pred_[i, j]
+
                         normal_cz = torch.tensor([-1.0 * normal_[1], normal_[0], 0]).cuda()
                         normal_cz = normal_cz / normal_cz.norm()
                         # disnn = torch.mul(normal_,normal_cz)
                         firstPoint = center_ + radis_ * normal_cz
+                        firstPoint = firstPoint - center_
                         for k in range(0, 360, 10):
                             angle = k * 2 * 3.1415926 / 360
                             angle = torch.tensor(angle).cuda()
                             point = Rotate_Point3d(firstPoint, normal_, angle)
+                            point = point + center_
                             point = point.unsqueeze(0)
                             if k == 0:
                                 points = point

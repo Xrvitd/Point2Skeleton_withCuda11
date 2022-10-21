@@ -99,25 +99,25 @@ class get_loss(nn.Module):
         # total_loss = chamfer_distance(pred_[:,:,0:3], target)[0]
         # return total_loss
 
-        pred_ = pred.view(batch_size, 10, 7)
-        # genrate the sphere points
-        center = pred_[:,:,0:3]
-        normal = pred_[:,:,3:6]
-        radis = pred_[:,:,6]
+
+        # radis only
+        total_loss = 0
+        pred_ = pred.view(batch_size, 10)
+        radis = pred_
         for i in range(batch_size):
             for j in range(10):
-                center_ = center[i,j,:]
-                normal_ = normal[i,j,:]
-                normal_ = normal_/normal_.norm()
-                radis_ = radis[i,j]
-                normal_cz = torch.tensor([-1.0*normal_[1],normal_[0],0],requires_grad = True).cuda()
-                normal_cz = normal_cz/normal_cz.norm()
-                # disnn = torch.mul(normal_,normal_cz)
-                firstPoint = center_ + radis_*normal_cz
-                for k in range(0,360,20):
+                center_ = torch.tensor([0.04,0.0,0.0],requires_grad = True).cuda()
+                center_[1] = 0.15*j -0.7
+                normal_ = torch.tensor([0.0,1.0,0.0],requires_grad=True).cuda()
+                radis_ = pred_[i,j]
+                normal_cz = torch.tensor([-1.0 * normal_[1], normal_[0], 0], requires_grad=True).cuda()
+                firstPoint = center_ + radis_ * normal_cz
+                firstPoint = firstPoint - center_
+                for k in range(0,360,10):
                     angle = k*2*3.1415926/360
                     angle = torch.tensor(angle,requires_grad = True).cuda()
                     point = self.Rotate_Point3d(firstPoint,normal_,angle)
+                    point = point + center_
                     point = point.unsqueeze(0)
                     if k == 0:
                         points = point
@@ -132,11 +132,8 @@ class get_loss(nn.Module):
             if i == 0:
                 points__ = points_
             else:
-                points__ = torch.cat((points__, points_),0)
-        # points__ = points__.view(8,20,36,3)
-        # print(points__.shape)
-        # total_loss = chamfer_distance(points__, target)[0]
-        # compute the one side chamfer distance
+                points__ = torch.cat((points__,points_),0)
+
         for i in range(batch_size):
             for j in range(points__.shape[1]):
                 pt = points__[i,j,:]
@@ -157,36 +154,100 @@ class get_loss(nn.Module):
         dis__ = dis__.sum()/batch_size
         # print(dis__)
         total_loss = dis__
-
-        # circles cd
-        # points__.view(batch_size,10,18,3)
-        diss =0
-        for i in range(batch_size):
-            for j in range(0,10):
-                for k in range(0,10):
-                    pt = points__[i,j*18:j*18+18,:]
-                    pt_ = points__[i,k*18:k*18+18,:]
-
-                    diss += chamfer_distance(pt.unsqueeze(0),pt_.unsqueeze(0))[0]
-
-        diss = diss/(10*10*batch_size)
-        # print(diss)
-        total_loss += 0.0001*torch.exp(-1.0*diss)
-        diss = 0
-        for i in range(batch_size):
-            for j in range(0,10):
-                for k in range(0,10):
-                    center_ = center[i,j,:]
-                    center__ = center[i,k,:]
-                    dis = torch.norm(center_-center__,dim = 0)
-                    dis = dis*dis
-                    diss += dis
-
-        diss = diss/(10*10*batch_size)
-        # print(diss)
-        total_loss += 0.0001*torch.exp(-1.0*diss)
-
         return total_loss
+
+
+
+
+
+        # pred_ = pred.view(batch_size, 10, 7)
+        # # genrate the sphere points
+        # center = pred_[:,:,0:3]
+        # normal = pred_[:,:,3:6]
+        # radis = pred_[:,:,6]
+        # for i in range(batch_size):
+        #     for j in range(10):
+        #         center_ = center[i,j,:]
+        #         normal_ = normal[i,j,:]
+        #         normal_ = normal_/normal_.norm()
+        #         radis_ = radis[i,j]
+        #         normal_cz = torch.tensor([-1.0*normal_[1],normal_[0],0],requires_grad = True).cuda()
+        #         normal_cz = normal_cz/normal_cz.norm()
+        #         # disnn = torch.mul(normal_,normal_cz)
+        #         firstPoint = center_ + radis_*normal_cz
+        #         for k in range(0,360,20):
+        #             angle = k*2*3.1415926/360
+        #             angle = torch.tensor(angle,requires_grad = True).cuda()
+        #             point = self.Rotate_Point3d(firstPoint,normal_,angle)
+        #             point = point.unsqueeze(0)
+        #             if k == 0:
+        #                 points = point
+        #             else:
+        #                 points = torch.cat((points,point),0)
+        #         points = points.unsqueeze(0)
+        #         if j == 0:
+        #             points_ = points
+        #         else:
+        #             points_ = torch.cat((points_,points),1)
+        #     # points_ = points_.unsqueeze(0)
+        #     if i == 0:
+        #         points__ = points_
+        #     else:
+        #         points__ = torch.cat((points__, points_),0)
+        # # points__ = points__.view(8,20,36,3)
+        # # print(points__.shape)
+        # # total_loss = chamfer_distance(points__, target)[0]
+        # # compute the one side chamfer distance
+        # for i in range(batch_size):
+        #     for j in range(points__.shape[1]):
+        #         pt = points__[i,j,:]
+        #         diss = torch.norm(pt-target[i,:],dim = 1)
+        #         dis = torch.min(diss)
+        #         dis = dis*dis
+        #         dis = dis.unsqueeze(0)
+        #         if j == 0:
+        #             dis_ = dis
+        #         else:
+        #             dis_ = torch.cat((dis_,dis),0)
+        #     dis_ = dis_.sum()/points__.shape[1]
+        #     dis_ = dis_.unsqueeze(0)
+        #     if i == 0:
+        #         dis__ = dis_
+        #     else:
+        #         dis__ = torch.cat((dis__,dis_),0)
+        # dis__ = dis__.sum()/batch_size
+        # # print(dis__)
+        # total_loss = dis__
+        #
+        # # circles cd
+        # # points__.view(batch_size,10,18,3)
+        # diss =0
+        # for i in range(batch_size):
+        #     for j in range(0,10):
+        #         for k in range(0,10):
+        #             pt = points__[i,j*18:j*18+18,:]
+        #             pt_ = points__[i,k*18:k*18+18,:]
+        #
+        #             diss += chamfer_distance(pt.unsqueeze(0),pt_.unsqueeze(0))[0]
+        #
+        # diss = diss/(10*10*batch_size)
+        # # print(diss)
+        # total_loss += 0.0001*torch.exp(-1.0*diss)
+        # diss = 0
+        # for i in range(batch_size):
+        #     for j in range(0,10):
+        #         for k in range(0,10):
+        #             center_ = center[i,j,:]
+        #             center__ = center[i,k,:]
+        #             dis = torch.norm(center_-center__,dim = 0)
+        #             dis = dis*dis
+        #             diss += dis
+        #
+        # diss = diss/(10*10*batch_size)
+        # # print(diss)
+        # total_loss += 0.0001*torch.exp(-1.0*diss)
+        #
+        # return total_loss
 
 
 
