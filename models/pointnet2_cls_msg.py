@@ -24,8 +24,14 @@ class get_model(nn.Module):
         self.fc2 = nn.Linear(512, 256)
         self.fc2_ = nn.Linear(256, 256)
         self.fc2__ = nn.Linear(256, 256)
+        self.fc2___ = nn.Linear(256, 256)
         self.bn2 = nn.BatchNorm1d(256)
         self.drop2 = nn.Dropout(0.3)
+        self.drop3 = nn.Dropout(0.2)
+        self.drop4 = nn.Dropout(0.2)
+        self.drop5 = nn.Dropout(0.1)
+        self.drop6 = nn.Dropout(0.1)
+
         self.fc3 = nn.Linear(256, num_class)
 
     def forward(self, xyz):
@@ -48,12 +54,12 @@ class get_model(nn.Module):
         # x = self.fc3(x)
 
         # x = self.fc0(xyz.reshape(1, -1))
-        x = ((self.fc1(x)))
-        x = self.fc1_(x)
-        x = ((self.fc2(x)))
-        x = ((self.fc2_(x)))
-        x = ((self.fc2__(x)))
-        # # x = ((self.fc2_(x)))
+        x = (((self.fc1(x))))
+        x = ((self.fc1_(x)))
+        x = (((self.fc2(x))))
+        x = (((self.fc2_(x))))
+        x = (((self.fc2__(x))))
+        # x = (((self.fc2___(x))))
         x = self.fc3(x)
         # x = self.fc0(xyz.view(3076))
         # x = self.bn1(self.fc1(x))
@@ -102,18 +108,18 @@ class get_loss(nn.Module):
 
         # radis only
         total_loss = 0
-        pred_ = pred.view(batch_size, 10)
+        pred_ = pred.view(batch_size, 20)
         radis = pred_
         for i in range(batch_size):
-            for j in range(10):
+            for j in range(20):
                 center_ = torch.tensor([0.04,0.0,0.0],requires_grad = True).cuda()
-                center_[1] = 0.15*j -0.7
+                center_[1] = 0.075*j -0.7
                 normal_ = torch.tensor([0.0,1.0,0.0],requires_grad=True).cuda()
                 radis_ = pred_[i,j]
                 normal_cz = torch.tensor([-1.0 * normal_[1], normal_[0], 0], requires_grad=True).cuda()
                 firstPoint = center_ + radis_ * normal_cz
                 firstPoint = firstPoint - center_
-                for k in range(0,360,10):
+                for k in range(0,360,20):
                     angle = k*2*3.1415926/360
                     angle = torch.tensor(angle,requires_grad = True).cuda()
                     point = self.Rotate_Point3d(firstPoint,normal_,angle)
@@ -135,25 +141,15 @@ class get_loss(nn.Module):
                 points__ = torch.cat((points__,points_),0)
 
         for i in range(batch_size):
+            disss = 0
             for j in range(points__.shape[1]):
                 pt = points__[i,j,:]
                 diss = torch.norm(pt-target[i,:],dim = 1)
                 dis = torch.min(diss)
-                dis = dis*dis
-                dis = dis.unsqueeze(0)
-                if j == 0:
-                    dis_ = dis
-                else:
-                    dis_ = torch.cat((dis_,dis),0)
-            dis_ = dis_.sum()/points__.shape[1]
-            dis_ = dis_.unsqueeze(0)
-            if i == 0:
-                dis__ = dis_
-            else:
-                dis__ = torch.cat((dis__,dis_),0)
-        dis__ = dis__.sum()/batch_size
-        # print(dis__)
-        total_loss = dis__
+                # dis = dis
+                disss = disss + dis
+            total_loss = total_loss + disss
+
         return total_loss
 
 

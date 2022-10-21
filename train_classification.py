@@ -9,6 +9,7 @@ import torch
 import numpy as np
 import open3d as o3d
 
+import random
 import datetime
 import logging
 import provider
@@ -31,10 +32,10 @@ def parse_args():
     parser.add_argument('--gpu', type=str, default='0', help='specify gpu device')
     parser.add_argument('--batch_size', type=int, default=2, help='batch size in training')
     parser.add_argument('--model', default='pointnet_cls', help='model name [default: pointnet_cls]')
-    parser.add_argument('--num_category', default=10, type=int, help='training on ModelNet10/40')
-    parser.add_argument('--epoch', default=500, type=int, help='number of epoch in training')
+    parser.add_argument('--num_category', default=20, type=int, help='training on ModelNet10/40')
+    parser.add_argument('--epoch', default=200, type=int, help='number of epoch in training')
     parser.add_argument('--learning_rate', default=0.001, type=float, help='learning rate in training')
-    # parser.add_argument('--num_point', type=int, default=1024, help='Point Number')
+    parser.add_argument('--num_point', type=int, default=2048, help='Point Number')
     parser.add_argument('--optimizer', type=str, default='Adam', help='optimizer for training')
     parser.add_argument('--log_dir', type=str, default=None, help='experiment root')
     parser.add_argument('--decay_rate', type=float, default=1e-4, help='decay rate')
@@ -155,6 +156,23 @@ def main(args):
     mypc3 = np.asarray(mypc3.points)
     mypc4 = o3d.io.read_point_cloud(data_path+'7000pts.xyz', format='xyzn')
     mypc4 = np.asarray(mypc4.points)
+    mypc5 = o3d.io.read_point_cloud(data_path + '14000pts.xyz', format='xyzn')
+    mypc5 = np.asarray(mypc5.points)
+    # for i in range(100):
+    #     sample_list = [i for i in range(len(mypc5))]  # [0, 1, 2, 3]
+    #     sample_list = random.sample(sample_list, 2048)  # [1, 2]
+    #     mypc5 = mypc5[sample_list,:]
+    #     pcd = o3d.geometry.PointCloud()
+    #     pcd.points = o3d.utility.Vector3dVector(mypc5)
+    #     o3d.io.write_point_cloud(data_path+'1024%dpts.xyz'%i, pcd)
+    mypcs=[]
+    for i in range(100):
+        file = data_path+'1024%dpts.xyz'%i
+        mypc = o3d.io.read_point_cloud(file, format='xyz')
+        mypc = np.asarray(mypc.points)
+        mypcs[i] = mypc
+
+
 
 
 
@@ -208,7 +226,7 @@ def main(args):
     best_class_acc = 0.0
     best_instance_acc = 999999
     '''TRANING'''
-    batch_size = 4
+    batch_size = 5
     logger.info('Start training...')
     for epoch in range(start_epoch, args.epoch):
         log_string('Epoch %d (%d/%s):' % (global_epoch + 1, epoch + 1, args.epoch))
@@ -219,12 +237,12 @@ def main(args):
         print('learning rate: %f' % scheduler.get_lr()[0])
 
         # for batch_id, (points, target) in tqdm(enumerate(trainDataLoader, 0), total=len(trainDataLoader), smoothing=0.9):
-        for batch_id in tqdm(range(4), smoothing=0.9):
+        for batch_id in tqdm(range(20), smoothing=0.9):
             optimizer.zero_grad()
             global points, target
 
-            points = np.array([mypc3,mypc3,mypc3,mypc3])
-            target = np.array([mypc3,mypc3,mypc3,mypc3])
+            points = np.array(mypcs[batch_id*5:batch_id*5+5])
+            target = np.array(mypcs[batch_id*5:batch_id*5+5])
             # points = points.data.numpy()
             # points = provider.random_point_dropout(points)
             # points[:, :, 0:3] = provider.random_scale_point_cloud(points[:, :, 0:3])
@@ -279,18 +297,18 @@ def main(args):
                 #             z = z.cpu().numpy()
                 #             f.write(str(x) + ' ' + str(y) + ' ' + str(z) + '\n')
                 #         f.write("\n")
-                pred_ = pred.view(batch_size, 10)
+                pred_ = pred.view(batch_size, 20)
                 # center = pred_[:, :, 0:3]
                 # normal = pred_[:, :, 3:6]
                 # radis = pred_[:, :, 6]
                 for i in range(batch_size):
-                    for j in range(10):
+                    for j in range(20):
                         # center_ = center[i, j, :]
                         # normal_ = normal[i, j, :]
                         # normal_ = normal_ / normal_.norm()
                         # radis_ = radis[i, j]
                         center_ = torch.tensor([0.04, 0, 0], requires_grad=True).cuda()
-                        center_[1] = 0.15 * j - 0.7
+                        center_[1] = 0.075 * j - 0.7
                         normal_ = torch.tensor([0.0, 1, 0], requires_grad=True).cuda()
                         radis_ = pred_[i, j]
 
