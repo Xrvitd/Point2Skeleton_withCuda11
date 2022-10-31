@@ -51,6 +51,49 @@ class get_model(nn.Module):
 
         self.cvx_weights_mlp = nn.Sequential(*cvx_weights_modules)
 
+        #for normal
+        input_channels = 256 + 256
+        cvx_weights_modules_nor = []
+
+        cvx_weights_modules_nor.append(nn.Dropout(0.2))
+        # cvx_weights_modules_nor.append(nn.Linear(input_channels, 384))
+        cvx_weights_modules_nor.append(nn.Conv1d(in_channels=input_channels, out_channels=384, kernel_size=1))
+        cvx_weights_modules_nor.append(nn.BatchNorm1d(384))
+        cvx_weights_modules_nor.append(nn.ReLU(inplace=True))
+
+        cvx_weights_modules_nor.append(nn.Dropout(0.2))
+        # cvx_weights_modules_nor.append(nn.Linear(384, 256))
+        cvx_weights_modules_nor.append(nn.Conv1d(in_channels=384, out_channels=256, kernel_size=1))
+        cvx_weights_modules_nor.append(nn.BatchNorm1d(256))
+        cvx_weights_modules_nor.append(nn.ReLU(inplace=True))
+
+        cvx_weights_modules_nor.append(nn.Dropout(0.2))
+        # cvx_weights_modules_nor.append(nn.Linear(256, 128))
+        cvx_weights_modules_nor.append(nn.Conv1d(in_channels=256, out_channels=256, kernel_size=1))
+        cvx_weights_modules_nor.append(nn.BatchNorm1d(256))
+        cvx_weights_modules_nor.append(nn.ReLU(inplace=True))
+
+        cvx_weights_modules_nor.append(nn.Dropout(0.2))
+        # cvx_weights_modules_nor.append(nn.Linear(128, 64))
+        cvx_weights_modules_nor.append(nn.Conv1d(in_channels=256, out_channels=64, kernel_size=1))
+        cvx_weights_modules_nor.append(nn.BatchNorm1d(64))
+        cvx_weights_modules_nor.append(nn.ReLU(inplace=True))
+
+        cvx_weights_modules_nor.append(nn.Dropout(0.2))
+        # cvx_weights_modules_nor.append(nn.Linear(64, 16))
+        cvx_weights_modules_nor.append(nn.Conv1d(in_channels=64, out_channels=16, kernel_size=1))
+        cvx_weights_modules_nor.append(nn.BatchNorm1d(16))
+        cvx_weights_modules_nor.append(nn.ReLU(inplace=True))
+
+        # cvx_weights_modules_nor.append(nn.Linear(16, 3))
+        cvx_weights_modules_nor.append(nn.Conv1d(in_channels=16, out_channels=3, kernel_size=1))
+        cvx_weights_modules_nor.append(nn.BatchNorm1d(3))
+        # cvx_weights_modules_nor.append(nn.Softmax(dim=2))
+
+
+
+        self.cvx_weights_mlp_nor = nn.Sequential(*cvx_weights_modules_nor)
+
         # self.fc1 = nn.Linear(1024, 512)
         # self.fc1_ = nn.Linear(512, 512)
         # self.bn1 = nn.BatchNorm1d(512)
@@ -84,8 +127,25 @@ class get_model(nn.Module):
         context_features = l3_points
         weights = self.cvx_weights_mlp(context_features) #need transpose?
         l3_xyz = l3_xyz.transpose(1,2)
+
+        Fnormals = self.cvx_weights_mlp_nor(context_features)
+        l3_normals = Fnormals.transpose(1,2)
+        # Fnormals = Fnormals / torch.norm(Fnormals, dim=2, keepdim=True)
         #skeletal points
         skel_xyz = torch.sum(weights[:, :, :, None] * l3_xyz[:, None, :, :], dim=2)
+        skel_nori = torch.sum(weights[:, :, :, None] * l3_normals[:, None, :, :], dim=2)
+        # skel_nori = skel_nori / torch.norm(skel_nori, dim=2, keepdim=True)
+
+        # skel_nori = skel_xyz
+        # for batch in range(B):
+        #     for i in range(len(skel_xyz)):
+        #         normals = l3_xyz[batch, :, :] - skel_xyz[batch, i, :]
+        #         normals = normals / torch.norm(normals, dim=1, keepdim=True)
+        #         skel_nori[batch,i] = torch.sum(weights[batch, i, :, None]*normals,dim=0)
+        # skel_nori = skel_nori / torch.norm(skel_nori, dim=2, keepdim=True)
+                # skel_nori = skel_nori / torch.norm(skel_nori, dim=0, keepdim=True)
+
+        # skel_normal = torch.sum(weights[:, :, :, None] * l3_points[:, None, :, :], dim=2)
 
         # radii
         min_dists, min_indices = DF.closest_distance_with_batch(l3_xyz, skel_xyz, is_sum=False)
@@ -94,6 +154,10 @@ class get_model(nn.Module):
         # surface features
         shape_cmb_features = torch.sum(weights[:, None, :, :] * context_features[:, :, None, :], dim=3)
         shape_cmb_features = shape_cmb_features.transpose(1, 2)
+
+
+
+
 
         # x = l3_points.view(B, 1024)
 
@@ -122,7 +186,7 @@ class get_model(nn.Module):
 
 
         # return x,l3_points
-        return skel_xyz, skel_r, shape_cmb_features
+        return skel_xyz, skel_r, shape_cmb_features, skel_nori,weights,l3_xyz,l3_normals
 
 
 class get_loss_pre(nn.Module):
@@ -130,7 +194,8 @@ class get_loss_pre(nn.Module):
         super(get_loss_pre, self).__init__()
 
     def forward(self, shape_xyz, skel_xyz):
-
+        normal = shape_xyz[:,:,3:6]
+        shape_xyz = shape_xyz[:,:,:3]
         cd1 = DF.closest_distance_with_batch(shape_xyz, skel_xyz)
         cd2 = DF.closest_distance_with_batch(skel_xyz, shape_xyz)
         loss_cd = cd1 + cd2
@@ -175,8 +240,10 @@ class get_loss(nn.Module):
         point = torch.matmul(R,point)
         return point
 
-    def forward(self, skel_xyz, skel_radius, shape_cmb_features, shape_xyz,A, w1, w2, w3=0, lap_reg=False):
+    def forward(self, skel_xyz, skel_radius, shape_cmb_features,skel_nori,weights,l3_xyz, l3_normals,shape_xyz,A, w1, w2, w3,w4, lap_reg=False):
         #point2skeleton loss
+        normal = shape_xyz[:, :, 3:6]
+        shape_xyz = shape_xyz[:, :, :3]
         bn = skel_xyz.size()[0]
         shape_pnum = float(shape_xyz.size()[1])
         skel_pnum = float(skel_xyz.size()[1])
@@ -204,13 +271,74 @@ class get_loss(nn.Module):
         # radius loss
         loss_radius = - torch.sum(skel_radius) / skel_pnum
 
+        # center loss
+        # loss_center = 0
+        # batch_size = skel_xyz.size()[0]
+        # for i in range(batch_size):
+        #     for j in range(skel_xyz.size()[1]):
+        #         mindis = 100000
+        #         for k in range(skel_xyz.size()[1]):
+        #             if k != j:
+        #                 dis = torch.norm(skel_xyz[i, j, :] - skel_xyz[i, k, :])
+        #                 if dis < mindis:
+        #                     mindis = dis
+        #         loss_center += torch.abs(mindis)
+        # loss_center = loss_center / (batch_size * skel_pnum)
+        # loss_center = -loss_center
+        # loss_center = torch.exp(loss_center)
+
+        #normal loss
+        loss_normal = 0
+        for i in range(skel_nori.size()[0]):
+            for j in range(skel_nori.size()[1]):
+                dists = torch.norm(shape_xyz[i, :, :] - skel_xyz[i, j, :], dim=1)
+                dists = dists - skel_radius[i, j]*1.0
+                # find indices less than 0
+                # idx = (dists<0).nonzero(as_tuple=True)[0]
+                # radis = skel_radius[i, j]
+                _,idx = torch.topk(dists, 20, largest=False)
+                loss_j =0
+                if idx.size()[0] != 0:
+                    for k in range(idx.size()[0]):
+                        # norij = skel_nori[i, j, :] / skel_nori[i, j, :].norm()
+                        loss_j = loss_j + torch.dot(skel_nori[i, j, :], normal[i, idx[k], :]).norm()
+                    loss_j = loss_j / idx.size()[0]
+                    loss_j = loss_j + (skel_nori[i, j, :].norm() - 1.0) * (skel_nori[i, j, :].norm() - 1.0)
+                    loss_normal = loss_normal + loss_j
+        loss_normal = loss_normal / (skel_xyz.size()[0])
+
+
+        #l3_normal loss
+        loss_normal1 = 0
+        for i in range(l3_normals.size()[0]):
+            loss_j = 0
+            for j in range(l3_normals.size()[1]):
+                # dists = torch.norm(shape_xyz[i, :, :] - l3_xyz[i, j, :], dim=1)
+                # # find indices less than 0
+                # # idx = (dists<0).nonzero(as_tuple=True)[0]
+                # _,idx = torch.topk(dists, 4, largest=False)
+                # loss_j =0
+                # if idx.size()[0] != 0:
+                #     for k in range(idx.size()[0]):
+                #         # norij = skel_nori[i, j, :] / skel_nori[i, j, :].norm()
+                #         loss_j = loss_j + torch.dot(l3_normals[i, j, :], normal[i, idx[k], :]).norm()
+                # loss_j = loss_j/idx.size()[0]
+                loss_j = loss_j + (l3_normals[i, j, :].norm() - 1.0)*(l3_normals[i, j, :].norm() - 1.0)
+            loss_normal1 = loss_normal1 + loss_j/l3_normals.size()[1]
+        loss_normal1 = loss_normal1 / (l3_xyz.size()[0])
+        # loss_normal = loss_normal + loss_normal1
+#换loss? 不应该一起训 感觉需要分开训
+
+
+
         # Laplacian smoothness loss
         loss_smooth = 0
         if lap_reg:
             loss_smooth = self.get_smoothness_loss(skel_xyzr, A) / skel_pnum
 
         # loss combination
-        final_loss = loss_sample + loss_point2sphere * w1 + loss_radius * w2 + loss_smooth * w3
+
+        final_loss = loss_sample + loss_point2sphere * w1 + loss_radius * w2 + loss_smooth * w3 + loss_normal * w4 + loss_normal1 * 0.2
 
         return final_loss
 

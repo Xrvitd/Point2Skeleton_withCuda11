@@ -35,7 +35,7 @@ def parse_args():
     parser.add_argument('--batch_size', type=int, default=2, help='batch size in training')
     parser.add_argument('--model', default='pointnet_cls', help='model name [default: pointnet_cls]')
     parser.add_argument('--num_category', default=20, type=int, help='training on ModelNet10/40')
-    parser.add_argument('--epoch', default=400, type=int, help='number of epoch in training')
+    parser.add_argument('--epoch', default=1000, type=int, help='number of epoch in training')
     parser.add_argument('--learning_rate', default=0.01, type=float, help='learning rate in training')
     parser.add_argument('--num_point', type=int, default=2048, help='Point Number')
     parser.add_argument('--optimizer', type=str, default='Adam', help='optimizer for training')
@@ -159,23 +159,37 @@ def main(args):
     mypc4 = o3d.io.read_point_cloud(data_path+'7000pts.xyz', format='xyzn')
     mypc4 = np.asarray(mypc4.points)
     mypc5 = o3d.io.read_point_cloud(data_path + '14000pts.xyz', format='xyzn')
+    # mypcNs = np.asarray(mypc5.normals)
     mypc5 = np.asarray(mypc5.points)
+
     # for i in range(100):
-    #     sample_list = [i for i in range(len(mypc5))]  # [0, 1, 2, 3]
+    #     sample_list = [j for j in range(len(mypc5))]  # [0, 1, 2, 3]
     #     sample_list = random.sample(sample_list, 2048)  # [1, 2]
-    #     mypc5 = mypc5[sample_list,:]
-    #     pcd = o3d.geometry.PointCloud()
-    #     pcd.points = o3d.utility.Vector3dVector(mypc5)
-    #     o3d.io.write_point_cloud(data_path+'1024%dpts.xyz'%i, pcd)
+    #     mypcopt = mypc5[sample_list,:]
+    #     mypcNopt = mypcNs[sample_list,:]
+    #     mypcopt = torch.cat((torch.from_numpy(mypcopt),torch.from_numpy(mypcNopt)),1)
+    #     mypcopt = np.asarray(mypcopt)
+    #     with open(data_path+'1024%dpts.xyz'%i, 'a') as f:
+    #         for j in range(len(mypcopt)):
+    #             f.write(str(mypcopt[j][0])+' '+str(mypcopt[j][1])+' '+str(mypcopt[j][2])+' '+str(mypcopt[j][3])+' '+str(mypcopt[j][4])+' '+str(mypcopt[j][5])+'\n')
+
+
+        # pcd = o3d.geometry.PointCloud()
+        # pcd.points = o3d.utility.Matrix3dVector(mypcopt)
+        # o3d.io.write_point_cloud(data_path+'1024%dpts.xyzn'%i, pcd)
     # mypcs = numpy.resize(100,2048,3)
-    for i in range(100):
+
+    for i in range(40):
         file = data_path+'1024%dpts.xyz'%i
-        mypc = o3d.io.read_point_cloud(file, format='xyz')
-        mypc = np.asarray([mypc.points])
+        mypci = o3d.io.read_point_cloud(file, format='xyzn')
+        mypc = np.asarray([mypci.points])
+        mypcN = np.asarray([mypci.normals])
         if i == 0:
             mypcs = mypc
+            mypcNs = mypcN
         else:
             mypcs = np.concatenate((mypcs,mypc),axis=0)
+            mypcNs = np.concatenate((mypcNs,mypcN),axis=0)
 
 
 
@@ -205,16 +219,6 @@ def main(args):
         criterion = criterion.cuda()
         criterion_pre = criterion_pre.cuda()
 
-    try:
-        checkpoint = torch.load(str(exp_dir) + '/checkpoints/best_model.pth')
-        start_epoch = checkpoint['epoch']
-        classifier.load_state_dict(checkpoint['model_state_dict'])
-        log_string('Use pretrain model')
-    except:
-        log_string('No existing model, starting training from scratch...')
-        start_epoch = 0
-    # log_string('Do not use pretrain model...')
-    # start_epoch = 0
 
     if args.optimizer == 'Adam':
         optimizer = torch.optim.Adam(
@@ -227,7 +231,27 @@ def main(args):
     else:
         optimizer = torch.optim.SGD(classifier.parameters(), lr=0.01, momentum=0.9)
 
-    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=20, gamma=0.7)
+    start_epoch = 0
+    try:
+        checkpoint = torch.load(str(exp_dir) + '/checkpoints/best_model0.25new.pth')
+        start_epoch = 100
+        # start_epoch = checkpoint['epoch']
+        classifier.load_state_dict(checkpoint['model_state_dict'])
+        log_string('Use pretrain model')
+        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+
+    except:
+        log_string('No existing model, starting training from scratch...')
+        start_epoch = 0
+    # log_string('Do not use pretrain model...')
+    # start_epoch = 0
+    for params in optimizer.param_groups:
+        params['lr'] = args.learning_rate
+
+
+
+
+    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=40, gamma=0.8)
     global_epoch = 0
     global_step = 0
     best_instance_acc = 0.0
@@ -241,17 +265,18 @@ def main(args):
         log_string('Epoch %d (%d/%s):' % (global_epoch + 1, epoch + 1, args.epoch))
         mean_correct = []
 
-
         scheduler.step()
         print('learning rate: %f' % scheduler.get_lr()[0])
 
+        loss_batch = 0
         # for batch_id, (points, target) in tqdm(enumerate(trainDataLoader, 0), total=len(trainDataLoader), smoothing=0.9):
-        for batch_id in tqdm(range(25), smoothing=0.9):
+        for batch_id in tqdm(range(10), smoothing=0.9):
             optimizer.zero_grad()
             global points, target
 
-            points = np.array(mypcs[batch_id*4:batch_id*4+4])
-            target = np.array(mypcs[batch_id*4:batch_id*4+4])
+            points = np.array(mypcs[batch_id*4:batch_id*4+4])#np.concatenate((mypcs[batch_id*4:batch_id*4+4],mypcNs[batch_id*4:batch_id*4+4]),axis=2)
+            target = np.concatenate((mypcs[batch_id*4:batch_id*4+4],mypcNs[batch_id*4:batch_id*4+4]),axis=2)
+            # target = np.array(mypcs[batch_id*4:batch_id*4+4])
             # points = points.data.numpy()
             # points = provider.random_point_dropout(points)
             # points[:, :, 0:3] = provider.random_scale_point_cloud(points[:, :, 0:3])
@@ -265,29 +290,34 @@ def main(args):
 
             # pred, trans_feat = classifier(points)
             # loss = criterion(pred, target, trans_feat)
-            skel_xyz, skel_r, shape_cmb_features = classifier(points)
+            skel_xyz, skel_r, shape_cmb_features,skel_nori ,weights,l3_xyz,l3_normals= classifier(points)
 
-            if epoch<50:
+            if epoch<25:
                 loss_pre = criterion_pre(target,skel_xyz)
+                loss_batch += loss_pre.item()
                 optimizer.zero_grad()
                 loss_pre.backward()
                 optimizer.step()
                 global_step += 1
                 # log_string('loss_pre: %f' % (loss_pre.item()))
             else:
-                loss = criterion(skel_xyz, skel_r, shape_cmb_features, target,None, 0.3, 0.4)
+                loss = criterion(skel_xyz, skel_r, shape_cmb_features, skel_nori,
+                                 weights,l3_xyz,l3_normals, target, None, 0.3, 0.4,0, 0.01)
+                loss_batch += loss.item()
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
                 global_step += 1
+
+        loss_batch = loss_batch/batch_size
                 # log_string('loss: %f' % (loss.item()))
 
         '''TESTING'''
 
-        if epoch < 50:
+        if epoch < 25:
             with torch.no_grad():
-                if (loss_pre <= best_instance_acc_pre):
-                    best_instance_acc_pre = loss_pre
+                if (loss_batch <= best_instance_acc_pre):
+                    best_instance_acc_pre = loss_batch
                     best_epoch = epoch + 1
                     logger.info('Save model...')
                     savepath = str(checkpoints_dir) + '/best_model.pth'
@@ -299,11 +329,11 @@ def main(args):
                         'optimizer_state_dict': optimizer.state_dict(),
                     }
                     torch.save(state, savepath)
-            print('Pretraining loss_pre: %f' % loss_pre, 'Bestloss: %f' % best_instance_acc_pre)
+            print('Pretraining loss_pre: %f' % loss_batch, 'Bestloss: %f' % best_instance_acc_pre)
         else:
             with torch.no_grad():
-                if (loss <= best_instance_acc):
-                    best_instance_acc = loss
+                if (loss_batch <= best_instance_acc):
+                    best_instance_acc = loss_batch
                     best_epoch = epoch + 1
                     logger.info('Save model...')
                     savepath = str(checkpoints_dir) + '/best_model.pth'
@@ -315,14 +345,21 @@ def main(args):
                         'optimizer_state_dict': optimizer.state_dict(),
                     }
                     torch.save(state, savepath)
+                    # skel_nori = skel_nori / torch.norm(skel_nori, dim=2, keepdim=True)
                     for branch_idx in range(batch_size):
                         with open(str(checkpoints_dir)+'/best_Points%d.xyz' % branch_idx, "w") as f:
                             for i in range(len(skel_xyz[branch_idx])):
-                                f.write("%f %f %f\n" % (skel_xyz[branch_idx][i][0], skel_xyz[branch_idx][i][1], skel_xyz[branch_idx][i][2]))
+                                f.write("%f %f %f " % (skel_xyz[branch_idx][i][0], skel_xyz[branch_idx][i][1], skel_xyz[branch_idx][i][2]))
+                                f.write("%f %f %f\n" % (skel_nori[branch_idx][i][0], skel_nori[branch_idx][i][1], skel_nori[branch_idx][i][2]))
                         with open(str(checkpoints_dir)+'/best_Radii%d.xyz' % branch_idx, "w") as f:
                             for i in range(len(skel_r[branch_idx])):
                                 f.write("%f\n" % skel_r[branch_idx][i])
-            print('Skeletal training loss: %f' % loss, 'Bestloss: %f' % best_instance_acc)
+                        with open(str(checkpoints_dir)+'/best_l3points%d.xyz' % branch_idx, "w") as f:
+                            for i in range(len(l3_xyz[branch_idx])):
+                                f.write("%f %f %f " % (l3_xyz[branch_idx][i][0], l3_xyz[branch_idx][i][1], l3_xyz[branch_idx][i][2]))
+                                f.write("%f %f %f\n" % (l3_normals[branch_idx][i][0], l3_normals[branch_idx][i][1], l3_normals[branch_idx][i][2]))
+
+            print('Skeletal training loss: %f' % loss_batch, 'Bestloss: %f' % best_instance_acc)
 
         global_epoch += 1
 
