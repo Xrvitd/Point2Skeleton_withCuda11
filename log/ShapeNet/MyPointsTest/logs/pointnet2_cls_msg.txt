@@ -1,0 +1,508 @@
+2022-11-01 19:02:42,404 - Model - INFO - PARAMETER ...
+2022-11-01 19:02:42,404 - Model - INFO - Namespace(batch_size=2, decay_rate=0.0001, epoch=1000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-01 19:02:42,404 - Model - INFO - Load dataset ...
+2022-11-01 19:03:09,137 - Model - INFO - PARAMETER ...
+2022-11-01 19:03:09,138 - Model - INFO - Namespace(batch_size=2, decay_rate=0.0001, epoch=1000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-01 19:03:09,138 - Model - INFO - Load dataset ...
+2022-11-01 19:03:24,630 - Model - INFO - PARAMETER ...
+2022-11-01 19:03:24,630 - Model - INFO - Namespace(batch_size=2, decay_rate=0.0001, epoch=1000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-01 19:03:24,630 - Model - INFO - Load dataset ...
+2022-11-01 19:03:25,230 - Model - INFO - No existing model, starting training from scratch...
+2022-11-01 19:03:25,230 - Model - INFO - Start training...
+2022-11-01 19:03:25,230 - Model - INFO - Epoch 1 (1/1000):
+2022-11-01 19:09:44,818 - Model - INFO - PARAMETER ...
+2022-11-01 19:09:44,818 - Model - INFO - Namespace(batch_size=2, decay_rate=0.0001, epoch=1000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-01 19:09:44,818 - Model - INFO - Load dataset ...
+2022-11-01 19:09:45,343 - Model - INFO - No existing model, starting training from scratch...
+2022-11-01 19:09:45,343 - Model - INFO - Start training...
+2022-11-01 19:09:45,343 - Model - INFO - Epoch 1 (1/1000):
+2022-11-01 19:12:23,821 - Model - INFO - PARAMETER ...
+2022-11-01 19:12:23,821 - Model - INFO - Namespace(batch_size=2, decay_rate=0.0001, epoch=1000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-01 19:12:23,821 - Model - INFO - Load dataset ...
+2022-11-01 19:12:24,357 - Model - INFO - No existing model, starting training from scratch...
+2022-11-01 19:12:24,357 - Model - INFO - Start training...
+2022-11-01 19:12:24,365 - Model - INFO - Epoch 1 (1/1000):
+2022-11-01 19:13:07,366 - Model - INFO - Save model...
+2022-11-01 19:13:07,366 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:13:07,393 - Model - INFO - Epoch 2 (2/1000):
+2022-11-01 19:13:45,760 - Model - INFO - Save model...
+2022-11-01 19:13:45,760 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:13:45,789 - Model - INFO - Epoch 3 (3/1000):
+2022-11-01 19:14:20,249 - Model - INFO - PARAMETER ...
+2022-11-01 19:14:20,250 - Model - INFO - Namespace(batch_size=2, decay_rate=0.0001, epoch=1000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-01 19:14:20,250 - Model - INFO - Load dataset ...
+2022-11-01 19:14:20,771 - Model - INFO - No existing model, starting training from scratch...
+2022-11-01 19:14:20,772 - Model - INFO - Start training...
+2022-11-01 19:14:20,772 - Model - INFO - Epoch 1 (1/1000):
+2022-11-01 19:14:27,098 - Model - INFO - PARAMETER ...
+2022-11-01 19:14:27,099 - Model - INFO - Namespace(batch_size=2, decay_rate=0.0001, epoch=1000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-01 19:14:27,099 - Model - INFO - Load dataset ...
+2022-11-01 19:14:27,648 - Model - INFO - No existing model, starting training from scratch...
+2022-11-01 19:14:27,648 - Model - INFO - Start training...
+2022-11-01 19:14:27,648 - Model - INFO - Epoch 1 (1/1000):
+2022-11-01 19:14:43,061 - Model - INFO - PARAMETER ...
+2022-11-01 19:14:43,061 - Model - INFO - Namespace(batch_size=2, decay_rate=0.0001, epoch=1000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-01 19:14:43,061 - Model - INFO - Load dataset ...
+2022-11-01 19:14:43,671 - Model - INFO - No existing model, starting training from scratch...
+2022-11-01 19:14:43,671 - Model - INFO - Start training...
+2022-11-01 19:14:43,671 - Model - INFO - Epoch 1 (1/1000):
+2022-11-01 19:15:13,590 - Model - INFO - PARAMETER ...
+2022-11-01 19:15:13,590 - Model - INFO - Namespace(batch_size=2, decay_rate=0.0001, epoch=1000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-01 19:15:13,590 - Model - INFO - Load dataset ...
+2022-11-01 19:15:14,117 - Model - INFO - No existing model, starting training from scratch...
+2022-11-01 19:15:14,117 - Model - INFO - Start training...
+2022-11-01 19:15:14,117 - Model - INFO - Epoch 1 (1/1000):
+2022-11-01 19:15:54,022 - Model - INFO - Save model...
+2022-11-01 19:15:54,022 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:15:54,050 - Model - INFO - Epoch 2 (2/1000):
+2022-11-01 19:16:33,041 - Model - INFO - Save model...
+2022-11-01 19:16:33,041 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:16:33,061 - Model - INFO - Epoch 3 (3/1000):
+2022-11-01 19:17:12,042 - Model - INFO - Save model...
+2022-11-01 19:17:12,042 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:17:12,070 - Model - INFO - Epoch 4 (4/1000):
+2022-11-01 19:17:50,932 - Model - INFO - Save model...
+2022-11-01 19:17:50,932 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:17:50,961 - Model - INFO - Epoch 5 (5/1000):
+2022-11-01 19:18:29,943 - Model - INFO - Save model...
+2022-11-01 19:18:29,943 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:18:29,962 - Model - INFO - Epoch 6 (6/1000):
+2022-11-01 19:19:08,838 - Model - INFO - Save model...
+2022-11-01 19:19:08,838 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:19:08,867 - Model - INFO - Epoch 7 (7/1000):
+2022-11-01 19:19:47,795 - Model - INFO - Save model...
+2022-11-01 19:19:47,795 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:19:47,823 - Model - INFO - Epoch 8 (8/1000):
+2022-11-01 19:20:27,012 - Model - INFO - Save model...
+2022-11-01 19:20:27,012 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:20:27,040 - Model - INFO - Epoch 9 (9/1000):
+2022-11-01 19:21:07,057 - Model - INFO - Epoch 10 (10/1000):
+2022-11-01 19:21:46,730 - Model - INFO - Epoch 11 (11/1000):
+2022-11-01 19:22:26,733 - Model - INFO - Save model...
+2022-11-01 19:22:26,733 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:22:26,762 - Model - INFO - Epoch 12 (12/1000):
+2022-11-01 19:23:07,151 - Model - INFO - Epoch 13 (13/1000):
+2022-11-01 19:23:47,953 - Model - INFO - Epoch 14 (14/1000):
+2022-11-01 19:24:28,057 - Model - INFO - Save model...
+2022-11-01 19:24:28,058 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:24:28,087 - Model - INFO - Epoch 15 (15/1000):
+2022-11-01 19:25:07,960 - Model - INFO - Save model...
+2022-11-01 19:25:07,960 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:25:07,988 - Model - INFO - Epoch 16 (16/1000):
+2022-11-01 19:25:48,525 - Model - INFO - Epoch 17 (17/1000):
+2022-11-01 19:26:28,338 - Model - INFO - Epoch 18 (18/1000):
+2022-11-01 19:27:08,458 - Model - INFO - Epoch 19 (19/1000):
+2022-11-01 19:27:51,066 - Model - INFO - Epoch 20 (20/1000):
+2022-11-01 19:28:38,604 - Model - INFO - Save model...
+2022-11-01 19:28:38,604 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:28:38,632 - Model - INFO - Epoch 21 (21/1000):
+2022-11-01 19:29:17,806 - Model - INFO - Epoch 22 (22/1000):
+2022-11-01 19:29:56,619 - Model - INFO - Epoch 23 (23/1000):
+2022-11-01 19:30:35,393 - Model - INFO - Save model...
+2022-11-01 19:30:35,394 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:30:35,422 - Model - INFO - Epoch 24 (24/1000):
+2022-11-01 19:31:14,230 - Model - INFO - Epoch 25 (25/1000):
+2022-11-01 19:31:53,233 - Model - INFO - Epoch 26 (26/1000):
+2022-11-01 19:34:23,692 - Model - INFO - Save model...
+2022-11-01 19:34:23,694 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:34:23,830 - Model - INFO - Epoch 27 (27/1000):
+2022-11-01 19:36:15,076 - Model - INFO - PARAMETER ...
+2022-11-01 19:36:15,076 - Model - INFO - Namespace(batch_size=2, decay_rate=0.0001, epoch=1000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-01 19:36:15,076 - Model - INFO - Load dataset ...
+2022-11-01 19:36:15,611 - Model - INFO - No existing model, starting training from scratch...
+2022-11-01 19:36:15,611 - Model - INFO - Start training...
+2022-11-01 19:36:15,611 - Model - INFO - Epoch 1 (1/1000):
+2022-11-01 19:36:55,351 - Model - INFO - Save model...
+2022-11-01 19:36:55,351 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:36:55,380 - Model - INFO - Epoch 2 (2/1000):
+2022-11-01 19:37:34,022 - Model - INFO - Save model...
+2022-11-01 19:37:34,022 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:37:34,050 - Model - INFO - Epoch 3 (3/1000):
+2022-11-01 19:38:12,654 - Model - INFO - Save model...
+2022-11-01 19:38:12,654 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:38:12,675 - Model - INFO - Epoch 4 (4/1000):
+2022-11-01 19:38:51,427 - Model - INFO - Save model...
+2022-11-01 19:38:51,428 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:38:51,447 - Model - INFO - Epoch 5 (5/1000):
+2022-11-01 19:39:30,204 - Model - INFO - Save model...
+2022-11-01 19:39:30,204 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:39:30,223 - Model - INFO - Epoch 6 (6/1000):
+2022-11-01 19:40:08,982 - Model - INFO - Save model...
+2022-11-01 19:40:08,982 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:40:09,002 - Model - INFO - Epoch 7 (7/1000):
+2022-11-01 19:40:47,695 - Model - INFO - Save model...
+2022-11-01 19:40:47,695 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:40:47,723 - Model - INFO - Epoch 8 (8/1000):
+2022-11-01 19:41:26,562 - Model - INFO - Epoch 9 (9/1000):
+2022-11-01 19:42:05,376 - Model - INFO - Save model...
+2022-11-01 19:42:05,377 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:42:05,405 - Model - INFO - Epoch 10 (10/1000):
+2022-11-01 19:42:44,053 - Model - INFO - Epoch 11 (11/1000):
+2022-11-01 19:43:22,680 - Model - INFO - Epoch 12 (12/1000):
+2022-11-01 19:44:01,177 - Model - INFO - Epoch 13 (13/1000):
+2022-11-01 19:44:39,749 - Model - INFO - Epoch 14 (14/1000):
+2022-11-01 19:45:18,292 - Model - INFO - Save model...
+2022-11-01 19:45:18,292 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:45:18,310 - Model - INFO - Epoch 15 (15/1000):
+2022-11-01 19:45:56,931 - Model - INFO - Epoch 16 (16/1000):
+2022-11-01 19:46:35,678 - Model - INFO - Epoch 17 (17/1000):
+2022-11-01 19:47:14,290 - Model - INFO - Save model...
+2022-11-01 19:47:14,290 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:47:14,317 - Model - INFO - Epoch 18 (18/1000):
+2022-11-01 19:47:52,902 - Model - INFO - Epoch 19 (19/1000):
+2022-11-01 19:48:31,390 - Model - INFO - Epoch 20 (20/1000):
+2022-11-01 19:49:10,033 - Model - INFO - Epoch 21 (21/1000):
+2022-11-01 19:49:48,630 - Model - INFO - Epoch 22 (22/1000):
+2022-11-01 19:50:27,144 - Model - INFO - Epoch 23 (23/1000):
+2022-11-01 19:51:05,708 - Model - INFO - Save model...
+2022-11-01 19:51:05,708 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:51:05,736 - Model - INFO - Epoch 24 (24/1000):
+2022-11-01 19:51:44,490 - Model - INFO - Epoch 25 (25/1000):
+2022-11-01 19:52:23,191 - Model - INFO - Epoch 26 (26/1000):
+2022-11-01 19:54:51,912 - Model - INFO - Save model...
+2022-11-01 19:54:51,914 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:54:52,046 - Model - INFO - Epoch 27 (27/1000):
+2022-11-01 19:57:21,948 - Model - INFO - Save model...
+2022-11-01 19:57:21,950 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:57:22,084 - Model - INFO - Epoch 28 (28/1000):
+2022-11-01 19:59:51,411 - Model - INFO - Save model...
+2022-11-01 19:59:51,412 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 19:59:51,544 - Model - INFO - Epoch 29 (29/1000):
+2022-11-01 20:02:20,394 - Model - INFO - Epoch 30 (30/1000):
+2022-11-01 20:04:49,539 - Model - INFO - Save model...
+2022-11-01 20:04:49,541 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:04:49,673 - Model - INFO - Epoch 31 (31/1000):
+2022-11-01 20:07:19,089 - Model - INFO - Epoch 32 (32/1000):
+2022-11-01 20:09:48,742 - Model - INFO - Epoch 33 (33/1000):
+2022-11-01 20:12:18,397 - Model - INFO - Save model...
+2022-11-01 20:12:18,398 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:12:18,531 - Model - INFO - Epoch 34 (34/1000):
+2022-11-01 20:14:48,026 - Model - INFO - Epoch 35 (35/1000):
+2022-11-01 20:17:17,207 - Model - INFO - Epoch 36 (36/1000):
+2022-11-01 20:19:46,179 - Model - INFO - Epoch 37 (37/1000):
+2022-11-01 20:22:15,002 - Model - INFO - Epoch 38 (38/1000):
+2022-11-01 20:24:44,578 - Model - INFO - Epoch 39 (39/1000):
+2022-11-01 20:27:19,677 - Model - INFO - Save model...
+2022-11-01 20:27:19,679 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:27:19,813 - Model - INFO - Epoch 40 (40/1000):
+2022-11-01 20:29:51,355 - Model - INFO - Epoch 41 (41/1000):
+2022-11-01 20:32:20,905 - Model - INFO - Epoch 42 (42/1000):
+2022-11-01 20:34:49,650 - Model - INFO - Save model...
+2022-11-01 20:34:49,652 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:34:49,786 - Model - INFO - Epoch 43 (43/1000):
+2022-11-01 20:37:19,136 - Model - INFO - Save model...
+2022-11-01 20:37:19,138 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:37:19,272 - Model - INFO - Epoch 44 (44/1000):
+2022-11-01 20:39:48,323 - Model - INFO - Epoch 45 (45/1000):
+2022-11-01 20:42:17,382 - Model - INFO - Epoch 46 (46/1000):
+2022-11-01 20:44:47,282 - Model - INFO - Epoch 47 (47/1000):
+2022-11-01 20:47:18,731 - Model - INFO - Epoch 48 (48/1000):
+2022-11-01 20:49:50,138 - Model - INFO - Epoch 49 (49/1000):
+2022-11-01 20:52:22,132 - Model - INFO - Epoch 50 (50/1000):
+2022-11-01 20:54:51,004 - Model - INFO - Epoch 51 (51/1000):
+2022-11-01 20:58:14,228 - Model - INFO - PARAMETER ...
+2022-11-01 20:58:14,228 - Model - INFO - Namespace(batch_size=2, decay_rate=0.0001, epoch=1000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-01 20:58:14,228 - Model - INFO - Load dataset ...
+2022-11-01 20:58:14,768 - Model - INFO - No existing model, starting training from scratch...
+2022-11-01 20:58:14,768 - Model - INFO - Start training...
+2022-11-01 20:58:14,768 - Model - INFO - Epoch 1 (1/1000):
+2022-11-01 20:58:25,069 - Model - INFO - Save model...
+2022-11-01 20:58:25,069 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:58:25,098 - Model - INFO - Epoch 2 (2/1000):
+2022-11-01 20:58:32,512 - Model - INFO - Save model...
+2022-11-01 20:58:32,512 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:58:32,532 - Model - INFO - Epoch 3 (3/1000):
+2022-11-01 20:58:39,959 - Model - INFO - Save model...
+2022-11-01 20:58:39,959 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:58:39,987 - Model - INFO - Epoch 4 (4/1000):
+2022-11-01 20:58:47,432 - Model - INFO - Save model...
+2022-11-01 20:58:47,432 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:58:47,450 - Model - INFO - Epoch 5 (5/1000):
+2022-11-01 20:58:54,889 - Model - INFO - Save model...
+2022-11-01 20:58:54,890 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:58:54,918 - Model - INFO - Epoch 6 (6/1000):
+2022-11-01 20:59:02,379 - Model - INFO - Save model...
+2022-11-01 20:59:02,379 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:59:02,407 - Model - INFO - Epoch 7 (7/1000):
+2022-11-01 20:59:09,848 - Model - INFO - Save model...
+2022-11-01 20:59:09,848 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:59:09,876 - Model - INFO - Epoch 8 (8/1000):
+2022-11-01 20:59:17,302 - Model - INFO - Save model...
+2022-11-01 20:59:17,302 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:59:17,331 - Model - INFO - Epoch 9 (9/1000):
+2022-11-01 20:59:24,753 - Model - INFO - Save model...
+2022-11-01 20:59:24,753 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:59:24,773 - Model - INFO - Epoch 10 (10/1000):
+2022-11-01 20:59:32,190 - Model - INFO - Save model...
+2022-11-01 20:59:32,190 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:59:32,218 - Model - INFO - Epoch 11 (11/1000):
+2022-11-01 20:59:39,680 - Model - INFO - Save model...
+2022-11-01 20:59:39,680 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:59:39,708 - Model - INFO - Epoch 12 (12/1000):
+2022-11-01 20:59:47,262 - Model - INFO - Save model...
+2022-11-01 20:59:47,262 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 20:59:47,298 - Model - INFO - Epoch 13 (13/1000):
+2022-11-01 20:59:54,736 - Model - INFO - Epoch 14 (14/1000):
+2022-11-01 21:00:02,155 - Model - INFO - Save model...
+2022-11-01 21:00:02,155 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:00:02,183 - Model - INFO - Epoch 15 (15/1000):
+2022-11-01 21:00:09,615 - Model - INFO - Save model...
+2022-11-01 21:00:09,615 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:00:09,644 - Model - INFO - Epoch 16 (16/1000):
+2022-11-01 21:00:17,063 - Model - INFO - Epoch 17 (17/1000):
+2022-11-01 21:00:24,474 - Model - INFO - Save model...
+2022-11-01 21:00:24,474 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:00:24,502 - Model - INFO - Epoch 18 (18/1000):
+2022-11-01 21:00:31,937 - Model - INFO - Save model...
+2022-11-01 21:00:31,937 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:00:31,985 - Model - INFO - Epoch 19 (19/1000):
+2022-11-01 21:00:39,418 - Model - INFO - Save model...
+2022-11-01 21:00:39,418 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:00:39,446 - Model - INFO - Epoch 20 (20/1000):
+2022-11-01 21:00:46,929 - Model - INFO - Save model...
+2022-11-01 21:00:46,929 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:00:46,958 - Model - INFO - Epoch 21 (21/1000):
+2022-11-01 21:01:15,346 - Model - INFO - Save model...
+2022-11-01 21:01:15,348 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:01:15,483 - Model - INFO - Epoch 22 (22/1000):
+2022-11-01 21:01:44,200 - Model - INFO - Save model...
+2022-11-01 21:01:44,201 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:01:44,335 - Model - INFO - Epoch 23 (23/1000):
+2022-11-01 21:02:13,121 - Model - INFO - Save model...
+2022-11-01 21:02:13,122 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:02:13,257 - Model - INFO - Epoch 24 (24/1000):
+2022-11-01 21:02:42,003 - Model - INFO - Save model...
+2022-11-01 21:02:42,005 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:02:42,161 - Model - INFO - Epoch 25 (25/1000):
+2022-11-01 21:03:10,806 - Model - INFO - Save model...
+2022-11-01 21:03:10,808 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:03:10,942 - Model - INFO - Epoch 26 (26/1000):
+2022-11-01 21:03:39,469 - Model - INFO - Save model...
+2022-11-01 21:03:39,471 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:03:39,607 - Model - INFO - Epoch 27 (27/1000):
+2022-11-01 21:04:08,234 - Model - INFO - Save model...
+2022-11-01 21:04:08,235 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:04:08,369 - Model - INFO - Epoch 28 (28/1000):
+2022-11-01 21:04:36,983 - Model - INFO - Save model...
+2022-11-01 21:04:36,984 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:04:37,118 - Model - INFO - Epoch 29 (29/1000):
+2022-11-01 21:05:05,755 - Model - INFO - Save model...
+2022-11-01 21:05:05,756 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:05:05,892 - Model - INFO - Epoch 30 (30/1000):
+2022-11-01 21:05:34,595 - Model - INFO - Save model...
+2022-11-01 21:05:34,596 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:05:34,731 - Model - INFO - Epoch 31 (31/1000):
+2022-11-01 21:06:03,472 - Model - INFO - Save model...
+2022-11-01 21:06:03,473 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:06:03,599 - Model - INFO - Epoch 32 (32/1000):
+2022-11-01 21:06:32,404 - Model - INFO - Epoch 33 (33/1000):
+2022-11-01 21:07:01,216 - Model - INFO - Save model...
+2022-11-01 21:07:01,217 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:07:01,352 - Model - INFO - Epoch 34 (34/1000):
+2022-11-01 21:07:30,128 - Model - INFO - Save model...
+2022-11-01 21:07:30,130 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:07:30,267 - Model - INFO - Epoch 35 (35/1000):
+2022-11-01 21:07:59,022 - Model - INFO - Epoch 36 (36/1000):
+2022-11-01 21:08:27,555 - Model - INFO - Epoch 37 (37/1000):
+2022-11-01 21:08:56,165 - Model - INFO - Epoch 38 (38/1000):
+2022-11-01 21:09:24,730 - Model - INFO - Epoch 39 (39/1000):
+2022-11-01 21:09:53,374 - Model - INFO - Epoch 40 (40/1000):
+2022-11-01 21:10:22,123 - Model - INFO - Save model...
+2022-11-01 21:10:22,125 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:10:22,260 - Model - INFO - Epoch 41 (41/1000):
+2022-11-01 21:10:51,072 - Model - INFO - Save model...
+2022-11-01 21:10:51,073 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:10:51,209 - Model - INFO - Epoch 42 (42/1000):
+2022-11-01 21:11:19,960 - Model - INFO - Save model...
+2022-11-01 21:11:19,961 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:11:20,097 - Model - INFO - Epoch 43 (43/1000):
+2022-11-01 21:11:48,908 - Model - INFO - Epoch 44 (44/1000):
+2022-11-01 21:12:17,750 - Model - INFO - Epoch 45 (45/1000):
+2022-11-01 21:12:46,532 - Model - INFO - Epoch 46 (46/1000):
+2022-11-01 21:13:15,264 - Model - INFO - Epoch 47 (47/1000):
+2022-11-01 21:13:44,062 - Model - INFO - Epoch 48 (48/1000):
+2022-11-01 21:14:12,850 - Model - INFO - Epoch 49 (49/1000):
+2022-11-01 21:14:41,536 - Model - INFO - Save model...
+2022-11-01 21:14:41,538 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:14:41,672 - Model - INFO - Epoch 50 (50/1000):
+2022-11-01 21:15:10,223 - Model - INFO - Save model...
+2022-11-01 21:15:10,225 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:15:10,360 - Model - INFO - Epoch 51 (51/1000):
+2022-11-01 21:15:38,938 - Model - INFO - Epoch 52 (52/1000):
+2022-11-01 21:16:07,632 - Model - INFO - Epoch 53 (53/1000):
+2022-11-01 21:16:36,470 - Model - INFO - Epoch 54 (54/1000):
+2022-11-01 21:17:05,107 - Model - INFO - Save model...
+2022-11-01 21:17:05,109 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:17:05,245 - Model - INFO - Epoch 55 (55/1000):
+2022-11-01 21:17:33,926 - Model - INFO - Epoch 56 (56/1000):
+2022-11-01 21:18:02,627 - Model - INFO - Epoch 57 (57/1000):
+2022-11-01 21:18:31,326 - Model - INFO - Epoch 58 (58/1000):
+2022-11-01 21:19:00,115 - Model - INFO - Save model...
+2022-11-01 21:19:00,118 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:19:00,272 - Model - INFO - Epoch 59 (59/1000):
+2022-11-01 21:19:28,959 - Model - INFO - Epoch 60 (60/1000):
+2022-11-01 21:19:57,697 - Model - INFO - Epoch 61 (61/1000):
+2022-11-01 21:20:26,410 - Model - INFO - Save model...
+2022-11-01 21:20:26,412 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:20:26,539 - Model - INFO - Epoch 62 (62/1000):
+2022-11-01 21:20:55,280 - Model - INFO - Epoch 63 (63/1000):
+2022-11-01 21:21:24,003 - Model - INFO - Epoch 64 (64/1000):
+2022-11-01 21:21:52,659 - Model - INFO - Epoch 65 (65/1000):
+2022-11-01 21:22:21,394 - Model - INFO - Epoch 66 (66/1000):
+2022-11-01 21:22:50,160 - Model - INFO - Epoch 67 (67/1000):
+2022-11-01 21:23:18,941 - Model - INFO - Epoch 68 (68/1000):
+2022-11-01 21:23:47,590 - Model - INFO - Epoch 69 (69/1000):
+2022-11-01 21:24:16,387 - Model - INFO - Epoch 70 (70/1000):
+2022-11-01 21:24:45,202 - Model - INFO - Epoch 71 (71/1000):
+2022-11-01 21:25:13,956 - Model - INFO - Epoch 72 (72/1000):
+2022-11-01 21:25:42,679 - Model - INFO - Save model...
+2022-11-01 21:25:42,680 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:25:42,815 - Model - INFO - Epoch 73 (73/1000):
+2022-11-01 21:26:11,559 - Model - INFO - Save model...
+2022-11-01 21:26:11,561 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:26:11,696 - Model - INFO - Epoch 74 (74/1000):
+2022-11-01 21:26:40,695 - Model - INFO - Save model...
+2022-11-01 21:26:40,696 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:26:40,829 - Model - INFO - Epoch 75 (75/1000):
+2022-11-01 21:27:09,609 - Model - INFO - Epoch 76 (76/1000):
+2022-11-01 21:27:38,386 - Model - INFO - Save model...
+2022-11-01 21:27:38,387 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:27:38,512 - Model - INFO - Epoch 77 (77/1000):
+2022-11-01 21:28:07,308 - Model - INFO - Save model...
+2022-11-01 21:28:07,309 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:28:07,434 - Model - INFO - Epoch 78 (78/1000):
+2022-11-01 21:28:36,149 - Model - INFO - Save model...
+2022-11-01 21:28:36,150 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:28:36,284 - Model - INFO - Epoch 79 (79/1000):
+2022-11-01 21:29:05,073 - Model - INFO - Epoch 80 (80/1000):
+2022-11-01 21:29:33,851 - Model - INFO - Epoch 81 (81/1000):
+2022-11-01 21:30:02,550 - Model - INFO - Save model...
+2022-11-01 21:30:02,551 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:30:02,678 - Model - INFO - Epoch 82 (82/1000):
+2022-11-01 21:30:31,451 - Model - INFO - Save model...
+2022-11-01 21:30:31,452 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:30:31,586 - Model - INFO - Epoch 83 (83/1000):
+2022-11-01 21:31:00,397 - Model - INFO - Epoch 84 (84/1000):
+2022-11-01 21:31:29,187 - Model - INFO - Save model...
+2022-11-01 21:31:29,188 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:31:29,324 - Model - INFO - Epoch 85 (85/1000):
+2022-11-01 21:31:58,343 - Model - INFO - Save model...
+2022-11-01 21:31:58,344 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:31:58,480 - Model - INFO - Epoch 86 (86/1000):
+2022-11-01 21:32:27,179 - Model - INFO - Epoch 87 (87/1000):
+2022-11-01 21:32:55,936 - Model - INFO - Epoch 88 (88/1000):
+2022-11-01 21:33:24,620 - Model - INFO - Epoch 89 (89/1000):
+2022-11-01 21:33:53,484 - Model - INFO - Epoch 90 (90/1000):
+2022-11-01 21:34:22,232 - Model - INFO - Epoch 91 (91/1000):
+2022-11-01 21:34:50,913 - Model - INFO - Save model...
+2022-11-01 21:34:50,914 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:34:51,050 - Model - INFO - Epoch 92 (92/1000):
+2022-11-01 21:35:19,761 - Model - INFO - Epoch 93 (93/1000):
+2022-11-01 21:35:48,548 - Model - INFO - Save model...
+2022-11-01 21:35:48,549 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:35:48,685 - Model - INFO - Epoch 94 (94/1000):
+2022-11-01 21:36:17,582 - Model - INFO - Epoch 95 (95/1000):
+2022-11-01 21:36:46,378 - Model - INFO - Epoch 96 (96/1000):
+2022-11-01 21:37:14,961 - Model - INFO - Epoch 97 (97/1000):
+2022-11-01 21:37:43,646 - Model - INFO - Save model...
+2022-11-01 21:37:43,647 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:37:43,781 - Model - INFO - Epoch 98 (98/1000):
+2022-11-01 21:38:12,397 - Model - INFO - Epoch 99 (99/1000):
+2022-11-01 21:38:41,144 - Model - INFO - Epoch 100 (100/1000):
+2022-11-01 21:39:09,866 - Model - INFO - Epoch 101 (101/1000):
+2022-11-01 21:39:38,533 - Model - INFO - Epoch 102 (102/1000):
+2022-11-01 21:40:07,322 - Model - INFO - Epoch 103 (103/1000):
+2022-11-01 21:40:35,980 - Model - INFO - Epoch 104 (104/1000):
+2022-11-01 21:41:04,546 - Model - INFO - Epoch 105 (105/1000):
+2022-11-01 21:41:33,174 - Model - INFO - Epoch 106 (106/1000):
+2022-11-01 21:42:01,788 - Model - INFO - Epoch 107 (107/1000):
+2022-11-01 21:42:30,412 - Model - INFO - Save model...
+2022-11-01 21:42:30,413 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:42:30,548 - Model - INFO - Epoch 108 (108/1000):
+2022-11-01 21:42:59,337 - Model - INFO - Epoch 109 (109/1000):
+2022-11-01 21:43:28,090 - Model - INFO - Epoch 110 (110/1000):
+2022-11-01 21:43:56,857 - Model - INFO - Epoch 111 (111/1000):
+2022-11-01 21:44:25,586 - Model - INFO - Epoch 112 (112/1000):
+2022-11-01 21:44:54,264 - Model - INFO - Epoch 113 (113/1000):
+2022-11-01 21:45:22,945 - Model - INFO - Epoch 114 (114/1000):
+2022-11-01 21:45:51,514 - Model - INFO - Epoch 115 (115/1000):
+2022-11-01 21:46:20,102 - Model - INFO - Epoch 116 (116/1000):
+2022-11-01 21:46:48,946 - Model - INFO - Epoch 117 (117/1000):
+2022-11-01 21:47:17,736 - Model - INFO - Epoch 118 (118/1000):
+2022-11-01 21:47:46,486 - Model - INFO - Epoch 119 (119/1000):
+2022-11-01 21:48:15,160 - Model - INFO - Epoch 120 (120/1000):
+2022-11-01 21:48:43,794 - Model - INFO - Epoch 121 (121/1000):
+2022-11-01 21:49:12,617 - Model - INFO - Save model...
+2022-11-01 21:49:12,618 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:49:12,754 - Model - INFO - Epoch 122 (122/1000):
+2022-11-01 21:49:41,567 - Model - INFO - Epoch 123 (123/1000):
+2022-11-01 21:50:10,322 - Model - INFO - Epoch 124 (124/1000):
+2022-11-01 21:50:39,039 - Model - INFO - Epoch 125 (125/1000):
+2022-11-01 21:51:07,838 - Model - INFO - Epoch 126 (126/1000):
+2022-11-01 21:51:36,666 - Model - INFO - Save model...
+2022-11-01 21:51:36,667 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 21:51:36,820 - Model - INFO - Epoch 127 (127/1000):
+2022-11-01 21:52:05,607 - Model - INFO - Epoch 128 (128/1000):
+2022-11-01 21:52:34,362 - Model - INFO - Epoch 129 (129/1000):
+2022-11-01 21:53:02,876 - Model - INFO - Epoch 130 (130/1000):
+2022-11-01 21:53:31,440 - Model - INFO - Epoch 131 (131/1000):
+2022-11-01 21:53:59,995 - Model - INFO - Epoch 132 (132/1000):
+2022-11-01 21:54:28,555 - Model - INFO - Epoch 133 (133/1000):
+2022-11-01 21:54:57,161 - Model - INFO - Epoch 134 (134/1000):
+2022-11-01 21:55:25,808 - Model - INFO - Epoch 135 (135/1000):
+2022-11-01 21:55:54,402 - Model - INFO - Epoch 136 (136/1000):
+2022-11-01 21:56:23,094 - Model - INFO - Epoch 137 (137/1000):
+2022-11-01 21:56:51,908 - Model - INFO - Epoch 138 (138/1000):
+2022-11-01 21:57:20,597 - Model - INFO - Epoch 139 (139/1000):
+2022-11-01 21:57:49,327 - Model - INFO - Epoch 140 (140/1000):
+2022-11-01 21:58:18,109 - Model - INFO - Epoch 141 (141/1000):
+2022-11-01 21:58:46,934 - Model - INFO - Epoch 142 (142/1000):
+2022-11-01 21:59:15,670 - Model - INFO - Epoch 143 (143/1000):
+2022-11-01 21:59:44,421 - Model - INFO - Epoch 144 (144/1000):
+2022-11-01 22:00:13,107 - Model - INFO - Save model...
+2022-11-01 22:00:13,108 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 22:00:13,244 - Model - INFO - Epoch 145 (145/1000):
+2022-11-01 22:00:41,980 - Model - INFO - Epoch 146 (146/1000):
+2022-11-01 22:01:10,769 - Model - INFO - Epoch 147 (147/1000):
+2022-11-01 22:01:39,522 - Model - INFO - Epoch 148 (148/1000):
+2022-11-01 22:02:08,224 - Model - INFO - Epoch 149 (149/1000):
+2022-11-01 22:02:36,825 - Model - INFO - Save model...
+2022-11-01 22:02:36,826 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 22:02:36,960 - Model - INFO - Epoch 150 (150/1000):
+2022-11-01 22:03:05,731 - Model - INFO - Epoch 151 (151/1000):
+2022-11-01 22:03:34,600 - Model - INFO - Epoch 152 (152/1000):
+2022-11-01 22:04:03,206 - Model - INFO - Epoch 153 (153/1000):
+2022-11-01 22:04:31,876 - Model - INFO - Epoch 154 (154/1000):
+2022-11-01 22:05:00,507 - Model - INFO - Epoch 155 (155/1000):
+2022-11-01 22:05:29,013 - Model - INFO - Epoch 156 (156/1000):
+2022-11-01 22:05:57,715 - Model - INFO - Epoch 157 (157/1000):
+2022-11-01 22:06:26,636 - Model - INFO - Epoch 158 (158/1000):
+2022-11-01 22:06:56,349 - Model - INFO - Epoch 159 (159/1000):
+2022-11-01 22:07:25,741 - Model - INFO - Epoch 160 (160/1000):
+2022-11-01 22:07:54,312 - Model - INFO - Save model...
+2022-11-01 22:07:54,313 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 22:07:54,447 - Model - INFO - Epoch 161 (161/1000):
+2022-11-01 22:08:23,087 - Model - INFO - Epoch 162 (162/1000):
+2022-11-01 22:08:51,790 - Model - INFO - Epoch 163 (163/1000):
+2022-11-01 22:09:20,541 - Model - INFO - Save model...
+2022-11-01 22:09:20,543 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 22:09:20,678 - Model - INFO - Epoch 164 (164/1000):
+2022-11-01 22:09:49,506 - Model - INFO - Save model...
+2022-11-01 22:09:49,508 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 22:09:49,643 - Model - INFO - Epoch 165 (165/1000):
+2022-11-01 22:10:18,424 - Model - INFO - Epoch 166 (166/1000):
+2022-11-01 22:10:48,757 - Model - INFO - Epoch 167 (167/1000):
+2022-11-01 22:11:18,865 - Model - INFO - Save model...
+2022-11-01 22:11:18,867 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/checkpoints/best_model.pth
+2022-11-01 22:11:19,002 - Model - INFO - Epoch 168 (168/1000):
+2022-11-01 22:11:49,435 - Model - INFO - Epoch 169 (169/1000):
+2022-11-01 22:12:19,626 - Model - INFO - Epoch 170 (170/1000):
+2022-11-01 22:12:49,783 - Model - INFO - Epoch 171 (171/1000):
+2022-11-01 22:13:18,429 - Model - INFO - Epoch 172 (172/1000):
+2022-11-01 22:13:47,089 - Model - INFO - Epoch 173 (173/1000):
+2022-11-01 22:14:15,660 - Model - INFO - Epoch 174 (174/1000):
+2022-11-01 22:14:45,521 - Model - INFO - Epoch 175 (175/1000):
+2022-11-01 22:15:17,199 - Model - INFO - Epoch 176 (176/1000):
+2022-11-01 22:15:45,905 - Model - INFO - Epoch 177 (177/1000):
+2022-11-01 22:16:15,870 - Model - INFO - Epoch 178 (178/1000):
+2022-11-01 22:16:47,588 - Model - INFO - Epoch 179 (179/1000):
