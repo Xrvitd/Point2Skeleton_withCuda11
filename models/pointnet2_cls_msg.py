@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from pytorch3d.loss import chamfer_distance
 import DistFunc as DF
-
+import numpy as np
 from pointnet2_utils import PointNetSetAbstractionMsg, PointNetSetAbstraction
 
 
@@ -329,6 +329,26 @@ class get_loss(nn.Module):
         # loss_normal = loss_normal + loss_normal1
 #换loss? 不应该一起训 感觉需要分开训
 
+        #loss_noraml3
+        loss_normal3 = 0
+        # for i in range(skel_nori.size()[0]):
+        #     for j in range(skel_nori.size()[1]):
+        #         # Vects = (shape_xyz[i, :, :] - skel_xyz[i, j, :])
+        #         # Vects = torch.mul(Vects, skel_nori[i, j, :])
+        #         for k in range(20):
+        #             SampleP1 = skel_xyz[i, j, :] + 0.05 * k * skel_nori[i, j, :]
+        #             SampleP2 = skel_xyz[i, j, :] - 0.05 * k * skel_nori[i, j, :]
+        #             d1 = DF.closest_distance_with_batch(SampleP1[None,None,:], shape_xyz[None,i, :, :])
+        #             d2 = DF.closest_distance_with_batch(SampleP2[None,None,:], shape_xyz[None,i, :, :])
+        #             if d1<0.1 or d2<0.1:
+        #                 loss_normal3 = loss_normal3 + 0.1
+        #             else:
+        #                 break
+        # loss_normal3 = loss_normal3 / (skel_xyz.size()[0] * skel_xyz.size()[1])
+        # loss_normal3 = np.exp(-loss_normal3)
+
+
+
 
 
         # Laplacian smoothness loss
@@ -338,7 +358,7 @@ class get_loss(nn.Module):
 
         # loss combination
 
-        final_loss = loss_sample + loss_point2sphere * w1 + loss_radius * w2 + loss_smooth * w3 + loss_normal * w4 + loss_normal1 * 0.2
+        final_loss = loss_sample + loss_point2sphere * w1 + loss_radius * w2 + loss_smooth * w3 + loss_normal * w4 + loss_normal1 * 0.2 + 1*loss_normal3
 
         return final_loss
 

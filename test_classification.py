@@ -102,7 +102,7 @@ def main(args):
     if not args.use_cpu:
         classifier = classifier.cuda()
 
-    checkpoint = torch.load(str(experiment_dir) + '/checkpoints/best_model.pth')
+    checkpoint = torch.load(str(experiment_dir) + '/test_out/best_model.pth')
     classifier.load_state_dict(checkpoint['model_state_dict'])
 
     with torch.no_grad():

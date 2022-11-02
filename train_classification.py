@@ -123,7 +123,7 @@ def main(args):
     else:
         exp_dir = exp_dir.joinpath(args.log_dir)
     exp_dir.mkdir(exist_ok=True)
-    checkpoints_dir = exp_dir.joinpath('checkpoints/')
+    checkpoints_dir = exp_dir.joinpath('test_out/')
     checkpoints_dir.mkdir(exist_ok=True)
     log_dir = exp_dir.joinpath('logs/')
     log_dir.mkdir(exist_ok=True)
@@ -233,7 +233,7 @@ def main(args):
 
     start_epoch = 0
     try:
-        checkpoint = torch.load(str(exp_dir) + '/checkpoints/best_model0.25new.pth')
+        checkpoint = torch.load(str(exp_dir) + '/test_out/best_model0.25new.pth')
         start_epoch = 100
         # start_epoch = checkpoint['epoch']
         classifier.load_state_dict(checkpoint['model_state_dict'])

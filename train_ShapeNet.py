@@ -59,31 +59,36 @@ def inplace_relu(m):
 
 def test(model, loader, num_class=60):
     mean_correct = []
-    class_acc = np.zeros((num_class, 3))
+    # class_acc = np.zeros((num_class, 3))
     classifier = model.eval()
+    testdir = 'log/ShapeNet/test_out'
+    for k, batch_data in tqdm(enumerate(loader, 0), total=len(loader), smoothing=0.8):
 
-    for j, (points, target) in tqdm(enumerate(loader), total=len(loader)):
+        batch_id, batch_pc = batch_data
+        batch_id = batch_id
+        batch_pc = batch_pc.cuda().float()
+        # global points, target
 
-        if not args.use_cpu:
-            points, target = points.cuda(), target.cuda()
-
+        points = batch_pc[:, :, 0:3]
+        # target = batch_pc
         points = points.transpose(2, 1)
-        pred, _ = classifier(points)
-        pred_choice = pred.data.max(1)[1]
+        skel_xyz, skel_r, shape_cmb_features, skel_nori, weights, l3_xyz, l3_normals = classifier(points)
+        with open(str(testdir) + '/SkelePoints%d.xyz' % batch_id, "w") as f:
+            for i in range(len(skel_xyz[0])):
+                f.write(
+                    "%f %f %f " % (skel_xyz[0][i][0], skel_xyz[0][i][1], skel_xyz[0][i][2]))
+                f.write("%f %f %f\n" % (
+                skel_nori[0][i][0], skel_nori[0][i][1], skel_nori[0][i][2]))
+        with open(str(testdir) + '/Radii%d.xyz' % batch_id, "w") as f:
+            for i in range(len(skel_r[0])):
+                f.write("%f\n" % skel_r[00][i])
+        with open(str(testdir) + '/l3points%d.xyz' % batch_id, "w") as f:
+            for i in range(len(l3_xyz[0])):
+                f.write("%f %f %f " % (l3_xyz[0][i][0], l3_xyz[0][i][1], l3_xyz[0][i][2]))
+                f.write("%f %f %f\n" % (
+                l3_normals[0][i][0], l3_normals[0][i][1], l3_normals[0][i][2]))
 
-        for cat in np.unique(target.cpu()):
-            classacc = pred_choice[target == cat].eq(target[target == cat].long().data).cpu().sum()
-            class_acc[cat, 0] += classacc.item() / float(points[target == cat].size()[0])
-            class_acc[cat, 1] += 1
-
-        correct = pred_choice.eq(target.long().data).cpu().sum()
-        mean_correct.append(correct.item() / float(points.size()[0]))
-
-    class_acc[:, 2] = class_acc[:, 0] / class_acc[:, 1]
-    class_acc = np.mean(class_acc[:, 2])
-    instance_acc = np.mean(mean_correct)
-
-    return instance_acc, class_acc
+    return testdir
 
 
 
@@ -115,7 +120,7 @@ def main(args):
 
     '''HYPER PARAMETER'''
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
-    batch_size = 4
+    batch_size = 8
     '''CREATE DIR'''
     timestr = str(datetime.datetime.now().strftime('%Y-%m-%d_%H-%M'))
     exp_dir = Path('./log/')
@@ -127,7 +132,7 @@ def main(args):
     else:
         exp_dir = exp_dir.joinpath(args.log_dir)
     exp_dir.mkdir(exist_ok=True)
-    checkpoints_dir = exp_dir.joinpath('checkpoints/')
+    checkpoints_dir = exp_dir.joinpath('test_out/')
     checkpoints_dir.mkdir(exist_ok=True)
     log_dir = exp_dir.joinpath('logs/')
     log_dir.mkdir(exist_ok=True)
@@ -154,12 +159,12 @@ def main(args):
     # testDataLoader = torch.utils.data.DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=10)
     data_path = 'data/MyPoints/'
     # train_dataset = torch.utils.data.DataLoader( , batch_size=args.batch_size, shuffle=True, num_workers=10, drop_last=True)
-    pc_list_file = 'data/data-split/little-train1.txt'
+    pc_list_file = 'data/data-split/all-train.txt'
     data_root = 'data/pointclouds/'
     pc_list = rw.load_data_id(pc_list_file)
     train_data = PCDataset(pc_list, data_root, args.num_point)
     train_loader = DataLoader(dataset=train_data, batch_size = batch_size, shuffle=True, drop_last=True)
-    pc_list_file = 'data/data-split/little-test1.txt'
+    pc_list_file = 'data/data-split/all-test.txt'
     data_root = 'data/pointclouds/'
     pc_list = rw.load_data_id(pc_list_file)
     test_data = PCDataset(pc_list, data_root, args.num_point)
@@ -208,7 +213,7 @@ def main(args):
 
     start_epoch = 0
     try:
-        checkpoint = torch.load(str(exp_dir) + '/checkpoints/best_model_ShapeNet.pth')
+        checkpoint = torch.load(str(exp_dir) + '/test_out/best_model_all.pth')
         start_epoch = 50
         # start_epoch = checkpoint['epoch']
         classifier.load_state_dict(checkpoint['model_state_dict'])
@@ -234,8 +239,13 @@ def main(args):
     best_instance_acc = 999999
     best_instance_acc_pre = 999999
     '''TRANING'''
-    batch_size = 4
+    # batch_size = 8
     logger.info('Start training...')
+    Totest = False
+    if Totest:
+        test(classifier, test_loader, 40)
+        sys.exit()
+
     for epoch in range(start_epoch, args.epoch):
         log_string('Epoch %d (%d/%s):' % (global_epoch + 1, epoch + 1, args.epoch))
         mean_correct = []
@@ -294,7 +304,7 @@ def main(args):
 
         '''TESTING'''
 
-        if epoch < 20:
+        if epoch <20:
             with torch.no_grad():
                 if (loss_batch <= best_instance_acc_pre):
                     best_instance_acc_pre = loss_batch
@@ -316,7 +326,7 @@ def main(args):
                     best_instance_acc = loss_batch
                     best_epoch = epoch + 1
                     logger.info('Save model...')
-                    savepath = str(checkpoints_dir) + '/best_model.pth'
+                    savepath = str(checkpoints_dir) + '/best_model_all.pth'
                     log_string('Saving at %s' % savepath)
                     state = {
                         'epoch': best_epoch,
@@ -342,78 +352,6 @@ def main(args):
             print('Skeletal training loss: %f' % loss_batch, 'Bestloss: %f' % best_instance_acc)
 
         global_epoch += 1
-
-
-
-
-                #         for i in range(20):
-                #             [x, y, z, nx, ny, nz, r] = pred[branch_idx][i * 7:i * 7 + 7]
-                #             x = x.cpu().numpy()
-                #             y = y.cpu().numpy()
-                #             z = z.cpu().numpy()
-                #             f.write(str(x) + ' ' + str(y) + ' ' + str(z) + '\n')
-                #         f.write("\n")
-                # pred_ = pred.view(batch_size, 20)
-                # # center = pred_[:, :, 0:3]
-                # # normal = pred_[:, :, 3:6]
-                # # radis = pred_[:, :, 6]
-                # for i in range(batch_size):
-                #     for j in range(20):
-                #         # center_ = center[i, j, :]
-                #         # normal_ = normal[i, j, :]
-                #         # normal_ = normal_ / normal_.norm()
-                #         # radis_ = radis[i, j]
-                #         center_ = torch.tensor([0.04, 0, 0], requires_grad=True).cuda()
-                #         center_[1] = 0.075 * j - 0.7
-                #         normal_ = torch.tensor([0.0, 1, 0], requires_grad=True).cuda()
-                #         radis_ = pred_[i, j]
-                #
-                #         normal_cz = torch.tensor([-1.0 * normal_[1], normal_[0], 0]).cuda()
-                #         normal_cz = normal_cz / normal_cz.norm()
-                #         # disnn = torch.mul(normal_,normal_cz)
-                #         firstPoint = center_ + radis_ * normal_cz
-                #         firstPoint = firstPoint - center_
-                #         for k in range(0, 360, 10):
-                #             angle = k * 2 * 3.1415926 / 360
-                #             angle = torch.tensor(angle).cuda()
-                #             point = Rotate_Point3d(firstPoint, normal_, angle)
-                #             point = point + center_
-                #             point = point.unsqueeze(0)
-                #             if k == 0:
-                #                 points = point
-                #             else:
-                #                 points = torch.cat((points, point), 0)
-                #         points = points.unsqueeze(0)
-                #         if j == 0:
-                #             points_ = points
-                #         else:
-                #             points_ = torch.cat((points_, points), 1)
-                #     # points_ = points_.unsqueeze(0)
-                #     if i == 0:
-                #         points__ = points_
-                #     else:
-                #         points__ = torch.cat((points__, points_), 0)
-                # points__ = points__.cpu().numpy()
-                # for i in range(batch_size):
-                #     with open(str(checkpoints_dir) + '/best_Points%d.xyz' % i, "w") as f:
-                #         for j in range(points__.shape[1]):
-                #             [x, y, z] = points__[i][j]
-                #             f.write(str(x) + ' ' + str(y) + ' ' + str(z) + '\n')
-                #         f.write("\n")
-
-            # pred_ = pred.view(batch_size, 20, 3)
-            # pred_ = pred_.cpu().numpy()
-            #
-            # for i in range(batch_size):
-            #     with open(str(checkpoints_dir) + '/best_Points%d.xyz' % i, "w") as f:
-            #         for j in range(2, 20):
-            #             [x,y,z] = pred_[i][j]
-            #             f.write(str(x) + ' ' + str(y) + ' ' + str(z)+ '\n')
-            #         center = pred_[i, 0, 0:3]
-            #         f.write(str(center[0]) + ' ' + str(center[1]) + ' ' + str(center[2]))
-            #         f.write("\n")
-
-
 
 
 
