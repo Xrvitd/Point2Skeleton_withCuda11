@@ -120,7 +120,7 @@ def main(args):
 
     '''HYPER PARAMETER'''
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
-    batch_size = 8
+    batch_size = 4
     '''CREATE DIR'''
     timestr = str(datetime.datetime.now().strftime('%Y-%m-%d_%H-%M'))
     exp_dir = Path('./log/')
@@ -159,12 +159,12 @@ def main(args):
     # testDataLoader = torch.utils.data.DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=10)
     data_path = 'data/MyPoints/'
     # train_dataset = torch.utils.data.DataLoader( , batch_size=args.batch_size, shuffle=True, num_workers=10, drop_last=True)
-    pc_list_file = 'data/data-split/all-train.txt'
+    pc_list_file = 'data/data-split/little-train.txt'
     data_root = 'data/pointclouds/'
     pc_list = rw.load_data_id(pc_list_file)
     train_data = PCDataset(pc_list, data_root, args.num_point)
     train_loader = DataLoader(dataset=train_data, batch_size = batch_size, shuffle=True, drop_last=True)
-    pc_list_file = 'data/data-split/all-test.txt'
+    pc_list_file = 'data/data-split/little-test.txt'
     data_root = 'data/pointclouds/'
     pc_list = rw.load_data_id(pc_list_file)
     test_data = PCDataset(pc_list, data_root, args.num_point)
@@ -212,17 +212,17 @@ def main(args):
         optimizer = torch.optim.SGD(classifier.parameters(), lr=0.01, momentum=0.9)
 
     start_epoch = 0
-    try:
-        checkpoint = torch.load(str(exp_dir) + '/test_out/best_model_all.pth')
-        start_epoch = 50
-        # start_epoch = checkpoint['epoch']
-        classifier.load_state_dict(checkpoint['model_state_dict'])
-        log_string('Use pretrain model')
-        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
-
-    except:
-        log_string('No existing model, starting training from scratch...')
-        start_epoch = 0
+    # try:
+    #     checkpoint = torch.load(str(exp_dir) + '/test_out/best_model_planeWithD.pth')
+    #     start_epoch = 50
+    #     # start_epoch = checkpoint['epoch']
+    #     classifier.load_state_dict(checkpoint['model_state_dict'])
+    #     log_string('Use pretrain model')
+    #     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    #
+    # except:
+    #     log_string('No existing model, starting training from scratch...')
+    #     start_epoch = 0
     # log_string('Do not use pretrain model...')
     # start_epoch = 0
     for params in optimizer.param_groups:
@@ -326,7 +326,7 @@ def main(args):
                     best_instance_acc = loss_batch
                     best_epoch = epoch + 1
                     logger.info('Save model...')
-                    savepath = str(checkpoints_dir) + '/best_model_all.pth'
+                    savepath = str(checkpoints_dir) + '/best_model_planeWithD.pth'
                     log_string('Saving at %s' % savepath)
                     state = {
                         'epoch': best_epoch,
@@ -341,9 +341,18 @@ def main(args):
                             for i in range(len(skel_xyz[branch_idx])):
                                 f.write("%f %f %f " % (skel_xyz[branch_idx][i][0], skel_xyz[branch_idx][i][1], skel_xyz[branch_idx][i][2]))
                                 f.write("%f %f %f\n" % (skel_nori[branch_idx][i][0], skel_nori[branch_idx][i][1], skel_nori[branch_idx][i][2]))
-                        with open(str(checkpoints_dir)+'/best_Radii%d.xyz' % branch_idx, "w") as f:
-                            for i in range(len(skel_r[branch_idx])):
-                                f.write("%f\n" % skel_r[branch_idx][i])
+                                # f.write("v %f %f %f %f %f %f\n"% (skel_xyz[branch_idx][i][0]+skel_nori[branch_idx][i][0], skel_xyz[branch_idx][i][1]+skel_nori[branch_idx][i][1], skel_xyz[branch_idx][i][2]+skel_nori[branch_idx][i][2],0,0,0))
+                        # with open(str(checkpoints_dir)+'/best_Radii%d.xyz' % branch_idx, "w") as f:
+                        #     for i in range(len(skel_r[branch_idx])):
+                        #         f.write("%f\n" % skel_r[branch_idx][i])
+                        with open(str(checkpoints_dir)+'/best_l3flows%d.obj' % branch_idx, "w") as f:
+                            for i in range(len(l3_xyz[branch_idx])):
+                                f.write("v %f %f %f " % (l3_xyz[branch_idx][i][0], l3_xyz[branch_idx][i][1], l3_xyz[branch_idx][i][2]))
+                                f.write("%f %f %f\n" % (l3_normals[branch_idx][i][0], l3_normals[branch_idx][i][1], l3_normals[branch_idx][i][2]))
+                                f.write("v %f %f %f " % (
+                                l3_xyz[branch_idx][i][0]+l3_normals[branch_idx][i][0], l3_xyz[branch_idx][i][1] +l3_normals[branch_idx][i][1], l3_xyz[branch_idx][i][2]+l3_normals[branch_idx][i][2]))
+                                f.write("%f %f %f\n" % (0,0,0))
+                                f.write("l %d %d\n" % (2*i+1,2*i+2))
                         with open(str(checkpoints_dir)+'/best_l3points%d.xyz' % branch_idx, "w") as f:
                             for i in range(len(l3_xyz[branch_idx])):
                                 f.write("%f %f %f " % (l3_xyz[branch_idx][i][0], l3_xyz[branch_idx][i][1], l3_xyz[branch_idx][i][2]))

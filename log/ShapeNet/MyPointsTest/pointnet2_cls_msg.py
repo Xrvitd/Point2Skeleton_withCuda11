@@ -4,8 +4,9 @@ import torch.nn.functional as F
 from pytorch3d.loss import chamfer_distance
 import DistFunc as DF
 import numpy as np
+import pytorch3d as p3d
 from pointnet2_utils import PointNetSetAbstractionMsg, PointNetSetAbstraction
-
+from scipy import spatial
 
 
 class get_model(nn.Module):
@@ -129,6 +130,8 @@ class get_model(nn.Module):
         l3_xyz = l3_xyz.transpose(1,2)
 
         Fnormals = self.cvx_weights_mlp_nor(context_features)
+        # Fnormals = Fnormals[:, :3, :]
+        # Dists = Fnormals[:, 3, :]
         l3_normals = Fnormals.transpose(1,2)
         # Fnormals = Fnormals / torch.norm(Fnormals, dim=2, keepdim=True)
         #skeletal points
@@ -287,66 +290,73 @@ class get_loss(nn.Module):
         # loss_center = -loss_center
         # loss_center = torch.exp(loss_center)
 
+        # knn_skel2shape = DF.knn_with_batch(skel_xyz, shape_xyz, 20)
+
+        for i in range(skel_nori.size()[0]):
+            tree = spatial.cKDTree(shape_xyz[0].cpu().detach().numpy())
+            dist, ind = tree.query(skel_xyz[0].cpu().detach().numpy(), k=20)
+            if i == 0:
+                knn_skel2shape = torch.unsqueeze(torch.tensor(ind).cuda(),0)
+                trees = tree
+            else:
+                knn_skel2shape = torch.cat((knn_skel2shape,torch.unsqueeze(torch.tensor(ind).cuda(),0)),0)
+                trees = np.append(trees,tree)
+
+
         #normal loss
         loss_normal = 0
         for i in range(skel_nori.size()[0]):
             for j in range(skel_nori.size()[1]):
-                dists = torch.norm(shape_xyz[i, :, :] - skel_xyz[i, j, :], dim=1)
-                dists = dists - skel_radius[i, j]*1.0
-                # find indices less than 0
-                # idx = (dists<0).nonzero(as_tuple=True)[0]
-                # radis = skel_radius[i, j]
-                _,idx = torch.topk(dists, 20, largest=False)
+                idx = knn_skel2shape[i,j,:]
                 loss_j =0
                 if idx.size()[0] != 0:
                     for k in range(idx.size()[0]):
                         # norij = skel_nori[i, j, :] / skel_nori[i, j, :].norm()
                         loss_j = loss_j + torch.dot(skel_nori[i, j, :], normal[i, idx[k], :]).norm()
                     loss_j = loss_j / idx.size()[0]
-                    loss_j = loss_j + (skel_nori[i, j, :].norm() - 1.0) * (skel_nori[i, j, :].norm() - 1.0)
+                    # loss_j = loss_j + (skel_nori[i, j, :].norm() - 1.0) * (skel_nori[i, j, :].norm() - 1.0)
                     loss_normal = loss_normal + loss_j
         loss_normal = loss_normal / (skel_xyz.size()[0])
 
 
+        # knn_l32shape = DF.knn_with_batch(l3_xyz, shape_xyz, 20)
         #l3_normal loss
         loss_normal1 = 0
         for i in range(l3_normals.size()[0]):
             loss_j = 0
+            sample_pointss = torch.zeros((l3_normals.size()[1]*20, 3)).cuda()
             for j in range(l3_normals.size()[1]):
-                # dists = torch.norm(shape_xyz[i, :, :] - l3_xyz[i, j, :], dim=1)
-                # # find indices less than 0
-                # # idx = (dists<0).nonzero(as_tuple=True)[0]
-                # _,idx = torch.topk(dists, 4, largest=False)
-                # loss_j =0
-                # if idx.size()[0] != 0:
-                #     for k in range(idx.size()[0]):
-                #         # norij = skel_nori[i, j, :] / skel_nori[i, j, :].norm()
-                #         loss_j = loss_j + torch.dot(l3_normals[i, j, :], normal[i, idx[k], :]).norm()
-                # loss_j = loss_j/idx.size()[0]
-                loss_j = loss_j + (l3_normals[i, j, :].norm() - 1.0)*(l3_normals[i, j, :].norm() - 1.0)
-            loss_normal1 = loss_normal1 + loss_j/l3_normals.size()[1]
-        loss_normal1 = loss_normal1 / (l3_xyz.size()[0])
+                start = l3_xyz[i, j, :]
+                end = l3_xyz[i, j, :] + l3_normals[i, j, :]
+                #sample 20 points on the line
+                sample_points = torch.zeros(20,3).cuda()
+                for k in range(20):
+                    sample_points[k, :] = start + (end - start) * k / 20.0
+                    dist, _ = trees[i].query(sample_points[k, :].cpu().detach().numpy(), k=1)
+                    loss_normal1 = loss_normal1 + dist
+            #     sample_pointss[j*20:(j+1)*20, :] = sample_points
+            # knn_sample2shape = DF.knn_with_batch(sample_pointss[None,:,:], shape_xyz[None,i,:,:], 1)
+            # for j in range(sample_pointss.size()[0]):
+            #     loss_normal1 = loss_normal1 + (sample_pointss[j,:]- shape_xyz[i, knn_sample2shape[0,j,0], :]).norm()
+
+        loss_normal1 = loss_normal1 / (l3_xyz.size()[0] * l3_xyz.size()[1]*20)
         # loss_normal = loss_normal + loss_normal1
 #换loss? 不应该一起训 感觉需要分开训
 
         #loss_noraml3
         loss_normal3 = 0
-        # for i in range(skel_nori.size()[0]):
-        #     for j in range(skel_nori.size()[1]):
-        #         # Vects = (shape_xyz[i, :, :] - skel_xyz[i, j, :])
-        #         # Vects = torch.mul(Vects, skel_nori[i, j, :])
-        #         for k in range(20):
-        #             SampleP1 = skel_xyz[i, j, :] + 0.05 * k * skel_nori[i, j, :]
-        #             SampleP2 = skel_xyz[i, j, :] - 0.05 * k * skel_nori[i, j, :]
-        #             d1 = DF.closest_distance_with_batch(SampleP1[None,None,:], shape_xyz[None,i, :, :])
-        #             d2 = DF.closest_distance_with_batch(SampleP2[None,None,:], shape_xyz[None,i, :, :])
-        #             if d1<0.1 or d2<0.1:
-        #                 loss_normal3 = loss_normal3 + 0.1
-        #             else:
-        #                 break
-        # loss_normal3 = loss_normal3 / (skel_xyz.size()[0] * skel_xyz.size()[1])
-        # loss_normal3 = np.exp(-loss_normal3)
-
+        for i in range(l3_normals.size()[0]):
+            for j in range(l3_normals.size()[1]):
+                loss_normal3 = loss_normal3 + l3_normals[i, j, :].norm()
+        loss_normal3 = loss_normal3 / (l3_normals.size()[0] * l3_normals.size()[1])
+        loss_normal3 = torch.exp(-loss_normal3*4)
+        loss_tmp =0
+        for i in range(l3_normals.size()[0]):
+            mean = torch.mean(l3_normals[i, :, :], dim=0)
+            for j in range(l3_normals.size()[1]):
+                loss_tmp = loss_tmp + (l3_normals[i, j, :].norm() - mean.norm()) * (l3_normals[i, j, :].norm() - mean.norm())
+        loss_tmp = loss_tmp / (l3_normals.size()[0] * l3_normals.size()[1])
+        loss_normal3 = loss_normal3 + loss_tmp
 
 
 
@@ -358,7 +368,7 @@ class get_loss(nn.Module):
 
         # loss combination
 
-        final_loss = loss_sample + loss_point2sphere * w1 + loss_radius * w2 + loss_smooth * w3 + loss_normal * w4 + loss_normal1 * 0.2 + 1*loss_normal3
+        final_loss = loss_sample + loss_point2sphere * w1 + loss_radius * w2 + loss_smooth * w3 + loss_normal * 0.005 + loss_normal1 * 5 + 0.2*loss_normal3
 
         return final_loss
 
