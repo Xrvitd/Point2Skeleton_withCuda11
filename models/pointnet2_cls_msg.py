@@ -293,8 +293,8 @@ class get_loss(nn.Module):
         # knn_skel2shape = DF.knn_with_batch(skel_xyz, shape_xyz, 20)
 
         for i in range(skel_nori.size()[0]):
-            tree = spatial.cKDTree(shape_xyz[0].cpu().detach().numpy())
-            dist, ind = tree.query(skel_xyz[0].cpu().detach().numpy(), k=20)
+            tree = spatial.cKDTree(shape_xyz[i].cpu().detach().numpy())
+            dist, ind = tree.query(skel_xyz[i].cpu().detach().numpy(), k=20)
             if i == 0:
                 knn_skel2shape = torch.unsqueeze(torch.tensor(ind).cuda(),0)
                 trees = tree
@@ -322,6 +322,7 @@ class get_loss(nn.Module):
         # knn_l32shape = DF.knn_with_batch(l3_xyz, shape_xyz, 20)
         #l3_normal loss
         loss_normal1 = 0
+        loss_normal11 = 0
         for i in range(l3_normals.size()[0]):
             loss_j = 0
             sample_pointss = torch.zeros((l3_normals.size()[1]*20, 3)).cuda()
@@ -332,14 +333,17 @@ class get_loss(nn.Module):
                 sample_points = torch.zeros(20,3).cuda()
                 for k in range(20):
                     sample_points[k, :] = start + (end - start) * k / 20.0
-                    dist, _ = trees[i].query(sample_points[k, :].cpu().detach().numpy(), k=1)
-                    loss_normal1 = loss_normal1 + dist
+                    dist, idx = trees[i].query(sample_points[k, :].cpu().detach().numpy(), k=1)
+                    loss_normal11 = loss_normal11 + torch.norm( sample_points[k, :] - shape_xyz[i, idx, :])
+                    # if i==3:
+                    #     idx = idx+1
             #     sample_pointss[j*20:(j+1)*20, :] = sample_points
             # knn_sample2shape = DF.knn_with_batch(sample_pointss[None,:,:], shape_xyz[None,i,:,:], 1)
             # for j in range(sample_pointss.size()[0]):
             #     loss_normal1 = loss_normal1 + (sample_pointss[j,:]- shape_xyz[i, knn_sample2shape[0,j,0], :]).norm()
 
-        loss_normal1 = loss_normal1 / (l3_xyz.size()[0] * l3_xyz.size()[1]*20)
+        # loss_normal1 = loss_normal1 / (l3_xyz.size()[0] * l3_xyz.size()[1]*20)
+        loss_normal11 = loss_normal11 / (l3_xyz.size()[0] * l3_xyz.size()[1]*20)
         # loss_normal = loss_normal + loss_normal1
 #换loss? 不应该一起训 感觉需要分开训
 
@@ -358,6 +362,10 @@ class get_loss(nn.Module):
         loss_tmp = loss_tmp / (l3_normals.size()[0] * l3_normals.size()[1])
         loss_normal3 = loss_normal3 + loss_tmp
 
+        # for i in range(l3_normals.size()[0]):
+        #     for j in range(l3_normals.size()[1]):
+        #         loss_normal3 = loss_normal3 + (l3_normals[i, j, :].norm() - 0.5) * (l3_normals[i, j, :].norm() - 0.5)
+        # loss_normal3 = loss_normal3 / (l3_normals.size()[0] * l3_normals.size()[1])
 
 
 
@@ -367,8 +375,8 @@ class get_loss(nn.Module):
             loss_smooth = self.get_smoothness_loss(skel_xyzr, A) / skel_pnum
 
         # loss combination
-
-        final_loss = loss_sample + loss_point2sphere * w1 + loss_radius * w2 + loss_smooth * w3 + loss_normal * 0.005 + loss_normal1 * 5 + 0.2*loss_normal3
+        # print('loss_normal', loss_normal1-loss_normal11)
+        final_loss = loss_sample + loss_point2sphere * w1 + loss_radius * w2 + loss_smooth * w3 + loss_normal * 0.005 + loss_normal11 * 2.5 + 0.3*loss_normal3
 
         return final_loss
 
