@@ -245,6 +245,7 @@ class get_loss(nn.Module):
 
     def forward(self, skel_xyz, skel_radius, shape_cmb_features,skel_nori,weights,l3_xyz, l3_normals,shape_xyz,A, w1, w2, w3,w4, lap_reg=False):
         #point2skeleton loss
+
         normal = shape_xyz[:, :, 3:6]
         shape_xyz = shape_xyz[:, :, :3]
         bn = skel_xyz.size()[0]
@@ -322,28 +323,41 @@ class get_loss(nn.Module):
         # knn_l32shape = DF.knn_with_batch(l3_xyz, shape_xyz, 20)
         #l3_normal loss
         loss_normal1 = 0
-        loss_normal11 = 0
-        for i in range(l3_normals.size()[0]):
-            loss_j = 0
-            sample_pointss = torch.zeros((l3_normals.size()[1]*20, 3)).cuda()
-            for j in range(l3_normals.size()[1]):
-                start = l3_xyz[i, j, :]
-                end = l3_xyz[i, j, :] + l3_normals[i, j, :]
-                #sample 20 points on the line
-                sample_points = torch.zeros(20,3).cuda()
-                for k in range(20):
-                    sample_points[k, :] = start + (end - start) * k / 20.0
-                    dist, idx = trees[i].query(sample_points[k, :].cpu().detach().numpy(), k=1)
-                    loss_normal11 = loss_normal11 + torch.norm( sample_points[k, :] - shape_xyz[i, idx, :])
-                    # if i==3:
-                    #     idx = idx+1
-            #     sample_pointss[j*20:(j+1)*20, :] = sample_points
-            # knn_sample2shape = DF.knn_with_batch(sample_pointss[None,:,:], shape_xyz[None,i,:,:], 1)
-            # for j in range(sample_pointss.size()[0]):
-            #     loss_normal1 = loss_normal1 + (sample_pointss[j,:]- shape_xyz[i, knn_sample2shape[0,j,0], :]).norm()
 
-        # loss_normal1 = loss_normal1 / (l3_xyz.size()[0] * l3_xyz.size()[1]*20)
-        loss_normal11 = loss_normal11 / (l3_xyz.size()[0] * l3_xyz.size()[1]*20)
+        l3_k = torch.zeros(20,l3_xyz.size()[0],l3_xyz.size()[1],l3_xyz.size()[2]).cuda()
+        for k in range(20):
+            l3_k[k] = l3_xyz + l3_normals * k/ 20.0
+        l3_combine = torch.zeros(l3_xyz.size()[0], l3_xyz.size()[1]*20, l3_xyz.size()[2]).cuda()
+        for i in range(l3_xyz.size()[0]):
+            for k in range(20):
+                l3_combine[i,k*l3_xyz.size()[1]:(k+1)*l3_xyz.size()[1],:] = l3_k[k,i,:,:]
+        # loss_normal1 = DF.closest_distance_with_batch(l3_combine, shape_xyz) / (l3_xyz.size()[0] * l3_xyz.size()[1] * 20)
+        loss_normal1 = DF.closest_distance_with_batch(l3_combine, shape_xyz)/(l3_xyz.size()[0] * l3_xyz.size()[1] * 20)
+        # ????????????????????????????????????????????????????????????????????????? 可能有问题
+
+        # loss_normal11 = 0
+        #
+        # for i in range(l3_normals.size()[0]):
+        #     loss_j = 0
+        #     sample_pointss = torch.zeros((l3_normals.size()[1]*20, 3)).cuda()
+        #     for j in range(l3_normals.size()[1]):
+        #         start = l3_xyz[i, j, :]
+        #         end = l3_xyz[i, j, :] + l3_normals[i, j, :]
+        #         #sample 20 points on the line
+        #         sample_points = torch.zeros(20,3).cuda()
+        #         for k in range(20):
+        #             sample_points[k, :] = start + (end - start) * k / 20.0
+        #             # dist, idx = trees[i].query(sample_points[k, :].cpu().detach().numpy(), k=1)
+        #             loss_normal11 = loss_normal11 + torch.norm( sample_points[k, :] - shape_xyz[i, idx, :])
+        #             # if i==3:
+        #             #     idx = idx+1
+        #     #     sample_pointss[j*20:(j+1)*20, :] = sample_points
+        #     # knn_sample2shape = DF.knn_with_batch(sample_pointss[None,:,:], shape_xyz[None,i,:,:], 1)
+        #     # for j in range(sample_pointss.size()[0]):
+        #     #     loss_normal1 = loss_normal1 + (sample_pointss[j,:]- shape_xyz[i, knn_sample2shape[0,j,0], :]).norm()
+        #
+        # # loss_normal1 = loss_normal1 / (l3_xyz.size()[0] * l3_xyz.size()[1]*20)
+        # loss_normal11 = loss_normal11 / (l3_xyz.size()[0] * l3_xyz.size()[1]*20)
         # loss_normal = loss_normal + loss_normal1
 #换loss? 不应该一起训 感觉需要分开训
 
@@ -376,7 +390,7 @@ class get_loss(nn.Module):
 
         # loss combination
         # print('loss_normal', loss_normal1-loss_normal11)
-        final_loss = loss_sample + loss_point2sphere * w1 + loss_radius * w2 + loss_smooth * w3 + loss_normal * 0.005 + loss_normal11 * 2.5 + 0.3*loss_normal3
+        final_loss = loss_sample + loss_point2sphere * w1 + loss_radius * w2 + loss_smooth * w3 + loss_normal * 0.005 + loss_normal1 * 1.0 + 0.3*loss_normal3
 
         return final_loss
 
