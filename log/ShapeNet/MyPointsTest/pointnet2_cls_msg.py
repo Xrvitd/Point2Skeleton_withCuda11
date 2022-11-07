@@ -243,7 +243,7 @@ class get_loss(nn.Module):
         point = torch.matmul(R,point)
         return point
 
-    def forward(self, skel_xyz, skel_radius, shape_cmb_features,skel_nori,weights,l3_xyz, l3_normals,shape_xyz,A, w1, w2, w3,w4, lap_reg=False):
+    def forward(self, skel_xyz, skel_radius, shape_cmb_features,skel_nori,weights,l3_xyz, l3_normals,shape_xyz,A, w1, w2, w3,w4,w5,w6, lap_reg=False):
         #point2skeleton loss
 
         normal = shape_xyz[:, :, 3:6]
@@ -374,7 +374,7 @@ class get_loss(nn.Module):
             for j in range(l3_normals.size()[1]):
                 loss_tmp = loss_tmp + (l3_normals[i, j, :].norm() - mean.norm()) * (l3_normals[i, j, :].norm() - mean.norm())
         loss_tmp = loss_tmp / (l3_normals.size()[0] * l3_normals.size()[1])
-        loss_normal3 = loss_normal3 + loss_tmp
+        loss_normal3 = loss_normal3 + 0.3*loss_tmp
 
         # for i in range(l3_normals.size()[0]):
         #     for j in range(l3_normals.size()[1]):
@@ -390,7 +390,7 @@ class get_loss(nn.Module):
 
         # loss combination
         # print('loss_normal', loss_normal1-loss_normal11)
-        final_loss = loss_sample + loss_point2sphere * w1 + loss_radius * w2 + loss_smooth * w3 + loss_normal * 0.005 + loss_normal1 * 1.0 + 0.3*loss_normal3
+        final_loss =  loss_sample + loss_point2sphere * w1 + loss_radius * w2 + loss_smooth * w3 + loss_normal * w4 + loss_normal1 * w5 + w6*loss_normal3
 
         return final_loss
 

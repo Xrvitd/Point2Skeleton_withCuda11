@@ -39,12 +39,12 @@ def parse_args():
     parser.add_argument('--batch_size', type=int, default=2, help='batch size in training')
     parser.add_argument('--model', default='pointnet_cls', help='model name [default: pointnet_cls]')
     parser.add_argument('--num_category', default=20, type=int, help='training on ModelNet10/40')
-    parser.add_argument('--epoch', default=1000, type=int, help='number of epoch in training')
+    parser.add_argument('--epoch', default=10000, type=int, help='number of epoch in training')
     parser.add_argument('--learning_rate', default=0.01, type=float, help='learning rate in training')
-    parser.add_argument('--num_point', type=int, default=2000, help='Point Number')
+    parser.add_argument('--num_point', type=int, default=2048, help='Point Number')
     parser.add_argument('--optimizer', type=str, default='Adam', help='optimizer for training')
     parser.add_argument('--log_dir', type=str, default=None, help='experiment root')
-    parser.add_argument('--decay_rate', type=float, default=1e-4, help='decay rate')
+    parser.add_argument('--decay_rate', type=float, default=1e-5, help='decay rate')
     parser.add_argument('--use_normals', action='store_true', default=False, help='use normals')
     parser.add_argument('--process_data', action='store_true', default=False, help='save data offline')
     parser.add_argument('--use_uniform_sample', action='store_true', default=False, help='use uniform sampiling')
@@ -120,7 +120,7 @@ def main(args):
 
     '''HYPER PARAMETER'''
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
-    batch_size = 4
+    batch_size = 8
     '''CREATE DIR'''
     timestr = str(datetime.datetime.now().strftime('%Y-%m-%d_%H-%M'))
     exp_dir = Path('./log/')
@@ -159,12 +159,12 @@ def main(args):
     # testDataLoader = torch.utils.data.DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=10)
     data_path = 'data/MyPoints/'
     # train_dataset = torch.utils.data.DataLoader( , batch_size=args.batch_size, shuffle=True, num_workers=10, drop_last=True)
-    pc_list_file = 'data/data-split/little-train2.txt'
+    pc_list_file = 'data/data-split/all-train.txt'
     data_root = 'data/pointclouds/'
     pc_list = rw.load_data_id(pc_list_file)
     train_data = PCDataset(pc_list, data_root, args.num_point)
     train_loader = DataLoader(dataset=train_data, batch_size = batch_size, shuffle=True, drop_last=True)
-    pc_list_file = 'data/data-split/little-test.txt'
+    pc_list_file = 'data/data-split/all-test.txt'
     data_root = 'data/pointclouds/'
     pc_list = rw.load_data_id(pc_list_file)
     test_data = PCDataset(pc_list, data_root, args.num_point)
@@ -214,8 +214,8 @@ def main(args):
     start_epoch = 0
     # try:
     #     checkpoint = torch.load(str(exp_dir) + '/test_out/best_model_planeWithD.pth')
-    #     start_epoch = 50
-    #     # start_epoch = checkpoint['epoch']
+    #     # start_epoch = 40
+    #     start_epoch = checkpoint['epoch']
     #     classifier.load_state_dict(checkpoint['model_state_dict'])
     #     log_string('Use pretrain model')
     #     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
@@ -231,7 +231,7 @@ def main(args):
 
 
 
-    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=40, gamma=0.8)
+    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=40, gamma=0.85)
     global_epoch = 0
     global_step = 0
     best_instance_acc = 0.0
@@ -291,8 +291,13 @@ def main(args):
                 global_step += 1
                 # log_string('loss_pre: %f' % (loss_pre.item()))
             else:
+
                 loss = criterion(skel_xyz, skel_r, shape_cmb_features, skel_nori,
-                                 weights,l3_xyz,l3_normals, target, None, 0.3, 0.4,0, 0.01)
+                                     weights, l3_xyz, l3_normals, target, None,
+                                     0.3, 0.4, 0, 0.000, 1.0, 0.15)
+                # loss = criterion(skel_xyz, skel_r, shape_cmb_features, skel_nori,
+                #                      weights, l3_xyz, l3_normals, target, None,
+                #                      0.3, 0.4, 0, 0.005, 1.0, 0.3)
                 loss_batch += loss.item()
                 optimizer.zero_grad()
                 loss.backward()
@@ -321,12 +326,13 @@ def main(args):
                     torch.save(state, savepath)
             print('Pretraining loss_pre: %f' % loss_batch, 'Bestloss: %f' % best_instance_acc_pre)
         else:
+
             with torch.no_grad():
                 if (loss_batch <= best_instance_acc):
                     best_instance_acc = loss_batch
                     best_epoch = epoch + 1
                     logger.info('Save model...')
-                    savepath = str(checkpoints_dir) + '/best_model_planeWithD.pth'
+                    savepath = str(checkpoints_dir) + '/best_model_alltrain.pth'
                     log_string('Saving at %s' % savepath)
                     state = {
                         'epoch': best_epoch,
