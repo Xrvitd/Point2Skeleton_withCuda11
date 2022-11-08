@@ -297,7 +297,7 @@ def main(args):
             else:
                 loss = criterion(skel_xyz, skel_r, shape_cmb_features, skel_nori,
                                  weights, l3_xyz, l3_normals, target, None,
-                                 1.0, 0.15, 0.4, 0.0, 0.01, 0.01, 0.1)
+                                 1.0, 0.4, 0.4, 0.0, 0.005, 0.02, 0.2)
                 # loss = criterion(skel_xyz, skel_r, shape_cmb_features, skel_nori,
                 #                      weights, l3_xyz, l3_normals, target, None,
                 #                      0.3, 0.4, 0, 0.005, 1.0, 0.3)

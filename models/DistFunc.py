@@ -75,6 +75,31 @@ def closest_distance_with_batch(p1, p2, is_sum=True):
     else:
         return min_dist, min_indice
 
+def closest_distance_variance_with_batch(p1, p2):
+    '''
+    :param p1: size[B,N,D]
+    :param p2: size[B,M,D]
+    :return: the variance of the distances from p1 to the closest points in p2
+    '''
+    assert p1.size(0) == p2.size(0) and p1.size(2) == p2.size(2)
+
+    p1 = p1.unsqueeze(1)
+    p2 = p2.unsqueeze(1)
+
+    p1 = p1.repeat(1, p2.size(2), 1, 1)
+    p1 = p1.transpose(1, 2)
+    p2 = p2.repeat(1, p1.size(1), 1, 1)
+
+    dist = torch.add(p1, torch.neg(p2))
+    dist = torch.norm(dist, 2, dim=3)
+
+    min_dist, min_indice = torch.min(dist, dim=2)
+
+    variance = torch.var(min_dist, dim=1)
+
+    # dist_scalar = torch.sum(min_dist)
+
+    return variance
 
 def point2sphere_distance_with_batch(p1, p2):
     '''
