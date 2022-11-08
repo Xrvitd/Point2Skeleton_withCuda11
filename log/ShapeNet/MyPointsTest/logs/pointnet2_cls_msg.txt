@@ -53932,3 +53932,777 @@
 2022-11-09 03:31:10,739 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
 2022-11-09 03:31:11,052 - Model - INFO - Epoch 134 (134/10000):
 2022-11-09 03:31:13,839 - Model - INFO - Epoch 135 (135/10000):
+2022-11-09 03:32:11,211 - Model - INFO - PARAMETER ...
+2022-11-09 03:32:11,211 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2048, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-09 03:32:11,211 - Model - INFO - Load dataset ...
+2022-11-09 03:32:11,747 - Model - INFO - Start training...
+2022-11-09 03:32:11,747 - Model - INFO - Epoch 1 (1/10000):
+2022-11-09 03:32:22,292 - Model - INFO - Save model...
+2022-11-09 03:32:22,292 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:32:22,325 - Model - INFO - Epoch 2 (2/10000):
+2022-11-09 03:32:31,570 - Model - INFO - Save model...
+2022-11-09 03:32:31,570 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:32:31,600 - Model - INFO - Epoch 3 (3/10000):
+2022-11-09 03:32:40,808 - Model - INFO - Save model...
+2022-11-09 03:32:40,809 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:32:40,837 - Model - INFO - Epoch 4 (4/10000):
+2022-11-09 03:32:50,085 - Model - INFO - Save model...
+2022-11-09 03:32:50,086 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:32:50,115 - Model - INFO - Epoch 5 (5/10000):
+2022-11-09 03:32:59,390 - Model - INFO - Save model...
+2022-11-09 03:32:59,390 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:32:59,419 - Model - INFO - Epoch 6 (6/10000):
+2022-11-09 03:33:08,633 - Model - INFO - Save model...
+2022-11-09 03:33:08,633 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:33:08,663 - Model - INFO - Epoch 7 (7/10000):
+2022-11-09 03:33:17,946 - Model - INFO - Save model...
+2022-11-09 03:33:17,946 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:33:17,968 - Model - INFO - Epoch 8 (8/10000):
+2022-11-09 03:33:27,344 - Model - INFO - Save model...
+2022-11-09 03:33:27,344 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:33:27,374 - Model - INFO - Epoch 9 (9/10000):
+2022-11-09 03:33:36,642 - Model - INFO - Save model...
+2022-11-09 03:33:36,642 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:33:36,672 - Model - INFO - Epoch 10 (10/10000):
+2022-11-09 03:33:45,944 - Model - INFO - Save model...
+2022-11-09 03:33:45,944 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:33:45,974 - Model - INFO - Epoch 11 (11/10000):
+2022-11-09 03:33:55,337 - Model - INFO - Save model...
+2022-11-09 03:33:55,337 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:33:55,367 - Model - INFO - Epoch 12 (12/10000):
+2022-11-09 03:34:04,678 - Model - INFO - Save model...
+2022-11-09 03:34:04,679 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:34:04,709 - Model - INFO - Epoch 13 (13/10000):
+2022-11-09 03:34:14,014 - Model - INFO - Epoch 14 (14/10000):
+2022-11-09 03:34:23,380 - Model - INFO - Save model...
+2022-11-09 03:34:23,380 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:34:23,402 - Model - INFO - Epoch 15 (15/10000):
+2022-11-09 03:34:32,669 - Model - INFO - Save model...
+2022-11-09 03:34:32,669 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:34:32,699 - Model - INFO - Epoch 16 (16/10000):
+2022-11-09 03:34:41,957 - Model - INFO - Save model...
+2022-11-09 03:34:41,957 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:34:41,987 - Model - INFO - Epoch 17 (17/10000):
+2022-11-09 03:34:51,340 - Model - INFO - Save model...
+2022-11-09 03:34:51,340 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:34:51,370 - Model - INFO - Epoch 18 (18/10000):
+2022-11-09 03:35:00,611 - Model - INFO - Save model...
+2022-11-09 03:35:00,611 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:35:00,642 - Model - INFO - Epoch 19 (19/10000):
+2022-11-09 03:35:09,899 - Model - INFO - Epoch 20 (20/10000):
+2022-11-09 03:35:19,147 - Model - INFO - Epoch 21 (21/10000):
+2022-11-09 03:35:52,169 - Model - INFO - Save model...
+2022-11-09 03:35:52,170 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:35:52,458 - Model - INFO - Epoch 22 (22/10000):
+2022-11-09 03:36:25,844 - Model - INFO - Epoch 23 (23/10000):
+2022-11-09 03:36:58,889 - Model - INFO - Save model...
+2022-11-09 03:36:58,891 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:36:59,181 - Model - INFO - Epoch 24 (24/10000):
+2022-11-09 03:37:32,448 - Model - INFO - Save model...
+2022-11-09 03:37:32,449 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:37:32,739 - Model - INFO - Epoch 25 (25/10000):
+2022-11-09 03:38:06,082 - Model - INFO - Save model...
+2022-11-09 03:38:06,083 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:38:06,376 - Model - INFO - Epoch 26 (26/10000):
+2022-11-09 03:38:39,943 - Model - INFO - Epoch 27 (27/10000):
+2022-11-09 03:39:13,331 - Model - INFO - Save model...
+2022-11-09 03:39:13,333 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:39:13,621 - Model - INFO - Epoch 28 (28/10000):
+2022-11-09 03:39:46,955 - Model - INFO - Save model...
+2022-11-09 03:39:46,957 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:39:47,248 - Model - INFO - Epoch 29 (29/10000):
+2022-11-09 03:40:20,574 - Model - INFO - Save model...
+2022-11-09 03:40:20,576 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:40:20,877 - Model - INFO - Epoch 30 (30/10000):
+2022-11-09 03:40:54,239 - Model - INFO - Epoch 31 (31/10000):
+2022-11-09 03:41:28,818 - Model - INFO - Epoch 32 (32/10000):
+2022-11-09 03:42:02,090 - Model - INFO - Save model...
+2022-11-09 03:42:02,092 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:42:02,381 - Model - INFO - Epoch 33 (33/10000):
+2022-11-09 03:42:35,704 - Model - INFO - Save model...
+2022-11-09 03:42:35,706 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:42:35,998 - Model - INFO - Epoch 34 (34/10000):
+2022-11-09 03:43:09,357 - Model - INFO - Save model...
+2022-11-09 03:43:09,359 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:43:09,644 - Model - INFO - Epoch 35 (35/10000):
+2022-11-09 03:43:43,534 - Model - INFO - Save model...
+2022-11-09 03:43:43,536 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:43:43,823 - Model - INFO - Epoch 36 (36/10000):
+2022-11-09 03:44:21,018 - Model - INFO - Save model...
+2022-11-09 03:44:21,019 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:44:21,313 - Model - INFO - Epoch 37 (37/10000):
+2022-11-09 03:44:54,800 - Model - INFO - Save model...
+2022-11-09 03:44:54,803 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:44:55,093 - Model - INFO - Epoch 38 (38/10000):
+2022-11-09 03:45:29,519 - Model - INFO - Epoch 39 (39/10000):
+2022-11-09 03:46:03,852 - Model - INFO - Epoch 40 (40/10000):
+2022-11-09 03:46:37,148 - Model - INFO - Save model...
+2022-11-09 03:46:37,150 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:46:37,435 - Model - INFO - Epoch 41 (41/10000):
+2022-11-09 03:47:12,273 - Model - INFO - Save model...
+2022-11-09 03:47:12,274 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:47:12,582 - Model - INFO - Epoch 42 (42/10000):
+2022-11-09 03:47:48,033 - Model - INFO - Save model...
+2022-11-09 03:47:48,035 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:47:48,326 - Model - INFO - Epoch 43 (43/10000):
+2022-11-09 03:48:21,667 - Model - INFO - Epoch 44 (44/10000):
+2022-11-09 03:48:55,233 - Model - INFO - Epoch 45 (45/10000):
+2022-11-09 03:49:32,176 - Model - INFO - Epoch 46 (46/10000):
+2022-11-09 03:50:06,326 - Model - INFO - Epoch 47 (47/10000):
+2022-11-09 03:50:39,413 - Model - INFO - Epoch 48 (48/10000):
+2022-11-09 03:51:12,699 - Model - INFO - Epoch 49 (49/10000):
+2022-11-09 03:51:33,855 - Model - INFO - PARAMETER ...
+2022-11-09 03:51:33,855 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2048, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-09 03:51:33,856 - Model - INFO - Load dataset ...
+2022-11-09 03:51:34,409 - Model - INFO - Start training...
+2022-11-09 03:51:34,409 - Model - INFO - Epoch 1 (1/10000):
+2022-11-09 03:51:36,283 - Model - INFO - Save model...
+2022-11-09 03:51:36,283 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:36,311 - Model - INFO - Epoch 2 (2/10000):
+2022-11-09 03:51:37,086 - Model - INFO - Save model...
+2022-11-09 03:51:37,086 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:37,106 - Model - INFO - Epoch 3 (3/10000):
+2022-11-09 03:51:37,868 - Model - INFO - Save model...
+2022-11-09 03:51:37,868 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:37,888 - Model - INFO - Epoch 4 (4/10000):
+2022-11-09 03:51:38,656 - Model - INFO - Save model...
+2022-11-09 03:51:38,656 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:38,676 - Model - INFO - Epoch 5 (5/10000):
+2022-11-09 03:51:39,448 - Model - INFO - Save model...
+2022-11-09 03:51:39,449 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:39,469 - Model - INFO - Epoch 6 (6/10000):
+2022-11-09 03:51:40,240 - Model - INFO - Save model...
+2022-11-09 03:51:40,240 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:40,261 - Model - INFO - Epoch 7 (7/10000):
+2022-11-09 03:51:41,027 - Model - INFO - Save model...
+2022-11-09 03:51:41,027 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:41,047 - Model - INFO - Epoch 8 (8/10000):
+2022-11-09 03:51:41,817 - Model - INFO - Save model...
+2022-11-09 03:51:41,817 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:41,837 - Model - INFO - Epoch 9 (9/10000):
+2022-11-09 03:51:42,602 - Model - INFO - Save model...
+2022-11-09 03:51:42,602 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:42,623 - Model - INFO - Epoch 10 (10/10000):
+2022-11-09 03:51:43,387 - Model - INFO - Save model...
+2022-11-09 03:51:43,387 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:43,407 - Model - INFO - Epoch 11 (11/10000):
+2022-11-09 03:51:44,177 - Model - INFO - Save model...
+2022-11-09 03:51:44,177 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:44,198 - Model - INFO - Epoch 12 (12/10000):
+2022-11-09 03:51:44,974 - Model - INFO - Save model...
+2022-11-09 03:51:44,974 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:45,016 - Model - INFO - Epoch 13 (13/10000):
+2022-11-09 03:51:45,791 - Model - INFO - Save model...
+2022-11-09 03:51:45,791 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:45,810 - Model - INFO - Epoch 14 (14/10000):
+2022-11-09 03:51:46,580 - Model - INFO - Save model...
+2022-11-09 03:51:46,580 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:46,601 - Model - INFO - Epoch 15 (15/10000):
+2022-11-09 03:51:47,371 - Model - INFO - Save model...
+2022-11-09 03:51:47,371 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:47,391 - Model - INFO - Epoch 16 (16/10000):
+2022-11-09 03:51:48,162 - Model - INFO - Save model...
+2022-11-09 03:51:48,162 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:48,182 - Model - INFO - Epoch 17 (17/10000):
+2022-11-09 03:51:48,950 - Model - INFO - Save model...
+2022-11-09 03:51:48,951 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:48,979 - Model - INFO - Epoch 18 (18/10000):
+2022-11-09 03:51:49,748 - Model - INFO - Save model...
+2022-11-09 03:51:49,748 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:49,768 - Model - INFO - Epoch 19 (19/10000):
+2022-11-09 03:51:50,535 - Model - INFO - Save model...
+2022-11-09 03:51:50,535 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:50,555 - Model - INFO - Epoch 20 (20/10000):
+2022-11-09 03:51:51,324 - Model - INFO - Save model...
+2022-11-09 03:51:51,324 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:51:51,345 - Model - INFO - Epoch 21 (21/10000):
+2022-11-09 03:51:53,860 - Model - INFO - Save model...
+2022-11-09 03:51:53,860 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:51:54,140 - Model - INFO - Epoch 22 (22/10000):
+2022-11-09 03:51:56,720 - Model - INFO - Epoch 23 (23/10000):
+2022-11-09 03:51:59,348 - Model - INFO - Epoch 24 (24/10000):
+2022-11-09 03:52:01,973 - Model - INFO - Save model...
+2022-11-09 03:52:01,975 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:02,264 - Model - INFO - Epoch 25 (25/10000):
+2022-11-09 03:52:04,951 - Model - INFO - Save model...
+2022-11-09 03:52:04,953 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:05,244 - Model - INFO - Epoch 26 (26/10000):
+2022-11-09 03:52:07,926 - Model - INFO - Save model...
+2022-11-09 03:52:07,928 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:08,219 - Model - INFO - Epoch 27 (27/10000):
+2022-11-09 03:52:10,909 - Model - INFO - Save model...
+2022-11-09 03:52:10,911 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:11,193 - Model - INFO - Epoch 28 (28/10000):
+2022-11-09 03:52:13,932 - Model - INFO - Save model...
+2022-11-09 03:52:13,933 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:14,216 - Model - INFO - Epoch 29 (29/10000):
+2022-11-09 03:52:16,887 - Model - INFO - Save model...
+2022-11-09 03:52:16,889 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:17,173 - Model - INFO - Epoch 30 (30/10000):
+2022-11-09 03:52:19,883 - Model - INFO - Save model...
+2022-11-09 03:52:19,885 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:20,168 - Model - INFO - Epoch 31 (31/10000):
+2022-11-09 03:52:22,849 - Model - INFO - Save model...
+2022-11-09 03:52:22,851 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:23,133 - Model - INFO - Epoch 32 (32/10000):
+2022-11-09 03:52:25,824 - Model - INFO - Save model...
+2022-11-09 03:52:25,825 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:26,107 - Model - INFO - Epoch 33 (33/10000):
+2022-11-09 03:52:28,776 - Model - INFO - Save model...
+2022-11-09 03:52:28,778 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:29,081 - Model - INFO - Epoch 34 (34/10000):
+2022-11-09 03:52:31,736 - Model - INFO - Epoch 35 (35/10000):
+2022-11-09 03:52:34,430 - Model - INFO - Epoch 36 (36/10000):
+2022-11-09 03:52:37,090 - Model - INFO - Save model...
+2022-11-09 03:52:37,091 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:37,377 - Model - INFO - Epoch 37 (37/10000):
+2022-11-09 03:52:40,066 - Model - INFO - Save model...
+2022-11-09 03:52:40,068 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:40,357 - Model - INFO - Epoch 38 (38/10000):
+2022-11-09 03:52:43,032 - Model - INFO - Save model...
+2022-11-09 03:52:43,034 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:43,314 - Model - INFO - Epoch 39 (39/10000):
+2022-11-09 03:52:45,986 - Model - INFO - Save model...
+2022-11-09 03:52:45,988 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:46,277 - Model - INFO - Epoch 40 (40/10000):
+2022-11-09 03:52:48,948 - Model - INFO - Epoch 41 (41/10000):
+2022-11-09 03:52:51,648 - Model - INFO - Save model...
+2022-11-09 03:52:51,650 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:51,937 - Model - INFO - Epoch 42 (42/10000):
+2022-11-09 03:52:54,617 - Model - INFO - Save model...
+2022-11-09 03:52:54,618 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:52:54,900 - Model - INFO - Epoch 43 (43/10000):
+2022-11-09 03:52:57,557 - Model - INFO - Epoch 44 (44/10000):
+2022-11-09 03:53:00,250 - Model - INFO - Save model...
+2022-11-09 03:53:00,251 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:53:00,539 - Model - INFO - Epoch 45 (45/10000):
+2022-11-09 03:53:03,211 - Model - INFO - Epoch 46 (46/10000):
+2022-11-09 03:53:05,900 - Model - INFO - Save model...
+2022-11-09 03:53:05,901 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:53:06,188 - Model - INFO - Epoch 47 (47/10000):
+2022-11-09 03:53:08,853 - Model - INFO - Save model...
+2022-11-09 03:53:08,854 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:53:09,174 - Model - INFO - Epoch 48 (48/10000):
+2022-11-09 03:53:11,919 - Model - INFO - Save model...
+2022-11-09 03:53:11,921 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:53:12,222 - Model - INFO - Epoch 49 (49/10000):
+2022-11-09 03:53:15,062 - Model - INFO - Epoch 50 (50/10000):
+2022-11-09 03:53:17,872 - Model - INFO - Epoch 51 (51/10000):
+2022-11-09 03:53:20,659 - Model - INFO - Save model...
+2022-11-09 03:53:20,661 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:53:20,942 - Model - INFO - Epoch 52 (52/10000):
+2022-11-09 03:53:23,773 - Model - INFO - Save model...
+2022-11-09 03:53:23,775 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:53:24,066 - Model - INFO - Epoch 53 (53/10000):
+2022-11-09 03:53:26,921 - Model - INFO - Save model...
+2022-11-09 03:53:26,922 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:53:27,221 - Model - INFO - Epoch 54 (54/10000):
+2022-11-09 03:53:30,044 - Model - INFO - Epoch 55 (55/10000):
+2022-11-09 03:53:32,956 - Model - INFO - Epoch 56 (56/10000):
+2022-11-09 03:53:35,836 - Model - INFO - Epoch 57 (57/10000):
+2022-11-09 03:53:38,623 - Model - INFO - Save model...
+2022-11-09 03:53:38,625 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:53:38,906 - Model - INFO - Epoch 58 (58/10000):
+2022-11-09 03:53:41,639 - Model - INFO - Save model...
+2022-11-09 03:53:41,640 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:53:41,931 - Model - INFO - Epoch 59 (59/10000):
+2022-11-09 03:53:44,766 - Model - INFO - Epoch 60 (60/10000):
+2022-11-09 03:53:47,563 - Model - INFO - Epoch 61 (61/10000):
+2022-11-09 03:53:50,310 - Model - INFO - Epoch 62 (62/10000):
+2022-11-09 03:53:53,126 - Model - INFO - Save model...
+2022-11-09 03:53:53,127 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:53:53,431 - Model - INFO - Epoch 63 (63/10000):
+2022-11-09 03:53:56,280 - Model - INFO - Epoch 64 (64/10000):
+2022-11-09 03:53:58,956 - Model - INFO - Save model...
+2022-11-09 03:53:58,958 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:53:59,249 - Model - INFO - Epoch 65 (65/10000):
+2022-11-09 03:54:01,959 - Model - INFO - Save model...
+2022-11-09 03:54:01,961 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:54:02,252 - Model - INFO - Epoch 66 (66/10000):
+2022-11-09 03:54:05,071 - Model - INFO - Epoch 67 (67/10000):
+2022-11-09 03:54:07,885 - Model - INFO - Epoch 68 (68/10000):
+2022-11-09 03:54:10,673 - Model - INFO - Epoch 69 (69/10000):
+2022-11-09 03:54:13,540 - Model - INFO - Save model...
+2022-11-09 03:54:13,542 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:54:13,831 - Model - INFO - Epoch 70 (70/10000):
+2022-11-09 03:54:16,634 - Model - INFO - Save model...
+2022-11-09 03:54:16,635 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:54:16,933 - Model - INFO - Epoch 71 (71/10000):
+2022-11-09 03:54:19,644 - Model - INFO - Epoch 72 (72/10000):
+2022-11-09 03:54:22,391 - Model - INFO - Epoch 73 (73/10000):
+2022-11-09 03:54:25,160 - Model - INFO - Save model...
+2022-11-09 03:54:25,161 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:54:25,457 - Model - INFO - Epoch 74 (74/10000):
+2022-11-09 03:54:28,218 - Model - INFO - Epoch 75 (75/10000):
+2022-11-09 03:54:31,042 - Model - INFO - Epoch 76 (76/10000):
+2022-11-09 03:54:33,828 - Model - INFO - Epoch 77 (77/10000):
+2022-11-09 03:54:36,664 - Model - INFO - Save model...
+2022-11-09 03:54:36,666 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:54:36,963 - Model - INFO - Epoch 78 (78/10000):
+2022-11-09 03:54:39,830 - Model - INFO - Epoch 79 (79/10000):
+2022-11-09 03:54:42,845 - Model - INFO - Epoch 80 (80/10000):
+2022-11-09 03:54:45,765 - Model - INFO - Epoch 81 (81/10000):
+2022-11-09 03:54:48,574 - Model - INFO - Epoch 82 (82/10000):
+2022-11-09 03:54:51,410 - Model - INFO - Epoch 83 (83/10000):
+2022-11-09 03:54:54,301 - Model - INFO - Save model...
+2022-11-09 03:54:54,303 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:54:54,592 - Model - INFO - Epoch 84 (84/10000):
+2022-11-09 03:54:57,403 - Model - INFO - Save model...
+2022-11-09 03:54:57,404 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:54:57,688 - Model - INFO - Epoch 85 (85/10000):
+2022-11-09 03:55:00,474 - Model - INFO - Save model...
+2022-11-09 03:55:00,476 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:55:00,762 - Model - INFO - Epoch 86 (86/10000):
+2022-11-09 03:55:03,516 - Model - INFO - Save model...
+2022-11-09 03:55:03,518 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:55:03,799 - Model - INFO - Epoch 87 (87/10000):
+2022-11-09 03:55:06,586 - Model - INFO - Save model...
+2022-11-09 03:55:06,587 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:55:06,872 - Model - INFO - Epoch 88 (88/10000):
+2022-11-09 03:55:09,649 - Model - INFO - Epoch 89 (89/10000):
+2022-11-09 03:55:12,365 - Model - INFO - Epoch 90 (90/10000):
+2022-11-09 03:55:15,119 - Model - INFO - Save model...
+2022-11-09 03:55:15,121 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:55:15,402 - Model - INFO - Epoch 91 (91/10000):
+2022-11-09 03:55:18,109 - Model - INFO - Epoch 92 (92/10000):
+2022-11-09 03:55:20,851 - Model - INFO - Save model...
+2022-11-09 03:55:20,853 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:55:21,141 - Model - INFO - Epoch 93 (93/10000):
+2022-11-09 03:55:23,876 - Model - INFO - Save model...
+2022-11-09 03:55:23,877 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:55:24,167 - Model - INFO - Epoch 94 (94/10000):
+2022-11-09 03:55:26,910 - Model - INFO - Epoch 95 (95/10000):
+2022-11-09 03:55:29,628 - Model - INFO - Save model...
+2022-11-09 03:55:29,630 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:55:29,927 - Model - INFO - Epoch 96 (96/10000):
+2022-11-09 03:55:32,662 - Model - INFO - Epoch 97 (97/10000):
+2022-11-09 03:55:35,405 - Model - INFO - Epoch 98 (98/10000):
+2022-11-09 03:55:38,111 - Model - INFO - Epoch 99 (99/10000):
+2022-11-09 03:55:40,866 - Model - INFO - Epoch 100 (100/10000):
+2022-11-09 03:55:43,597 - Model - INFO - Epoch 101 (101/10000):
+2022-11-09 03:55:46,361 - Model - INFO - Epoch 102 (102/10000):
+2022-11-09 03:55:49,071 - Model - INFO - Epoch 103 (103/10000):
+2022-11-09 03:55:51,800 - Model - INFO - Epoch 104 (104/10000):
+2022-11-09 03:55:54,513 - Model - INFO - Epoch 105 (105/10000):
+2022-11-09 03:55:57,228 - Model - INFO - Epoch 106 (106/10000):
+2022-11-09 03:55:59,968 - Model - INFO - Epoch 107 (107/10000):
+2022-11-09 03:56:02,691 - Model - INFO - Epoch 108 (108/10000):
+2022-11-09 03:56:05,453 - Model - INFO - Save model...
+2022-11-09 03:56:05,455 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:56:05,743 - Model - INFO - Epoch 109 (109/10000):
+2022-11-09 03:56:08,466 - Model - INFO - Epoch 110 (110/10000):
+2022-11-09 03:56:11,202 - Model - INFO - Epoch 111 (111/10000):
+2022-11-09 03:56:13,910 - Model - INFO - Epoch 112 (112/10000):
+2022-11-09 03:56:16,635 - Model - INFO - Epoch 113 (113/10000):
+2022-11-09 03:56:19,357 - Model - INFO - Epoch 114 (114/10000):
+2022-11-09 03:56:22,111 - Model - INFO - Epoch 115 (115/10000):
+2022-11-09 03:56:24,844 - Model - INFO - Epoch 116 (116/10000):
+2022-11-09 03:56:27,588 - Model - INFO - Epoch 117 (117/10000):
+2022-11-09 03:56:30,329 - Model - INFO - Epoch 118 (118/10000):
+2022-11-09 03:56:33,066 - Model - INFO - Epoch 119 (119/10000):
+2022-11-09 03:56:35,792 - Model - INFO - Epoch 120 (120/10000):
+2022-11-09 03:56:38,505 - Model - INFO - Epoch 121 (121/10000):
+2022-11-09 03:56:41,231 - Model - INFO - Save model...
+2022-11-09 03:56:41,233 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:56:41,526 - Model - INFO - Epoch 122 (122/10000):
+2022-11-09 03:56:44,244 - Model - INFO - Save model...
+2022-11-09 03:56:44,245 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:56:44,530 - Model - INFO - Epoch 123 (123/10000):
+2022-11-09 03:56:47,286 - Model - INFO - Epoch 124 (124/10000):
+2022-11-09 03:56:50,037 - Model - INFO - Epoch 125 (125/10000):
+2022-11-09 03:56:52,797 - Model - INFO - Epoch 126 (126/10000):
+2022-11-09 03:56:55,518 - Model - INFO - Epoch 127 (127/10000):
+2022-11-09 03:56:58,240 - Model - INFO - Epoch 128 (128/10000):
+2022-11-09 03:57:00,975 - Model - INFO - Epoch 129 (129/10000):
+2022-11-09 03:57:03,689 - Model - INFO - Epoch 130 (130/10000):
+2022-11-09 03:57:06,445 - Model - INFO - Save model...
+2022-11-09 03:57:06,447 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:57:06,735 - Model - INFO - Epoch 131 (131/10000):
+2022-11-09 03:57:09,465 - Model - INFO - Epoch 132 (132/10000):
+2022-11-09 03:57:12,222 - Model - INFO - Epoch 133 (133/10000):
+2022-11-09 03:57:14,946 - Model - INFO - Epoch 134 (134/10000):
+2022-11-09 03:57:17,672 - Model - INFO - Epoch 135 (135/10000):
+2022-11-09 03:57:20,388 - Model - INFO - Save model...
+2022-11-09 03:57:20,390 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:57:20,678 - Model - INFO - Epoch 136 (136/10000):
+2022-11-09 03:57:23,421 - Model - INFO - Epoch 137 (137/10000):
+2022-11-09 03:57:26,188 - Model - INFO - Save model...
+2022-11-09 03:57:26,190 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:57:26,480 - Model - INFO - Epoch 138 (138/10000):
+2022-11-09 03:57:29,209 - Model - INFO - Save model...
+2022-11-09 03:57:29,210 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:57:29,506 - Model - INFO - Epoch 139 (139/10000):
+2022-11-09 03:57:32,242 - Model - INFO - Save model...
+2022-11-09 03:57:32,244 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:57:32,534 - Model - INFO - Epoch 140 (140/10000):
+2022-11-09 03:57:35,259 - Model - INFO - Epoch 141 (141/10000):
+2022-11-09 03:57:38,023 - Model - INFO - Epoch 142 (142/10000):
+2022-11-09 03:57:40,720 - Model - INFO - Save model...
+2022-11-09 03:57:40,721 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:57:41,011 - Model - INFO - Epoch 143 (143/10000):
+2022-11-09 03:57:43,756 - Model - INFO - Save model...
+2022-11-09 03:57:43,757 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:57:44,042 - Model - INFO - Epoch 144 (144/10000):
+2022-11-09 03:57:46,802 - Model - INFO - Save model...
+2022-11-09 03:57:46,804 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:57:47,093 - Model - INFO - Epoch 145 (145/10000):
+2022-11-09 03:57:49,809 - Model - INFO - Epoch 146 (146/10000):
+2022-11-09 03:57:52,584 - Model - INFO - Epoch 147 (147/10000):
+2022-11-09 03:57:55,304 - Model - INFO - Epoch 148 (148/10000):
+2022-11-09 03:57:58,107 - Model - INFO - Epoch 149 (149/10000):
+2022-11-09 03:58:00,966 - Model - INFO - Epoch 150 (150/10000):
+2022-11-09 03:58:03,860 - Model - INFO - Epoch 151 (151/10000):
+2022-11-09 03:58:06,644 - Model - INFO - Save model...
+2022-11-09 03:58:06,645 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:58:06,940 - Model - INFO - Epoch 152 (152/10000):
+2022-11-09 03:58:09,817 - Model - INFO - Epoch 153 (153/10000):
+2022-11-09 03:58:12,602 - Model - INFO - Epoch 154 (154/10000):
+2022-11-09 03:58:15,479 - Model - INFO - Epoch 155 (155/10000):
+2022-11-09 03:58:18,259 - Model - INFO - Save model...
+2022-11-09 03:58:18,261 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:58:18,548 - Model - INFO - Epoch 156 (156/10000):
+2022-11-09 03:58:21,309 - Model - INFO - Epoch 157 (157/10000):
+2022-11-09 03:58:24,053 - Model - INFO - Epoch 158 (158/10000):
+2022-11-09 03:58:26,774 - Model - INFO - Epoch 159 (159/10000):
+2022-11-09 03:58:29,622 - Model - INFO - Epoch 160 (160/10000):
+2022-11-09 03:58:32,485 - Model - INFO - Epoch 161 (161/10000):
+2022-11-09 03:58:35,259 - Model - INFO - Epoch 162 (162/10000):
+2022-11-09 03:58:38,214 - Model - INFO - Epoch 163 (163/10000):
+2022-11-09 03:58:43,502 - Model - INFO - Save model...
+2022-11-09 03:58:43,504 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:58:44,160 - Model - INFO - Epoch 164 (164/10000):
+2022-11-09 03:58:48,423 - Model - INFO - Save model...
+2022-11-09 03:58:48,425 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:58:48,724 - Model - INFO - Epoch 165 (165/10000):
+2022-11-09 03:58:51,521 - Model - INFO - Epoch 166 (166/10000):
+2022-11-09 03:58:54,418 - Model - INFO - Save model...
+2022-11-09 03:58:54,420 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:58:54,699 - Model - INFO - Epoch 167 (167/10000):
+2022-11-09 03:58:57,516 - Model - INFO - Epoch 168 (168/10000):
+2022-11-09 03:59:00,505 - Model - INFO - Epoch 169 (169/10000):
+2022-11-09 03:59:03,246 - Model - INFO - Epoch 170 (170/10000):
+2022-11-09 03:59:06,308 - Model - INFO - Epoch 171 (171/10000):
+2022-11-09 03:59:09,014 - Model - INFO - Epoch 172 (172/10000):
+2022-11-09 03:59:12,043 - Model - INFO - Epoch 173 (173/10000):
+2022-11-09 03:59:16,994 - Model - INFO - PARAMETER ...
+2022-11-09 03:59:16,994 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2048, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-09 03:59:16,994 - Model - INFO - Load dataset ...
+2022-11-09 03:59:17,530 - Model - INFO - Start training...
+2022-11-09 03:59:17,530 - Model - INFO - Epoch 1 (1/10000):
+2022-11-09 03:59:19,390 - Model - INFO - Save model...
+2022-11-09 03:59:19,390 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:19,413 - Model - INFO - Epoch 2 (2/10000):
+2022-11-09 03:59:20,181 - Model - INFO - Save model...
+2022-11-09 03:59:20,181 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:20,204 - Model - INFO - Epoch 3 (3/10000):
+2022-11-09 03:59:20,971 - Model - INFO - Save model...
+2022-11-09 03:59:20,971 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:20,994 - Model - INFO - Epoch 4 (4/10000):
+2022-11-09 03:59:21,759 - Model - INFO - Save model...
+2022-11-09 03:59:21,759 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:21,783 - Model - INFO - Epoch 5 (5/10000):
+2022-11-09 03:59:22,555 - Model - INFO - Save model...
+2022-11-09 03:59:22,555 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:22,585 - Model - INFO - Epoch 6 (6/10000):
+2022-11-09 03:59:23,356 - Model - INFO - Save model...
+2022-11-09 03:59:23,356 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:23,379 - Model - INFO - Epoch 7 (7/10000):
+2022-11-09 03:59:24,150 - Model - INFO - Save model...
+2022-11-09 03:59:24,150 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:24,173 - Model - INFO - Epoch 8 (8/10000):
+2022-11-09 03:59:24,942 - Model - INFO - Save model...
+2022-11-09 03:59:24,942 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:24,966 - Model - INFO - Epoch 9 (9/10000):
+2022-11-09 03:59:25,740 - Model - INFO - Save model...
+2022-11-09 03:59:25,740 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:25,764 - Model - INFO - Epoch 10 (10/10000):
+2022-11-09 03:59:26,541 - Model - INFO - Save model...
+2022-11-09 03:59:26,541 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:26,564 - Model - INFO - Epoch 11 (11/10000):
+2022-11-09 03:59:27,338 - Model - INFO - Save model...
+2022-11-09 03:59:27,338 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:27,362 - Model - INFO - Epoch 12 (12/10000):
+2022-11-09 03:59:28,137 - Model - INFO - Save model...
+2022-11-09 03:59:28,137 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:28,181 - Model - INFO - Epoch 13 (13/10000):
+2022-11-09 03:59:28,948 - Model - INFO - Save model...
+2022-11-09 03:59:28,948 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:28,972 - Model - INFO - Epoch 14 (14/10000):
+2022-11-09 03:59:29,742 - Model - INFO - Save model...
+2022-11-09 03:59:29,742 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:29,765 - Model - INFO - Epoch 15 (15/10000):
+2022-11-09 03:59:30,536 - Model - INFO - Save model...
+2022-11-09 03:59:30,536 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:30,560 - Model - INFO - Epoch 16 (16/10000):
+2022-11-09 03:59:31,337 - Model - INFO - Save model...
+2022-11-09 03:59:31,337 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:31,360 - Model - INFO - Epoch 17 (17/10000):
+2022-11-09 03:59:32,131 - Model - INFO - Save model...
+2022-11-09 03:59:32,131 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:32,154 - Model - INFO - Epoch 18 (18/10000):
+2022-11-09 03:59:32,927 - Model - INFO - Save model...
+2022-11-09 03:59:32,928 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:32,951 - Model - INFO - Epoch 19 (19/10000):
+2022-11-09 03:59:33,725 - Model - INFO - Save model...
+2022-11-09 03:59:33,725 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 03:59:33,757 - Model - INFO - Epoch 20 (20/10000):
+2022-11-09 03:59:34,534 - Model - INFO - Epoch 21 (21/10000):
+2022-11-09 03:59:37,051 - Model - INFO - Save model...
+2022-11-09 03:59:37,051 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:59:37,339 - Model - INFO - Epoch 22 (22/10000):
+2022-11-09 03:59:39,917 - Model - INFO - Save model...
+2022-11-09 03:59:39,918 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:59:40,200 - Model - INFO - Epoch 23 (23/10000):
+2022-11-09 03:59:42,865 - Model - INFO - Save model...
+2022-11-09 03:59:42,866 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:59:43,150 - Model - INFO - Epoch 24 (24/10000):
+2022-11-09 03:59:45,802 - Model - INFO - Save model...
+2022-11-09 03:59:45,803 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:59:46,095 - Model - INFO - Epoch 25 (25/10000):
+2022-11-09 03:59:48,794 - Model - INFO - Save model...
+2022-11-09 03:59:48,796 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:59:49,083 - Model - INFO - Epoch 26 (26/10000):
+2022-11-09 03:59:51,731 - Model - INFO - Save model...
+2022-11-09 03:59:51,732 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:59:52,024 - Model - INFO - Epoch 27 (27/10000):
+2022-11-09 03:59:54,684 - Model - INFO - Save model...
+2022-11-09 03:59:54,685 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:59:54,970 - Model - INFO - Epoch 28 (28/10000):
+2022-11-09 03:59:57,655 - Model - INFO - Save model...
+2022-11-09 03:59:57,657 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 03:59:57,941 - Model - INFO - Epoch 29 (29/10000):
+2022-11-09 04:00:00,622 - Model - INFO - Save model...
+2022-11-09 04:00:00,623 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:00,916 - Model - INFO - Epoch 30 (30/10000):
+2022-11-09 04:00:03,626 - Model - INFO - Save model...
+2022-11-09 04:00:03,628 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:03,916 - Model - INFO - Epoch 31 (31/10000):
+2022-11-09 04:00:06,583 - Model - INFO - Save model...
+2022-11-09 04:00:06,585 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:06,875 - Model - INFO - Epoch 32 (32/10000):
+2022-11-09 04:00:09,585 - Model - INFO - Save model...
+2022-11-09 04:00:09,587 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:09,871 - Model - INFO - Epoch 33 (33/10000):
+2022-11-09 04:00:12,559 - Model - INFO - Save model...
+2022-11-09 04:00:12,561 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:12,856 - Model - INFO - Epoch 34 (34/10000):
+2022-11-09 04:00:15,533 - Model - INFO - Epoch 35 (35/10000):
+2022-11-09 04:00:18,227 - Model - INFO - Save model...
+2022-11-09 04:00:18,229 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:18,520 - Model - INFO - Epoch 36 (36/10000):
+2022-11-09 04:00:21,186 - Model - INFO - Epoch 37 (37/10000):
+2022-11-09 04:00:23,900 - Model - INFO - Save model...
+2022-11-09 04:00:23,901 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:24,186 - Model - INFO - Epoch 38 (38/10000):
+2022-11-09 04:00:26,878 - Model - INFO - Save model...
+2022-11-09 04:00:26,880 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:27,171 - Model - INFO - Epoch 39 (39/10000):
+2022-11-09 04:00:29,885 - Model - INFO - Save model...
+2022-11-09 04:00:29,886 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:30,169 - Model - INFO - Epoch 40 (40/10000):
+2022-11-09 04:00:32,894 - Model - INFO - Save model...
+2022-11-09 04:00:32,896 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:33,190 - Model - INFO - Epoch 41 (41/10000):
+2022-11-09 04:00:35,854 - Model - INFO - Save model...
+2022-11-09 04:00:35,856 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:36,141 - Model - INFO - Epoch 42 (42/10000):
+2022-11-09 04:00:38,822 - Model - INFO - Save model...
+2022-11-09 04:00:38,824 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:39,109 - Model - INFO - Epoch 43 (43/10000):
+2022-11-09 04:00:41,799 - Model - INFO - Epoch 44 (44/10000):
+2022-11-09 04:00:44,502 - Model - INFO - Save model...
+2022-11-09 04:00:44,504 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:44,784 - Model - INFO - Epoch 45 (45/10000):
+2022-11-09 04:00:47,483 - Model - INFO - Save model...
+2022-11-09 04:00:47,484 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:47,775 - Model - INFO - Epoch 46 (46/10000):
+2022-11-09 04:00:50,469 - Model - INFO - Epoch 47 (47/10000):
+2022-11-09 04:00:53,192 - Model - INFO - Save model...
+2022-11-09 04:00:53,194 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:00:53,485 - Model - INFO - Epoch 48 (48/10000):
+2022-11-09 04:00:56,157 - Model - INFO - Epoch 49 (49/10000):
+2022-11-09 04:00:58,851 - Model - INFO - Epoch 50 (50/10000):
+2022-11-09 04:01:01,528 - Model - INFO - Save model...
+2022-11-09 04:01:01,529 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:01:01,816 - Model - INFO - Epoch 51 (51/10000):
+2022-11-09 04:01:04,503 - Model - INFO - Save model...
+2022-11-09 04:01:04,504 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:01:04,787 - Model - INFO - Epoch 52 (52/10000):
+2022-11-09 04:01:07,483 - Model - INFO - Epoch 53 (53/10000):
+2022-11-09 04:01:10,131 - Model - INFO - Epoch 54 (54/10000):
+2022-11-09 04:01:12,813 - Model - INFO - Save model...
+2022-11-09 04:01:12,815 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:01:13,104 - Model - INFO - Epoch 55 (55/10000):
+2022-11-09 04:01:15,789 - Model - INFO - Epoch 56 (56/10000):
+2022-11-09 04:01:18,506 - Model - INFO - Save model...
+2022-11-09 04:01:18,508 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:01:18,804 - Model - INFO - Epoch 57 (57/10000):
+2022-11-09 04:01:21,491 - Model - INFO - Epoch 58 (58/10000):
+2022-11-09 04:01:24,217 - Model - INFO - Epoch 59 (59/10000):
+2022-11-09 04:01:26,899 - Model - INFO - Epoch 60 (60/10000):
+2022-11-09 04:01:29,581 - Model - INFO - Epoch 61 (61/10000):
+2022-11-09 04:01:32,278 - Model - INFO - Save model...
+2022-11-09 04:01:32,279 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:01:32,568 - Model - INFO - Epoch 62 (62/10000):
+2022-11-09 04:01:35,239 - Model - INFO - Save model...
+2022-11-09 04:01:35,240 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:01:35,531 - Model - INFO - Epoch 63 (63/10000):
+2022-11-09 04:01:38,244 - Model - INFO - Epoch 64 (64/10000):
+2022-11-09 04:01:40,938 - Model - INFO - Epoch 65 (65/10000):
+2022-11-09 04:01:43,640 - Model - INFO - Save model...
+2022-11-09 04:01:43,642 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:01:43,926 - Model - INFO - Epoch 66 (66/10000):
+2022-11-09 04:01:46,609 - Model - INFO - Epoch 67 (67/10000):
+2022-11-09 04:01:49,324 - Model - INFO - Epoch 68 (68/10000):
+2022-11-09 04:01:52,028 - Model - INFO - Epoch 69 (69/10000):
+2022-11-09 04:01:54,723 - Model - INFO - Save model...
+2022-11-09 04:01:54,725 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:01:55,013 - Model - INFO - Epoch 70 (70/10000):
+2022-11-09 04:01:57,707 - Model - INFO - Save model...
+2022-11-09 04:01:57,709 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:01:58,000 - Model - INFO - Epoch 71 (71/10000):
+2022-11-09 04:02:00,661 - Model - INFO - Save model...
+2022-11-09 04:02:00,662 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:02:00,953 - Model - INFO - Epoch 72 (72/10000):
+2022-11-09 04:02:03,647 - Model - INFO - Epoch 73 (73/10000):
+2022-11-09 04:02:06,315 - Model - INFO - Save model...
+2022-11-09 04:02:06,317 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:02:06,606 - Model - INFO - Epoch 74 (74/10000):
+2022-11-09 04:02:09,318 - Model - INFO - Save model...
+2022-11-09 04:02:09,319 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:02:09,611 - Model - INFO - Epoch 75 (75/10000):
+2022-11-09 04:02:12,321 - Model - INFO - Save model...
+2022-11-09 04:02:12,323 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:02:12,604 - Model - INFO - Epoch 76 (76/10000):
+2022-11-09 04:02:15,307 - Model - INFO - Save model...
+2022-11-09 04:02:15,309 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:02:15,594 - Model - INFO - Epoch 77 (77/10000):
+2022-11-09 04:02:18,293 - Model - INFO - Save model...
+2022-11-09 04:02:18,294 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:02:18,576 - Model - INFO - Epoch 78 (78/10000):
+2022-11-09 04:02:21,245 - Model - INFO - Epoch 79 (79/10000):
+2022-11-09 04:02:23,941 - Model - INFO - Epoch 80 (80/10000):
+2022-11-09 04:02:26,593 - Model - INFO - Epoch 81 (81/10000):
+2022-11-09 04:02:29,307 - Model - INFO - Epoch 82 (82/10000):
+2022-11-09 04:02:32,015 - Model - INFO - Epoch 83 (83/10000):
+2022-11-09 04:02:34,831 - Model - INFO - Save model...
+2022-11-09 04:02:34,833 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:02:35,131 - Model - INFO - Epoch 84 (84/10000):
+2022-11-09 04:02:38,004 - Model - INFO - Epoch 85 (85/10000):
+2022-11-09 04:02:40,772 - Model - INFO - Save model...
+2022-11-09 04:02:40,774 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:02:41,061 - Model - INFO - Epoch 86 (86/10000):
+2022-11-09 04:02:43,907 - Model - INFO - Epoch 87 (87/10000):
+2022-11-09 04:02:46,741 - Model - INFO - Save model...
+2022-11-09 04:02:46,743 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:02:47,054 - Model - INFO - Epoch 88 (88/10000):
+2022-11-09 04:02:49,965 - Model - INFO - Epoch 89 (89/10000):
+2022-11-09 04:02:52,743 - Model - INFO - Epoch 90 (90/10000):
+2022-11-09 04:02:55,525 - Model - INFO - Epoch 91 (91/10000):
+2022-11-09 04:02:58,236 - Model - INFO - Epoch 92 (92/10000):
+2022-11-09 04:03:00,932 - Model - INFO - Epoch 93 (93/10000):
+2022-11-09 04:03:03,648 - Model - INFO - Epoch 94 (94/10000):
+2022-11-09 04:03:06,382 - Model - INFO - Epoch 95 (95/10000):
+2022-11-09 04:03:09,291 - Model - INFO - Epoch 96 (96/10000):
+2022-11-09 04:03:12,177 - Model - INFO - Save model...
+2022-11-09 04:03:12,179 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:03:12,486 - Model - INFO - Epoch 97 (97/10000):
+2022-11-09 04:03:15,377 - Model - INFO - Epoch 98 (98/10000):
+2022-11-09 04:03:18,225 - Model - INFO - Epoch 99 (99/10000):
+2022-11-09 04:03:20,968 - Model - INFO - Epoch 100 (100/10000):
+2022-11-09 04:03:23,721 - Model - INFO - Save model...
+2022-11-09 04:03:23,723 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:03:24,037 - Model - INFO - Epoch 101 (101/10000):
+2022-11-09 04:03:26,822 - Model - INFO - Epoch 102 (102/10000):
+2022-11-09 04:03:29,597 - Model - INFO - Epoch 103 (103/10000):
+2022-11-09 04:03:32,322 - Model - INFO - Epoch 104 (104/10000):
+2022-11-09 04:03:35,043 - Model - INFO - Epoch 105 (105/10000):
+2022-11-09 04:03:37,686 - Model - INFO - Save model...
+2022-11-09 04:03:37,688 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:03:37,981 - Model - INFO - Epoch 106 (106/10000):
+2022-11-09 04:03:40,685 - Model - INFO - Save model...
+2022-11-09 04:03:40,687 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:03:40,979 - Model - INFO - Epoch 107 (107/10000):
+2022-11-09 04:03:43,661 - Model - INFO - Save model...
+2022-11-09 04:03:43,662 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:03:43,947 - Model - INFO - Epoch 108 (108/10000):
+2022-11-09 04:03:46,825 - Model - INFO - Epoch 109 (109/10000):
+2022-11-09 04:03:49,691 - Model - INFO - Epoch 110 (110/10000):
+2022-11-09 04:03:52,541 - Model - INFO - Epoch 111 (111/10000):
+2022-11-09 04:03:55,409 - Model - INFO - Epoch 112 (112/10000):
+2022-11-09 04:03:58,271 - Model - INFO - Epoch 113 (113/10000):
+2022-11-09 04:04:01,183 - Model - INFO - Epoch 114 (114/10000):
+2022-11-09 04:04:03,962 - Model - INFO - Epoch 115 (115/10000):
+2022-11-09 04:04:06,732 - Model - INFO - Epoch 116 (116/10000):
+2022-11-09 04:04:09,613 - Model - INFO - Epoch 117 (117/10000):
+2022-11-09 04:04:12,474 - Model - INFO - Epoch 118 (118/10000):
+2022-11-09 04:04:15,256 - Model - INFO - Epoch 119 (119/10000):
+2022-11-09 04:04:18,017 - Model - INFO - Save model...
+2022-11-09 04:04:18,018 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:04:18,316 - Model - INFO - Epoch 120 (120/10000):
+2022-11-09 04:04:21,212 - Model - INFO - Save model...
+2022-11-09 04:04:21,213 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:04:21,523 - Model - INFO - Epoch 121 (121/10000):
+2022-11-09 04:04:24,385 - Model - INFO - Epoch 122 (122/10000):
+2022-11-09 04:04:27,216 - Model - INFO - Save model...
+2022-11-09 04:04:27,218 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:04:27,527 - Model - INFO - Epoch 123 (123/10000):
+2022-11-09 04:04:30,289 - Model - INFO - Save model...
+2022-11-09 04:04:30,291 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:04:30,600 - Model - INFO - Epoch 124 (124/10000):
+2022-11-09 04:04:33,436 - Model - INFO - Epoch 125 (125/10000):
+2022-11-09 04:04:36,317 - Model - INFO - Save model...
+2022-11-09 04:04:36,319 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:04:36,661 - Model - INFO - Epoch 126 (126/10000):
+2022-11-09 04:04:39,511 - Model - INFO - Save model...
+2022-11-09 04:04:39,513 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:04:39,811 - Model - INFO - Epoch 127 (127/10000):
+2022-11-09 04:04:42,610 - Model - INFO - Save model...
+2022-11-09 04:04:42,612 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:04:42,898 - Model - INFO - Epoch 128 (128/10000):
+2022-11-09 04:04:45,680 - Model - INFO - Epoch 129 (129/10000):
+2022-11-09 04:04:48,428 - Model - INFO - Epoch 130 (130/10000):
+2022-11-09 04:04:51,114 - Model - INFO - Epoch 131 (131/10000):
+2022-11-09 04:04:53,847 - Model - INFO - Epoch 132 (132/10000):
+2022-11-09 04:04:56,553 - Model - INFO - Save model...
+2022-11-09 04:04:56,555 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:04:56,848 - Model - INFO - Epoch 133 (133/10000):
+2022-11-09 04:04:59,556 - Model - INFO - Epoch 134 (134/10000):
+2022-11-09 04:05:02,345 - Model - INFO - Epoch 135 (135/10000):
+2022-11-09 04:05:05,157 - Model - INFO - Save model...
+2022-11-09 04:05:05,159 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:05:05,455 - Model - INFO - Epoch 136 (136/10000):
+2022-11-09 04:05:08,199 - Model - INFO - Epoch 137 (137/10000):
+2022-11-09 04:05:10,929 - Model - INFO - Epoch 138 (138/10000):
+2022-11-09 04:05:13,630 - Model - INFO - Epoch 139 (139/10000):
+2022-11-09 04:05:16,296 - Model - INFO - Save model...
+2022-11-09 04:05:16,298 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:05:16,586 - Model - INFO - Epoch 140 (140/10000):
+2022-11-09 04:05:19,281 - Model - INFO - Epoch 141 (141/10000):
+2022-11-09 04:05:21,965 - Model - INFO - Epoch 142 (142/10000):
+2022-11-09 04:05:24,672 - Model - INFO - Epoch 143 (143/10000):
+2022-11-09 04:05:27,398 - Model - INFO - Epoch 144 (144/10000):
+2022-11-09 04:05:30,176 - Model - INFO - Epoch 145 (145/10000):
+2022-11-09 04:05:32,957 - Model - INFO - Epoch 146 (146/10000):
+2022-11-09 04:05:35,664 - Model - INFO - Save model...
+2022-11-09 04:05:35,666 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:05:35,953 - Model - INFO - Epoch 147 (147/10000):
+2022-11-09 04:05:38,718 - Model - INFO - Epoch 148 (148/10000):
+2022-11-09 04:05:41,606 - Model - INFO - Epoch 149 (149/10000):
+2022-11-09 04:05:44,441 - Model - INFO - Save model...
+2022-11-09 04:05:44,442 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_alltrain.pth
+2022-11-09 04:05:44,725 - Model - INFO - Epoch 150 (150/10000):
+2022-11-09 04:05:46,804 - Model - INFO - PARAMETER ...
+2022-11-09 04:05:46,805 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='pointnet2_cls_msg', num_category=20, num_point=2048, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-09 04:05:46,805 - Model - INFO - Load dataset ...
+2022-11-09 04:05:47,348 - Model - INFO - Start training...
+2022-11-09 04:05:47,348 - Model - INFO - Epoch 1 (1/10000):
+2022-11-09 04:05:50,422 - Model - INFO - Save model...
+2022-11-09 04:05:50,422 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 04:05:50,445 - Model - INFO - Epoch 2 (2/10000):
+2022-11-09 04:05:52,383 - Model - INFO - Save model...
+2022-11-09 04:05:52,383 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 04:05:52,407 - Model - INFO - Epoch 3 (3/10000):
+2022-11-09 04:05:54,367 - Model - INFO - Save model...
+2022-11-09 04:05:54,367 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model.pth
+2022-11-09 04:05:54,391 - Model - INFO - Epoch 4 (4/10000):

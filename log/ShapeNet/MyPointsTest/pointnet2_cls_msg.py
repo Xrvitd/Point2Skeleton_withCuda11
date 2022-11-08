@@ -58,21 +58,21 @@ class get_model(nn.Module):
 
         cvx_weights_modules_nor.append(nn.Dropout(0.2))
         # cvx_weights_modules_nor.append(nn.Linear(input_channels, 384))
-        cvx_weights_modules_nor.append(nn.Conv1d(in_channels=input_channels, out_channels=256, kernel_size=1))
+        cvx_weights_modules_nor.append(nn.Conv1d(in_channels=input_channels, out_channels=384, kernel_size=1))
+        cvx_weights_modules_nor.append(nn.BatchNorm1d(384))
+        cvx_weights_modules_nor.append(nn.ReLU(inplace=True))
+
+        cvx_weights_modules_nor.append(nn.Dropout(0.2))
+        # cvx_weights_modules_nor.append(nn.Linear(384, 256))
+        cvx_weights_modules_nor.append(nn.Conv1d(in_channels=384, out_channels=256, kernel_size=1))
         cvx_weights_modules_nor.append(nn.BatchNorm1d(256))
         cvx_weights_modules_nor.append(nn.ReLU(inplace=True))
 
-        # cvx_weights_modules_nor.append(nn.Dropout(0.2))
-        # # cvx_weights_modules_nor.append(nn.Linear(384, 256))
-        # cvx_weights_modules_nor.append(nn.Conv1d(in_channels=384, out_channels=256, kernel_size=1))
-        # cvx_weights_modules_nor.append(nn.BatchNorm1d(256))
-        # cvx_weights_modules_nor.append(nn.ReLU(inplace=True))
-        #
-        # cvx_weights_modules_nor.append(nn.Dropout(0.2))
-        # # cvx_weights_modules_nor.append(nn.Linear(256, 128))
-        # cvx_weights_modules_nor.append(nn.Conv1d(in_channels=256, out_channels=256, kernel_size=1))
-        # cvx_weights_modules_nor.append(nn.BatchNorm1d(256))
-        # cvx_weights_modules_nor.append(nn.ReLU(inplace=True))
+        cvx_weights_modules_nor.append(nn.Dropout(0.2))
+        # cvx_weights_modules_nor.append(nn.Linear(256, 128))
+        cvx_weights_modules_nor.append(nn.Conv1d(in_channels=256, out_channels=256, kernel_size=1))
+        cvx_weights_modules_nor.append(nn.BatchNorm1d(256))
+        cvx_weights_modules_nor.append(nn.ReLU(inplace=True))
 
         cvx_weights_modules_nor.append(nn.Dropout(0.2))
         # cvx_weights_modules_nor.append(nn.Linear(128, 64))
@@ -486,7 +486,7 @@ class get_loss(nn.Module):
                       loss_normal * w4 + \
                       loss_skelenormal * w5 + \
                       w6*loss_normaldist + \
-                      0.1*loss_normalsmooth
+                      0.05*loss_normalsmooth
 
         return final_loss
 
