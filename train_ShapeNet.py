@@ -231,7 +231,7 @@ def main(args):
 
 
 
-    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=40, gamma=0.85)
+    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=30, gamma=0.85)
     global_epoch = 0
     global_step = 0
     best_instance_acc = 0.0

@@ -486,7 +486,7 @@ class get_loss(nn.Module):
                       loss_normal * w4 + \
                       loss_skelenormal * w5 + \
                       w6*loss_normaldist + \
-                      0.05*loss_normalsmooth
+                      0.01*loss_normalsmooth
 
         return final_loss
 
