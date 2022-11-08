@@ -120,7 +120,7 @@ def main(args):
 
     '''HYPER PARAMETER'''
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
-    batch_size = 8
+    batch_size = 4
     '''CREATE DIR'''
     timestr = str(datetime.datetime.now().strftime('%Y-%m-%d_%H-%M'))
     exp_dir = Path('./log/')
@@ -159,7 +159,7 @@ def main(args):
     # testDataLoader = torch.utils.data.DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=10)
     data_path = 'data/MyPoints/'
     # train_dataset = torch.utils.data.DataLoader( , batch_size=args.batch_size, shuffle=True, num_workers=10, drop_last=True)
-    pc_list_file = 'data/data-split/all-train.txt'
+    pc_list_file = 'data/data-split/Single_chair.txt'
     data_root = 'data/pointclouds/'
     pc_list = rw.load_data_id(pc_list_file)
     train_data = PCDataset(pc_list, data_root, args.num_point)
@@ -213,8 +213,8 @@ def main(args):
 
     start_epoch = 0
     # try:
-    #     checkpoint = torch.load(str(exp_dir) + '/test_out/best_model_planeWithD.pth')
-    #     # start_epoch = 40
+    #     checkpoint = torch.load(str(exp_dir) + '/test_out/best_model_alltrain.pth')
+    #     start_epoch = 40
     #     start_epoch = checkpoint['epoch']
     #     classifier.load_state_dict(checkpoint['model_state_dict'])
     #     log_string('Use pretrain model')
@@ -245,6 +245,10 @@ def main(args):
     if Totest:
         test(classifier, test_loader, 40)
         sys.exit()
+
+    # for name, param in classifier.named_parameters():
+    #     if 'cvx_weights_mlp_nor' in name:
+    #         param.requires_grad = False
 
     for epoch in range(start_epoch, args.epoch):
         log_string('Epoch %d (%d/%s):' % (global_epoch + 1, epoch + 1, args.epoch))
@@ -283,7 +287,7 @@ def main(args):
             skel_xyz, skel_r, shape_cmb_features,skel_nori ,weights,l3_xyz,l3_normals= classifier(points)
 
             if epoch<20:
-                loss_pre = criterion_pre(target,skel_xyz)
+                loss_pre = criterion_pre(target,skel_xyz,skel_nori)
                 loss_batch += loss_pre.item()
                 optimizer.zero_grad()
                 loss_pre.backward()
@@ -291,10 +295,9 @@ def main(args):
                 global_step += 1
                 # log_string('loss_pre: %f' % (loss_pre.item()))
             else:
-
                 loss = criterion(skel_xyz, skel_r, shape_cmb_features, skel_nori,
-                                     weights, l3_xyz, l3_normals, target, None,
-                                     0.3, 0.4, 0, 0.000, 1.0, 0.15)
+                                 weights, l3_xyz, l3_normals, target, None,
+                                 1.0, 0.15, 0.4, 0.0, 0.01, 0.01, 0.1)
                 # loss = criterion(skel_xyz, skel_r, shape_cmb_features, skel_nori,
                 #                      weights, l3_xyz, l3_normals, target, None,
                 #                      0.3, 0.4, 0, 0.005, 1.0, 0.3)
@@ -303,6 +306,8 @@ def main(args):
                 loss.backward()
                 optimizer.step()
                 global_step += 1
+
+
 
         loss_batch = loss_batch/batch_size
                 # log_string('loss: %f' % (loss.item()))
