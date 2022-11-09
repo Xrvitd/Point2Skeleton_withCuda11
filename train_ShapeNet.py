@@ -295,9 +295,14 @@ def main(args):
                 global_step += 1
                 # log_string('loss_pre: %f' % (loss_pre.item()))
             else:
+                # if epoch==40:
+                #     for name, param in classifier.named_parameters():
+                #         if 'cvx_weights_mlp_nor' in name:
+                #             param.requires_grad = True
+                #     best_instance_acc_pre = 999999
                 loss = criterion(skel_xyz, skel_r, shape_cmb_features, skel_nori,
                                  weights, l3_xyz, l3_normals, target, None,
-                                 1.0, 0.4, 0.4, 0.0, 0.005, 0.02, 0.1)
+                                 1.0, 0.4, 0.4, 0.0, 0.005, 0.005, 0.01)
                 # loss = criterion(skel_xyz, skel_r, shape_cmb_features, skel_nori,
                 #                      weights, l3_xyz, l3_normals, target, None,
                 #                      0.3, 0.4, 0, 0.005, 1.0, 0.3)
