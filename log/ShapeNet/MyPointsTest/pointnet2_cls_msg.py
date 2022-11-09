@@ -407,6 +407,7 @@ class get_loss(nn.Module):
         for i in range(skel_xyz.size()[0]):
             for k in range(30):
                 skel_combine[i,k*skel_xyz.size()[1]:(k+1)*skel_xyz.size()[1],:] = skel_k[k,i,:,:]
+        #不能只有方差，还要有距离!!!!
         # loss_skelenormal = chamfer_distance(skel_combine, skel_xyz)[0]
         # loss_skelenormal = loss_skelenormal+2.5*DF.closest_distance_with_batch(skel_combine, skel_xyz)/(skel_xyz.size()[0] * skel_xyz.size()[1] * 30)
         # loss_skelenormal = loss_skelenormal+1.25*DF.closest_distance_with_batch(skel_combine,l3_xyz)/(skel_xyz.size()[0] * skel_xyz.size()[1] * 30)
@@ -486,7 +487,7 @@ class get_loss(nn.Module):
                       loss_normal * w4 + \
                       loss_skelenormal * w5 + \
                       w6*loss_normaldist + \
-                      0.05*loss_normalsmooth
+                      0.01*loss_normalsmooth
 
         return final_loss
 

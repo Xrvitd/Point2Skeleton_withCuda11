@@ -159,7 +159,7 @@ def main(args):
     # testDataLoader = torch.utils.data.DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=10)
     data_path = 'data/MyPoints/'
     # train_dataset = torch.utils.data.DataLoader( , batch_size=args.batch_size, shuffle=True, num_workers=10, drop_last=True)
-    pc_list_file = 'data/data-split/20chair_train.txt'
+    pc_list_file = 'data/data-split/little-train1.txt'
     data_root = 'data/pointclouds/'
     pc_list = rw.load_data_id(pc_list_file)
     train_data = PCDataset(pc_list, data_root, args.num_point)
