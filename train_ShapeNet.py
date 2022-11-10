@@ -302,7 +302,7 @@ def main(args):
                 #     best_instance_acc_pre = 999999
                 loss = criterion(skel_xyz, skel_r, shape_cmb_features, skel_nori,
                                  weights, l3_xyz, l3_normals, target, None,
-                                 1.0, 0.4, 0.4, 0.1, 0.005, 0.25, 0.1)
+                                 1.0, 0.4, 0.4, 0.1, 0.005, 0.25, 0.01)
                 # loss = criterion(skel_xyz, skel_r, shape_cmb_features, skel_nori,
                 #                      weights, l3_xyz, l3_normals, target, None,
                 #                      0.3, 0.4, 0, 0.005, 1.0, 0.3)

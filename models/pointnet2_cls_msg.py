@@ -391,7 +391,8 @@ class get_loss(nn.Module):
                     loss_j = loss_j / idx.size()[0]
                     # loss_j = loss_j + (skel_nori[i, j, :].norm() - 1.0) * (skel_nori[i, j, :].norm() - 1.0)
                     loss_normal = loss_normal + loss_j
-        loss_normal = loss_normal / (skel_xyz.size()[0])
+        loss_normal = loss_normal / (skel_nori.size()[1])
+
 
 
         # knn_l32shape = DF.knn_with_batch(l3_xyz, shape_xyz, 20)
@@ -435,26 +436,40 @@ class get_loss(nn.Module):
         # loss_normal = loss_normal + loss_normal1
 #换loss? 不应该一起训 感觉需要分开训
 
+
         # loss skele normal  try to fix more skele points
         loss_skelenormal = 0
         skel_k = torch.zeros(30,skel_xyz.size()[0],skel_xyz.size()[1],skel_xyz.size()[2]).cuda()
         for k in range(30):
             skel_k[k] = skel_xyz + skel_nori * k/ 30.0
         skel_combine = torch.zeros(skel_xyz.size()[0], skel_xyz.size()[1]*30, skel_xyz.size()[2]).cuda()
+
         for i in range(skel_xyz.size()[0]):
             for k in range(30):
                 skel_combine[i,k*skel_xyz.size()[1]:(k+1)*skel_xyz.size()[1],:] = skel_k[k,i,:,:]
+
         #不能只有方差，还要有距离!!!!
         # loss_skelenormal = chamfer_distance(skel_combine, skel_xyz)[0]
-        loss_skelenormal = loss_skelenormal + 1*DF.closest_distance_with_batch(skel_combine, skel_xyz)/(skel_xyz.size()[0] * skel_xyz.size()[1] * 30)
+        loss_skelenormal = loss_skelenormal + 1*DF.closest_distance_with_batch(skel_combine, skel_xyz)/(skel_xyz.size()[1] * 30)
         # loss_skelenormal = loss_skelenormal+ 10*DF.closest_distance_with_batch(skel_combine,l3_xyz)/(skel_xyz.size()[0] * skel_xyz.size()[1] * 30)
         # loss_skelenormal = loss_skelenormal+50*DF.closest_distance_with_batch( l3_xyz,skel_combine)/ ((l3_xyz.size()[0] * l3_xyz.size()[1]))
-        loss_skelenormal = loss_skelenormal + 1 * DF.closest_distance_variance_with_batch(skel_combine,shape_xyz).sum()/skel_combine.size()[0]
+        loss_skelenormal = loss_skelenormal + 1 * DF.closest_distance_variance_with_batch(skel_combine,shape_xyz).sum()
         # loss_skelenormal = loss_skelenormal + 500 * DF.closest_distance_variance_with_batch(skel_combine,skel_xyz).sum()/skel_combine.size()[0]
         # loss_skelenormal = loss_skelenormal + 300 * DF.closest_distance_variance_with_batch(skel_combine,skel_xyz).sum()/skel_combine.size()[0]
         # loss_skelenormal = loss_skelenormal + 500 * DF.closest_distance_variance_with_batch(l3_xyz,skel_combine).sum()/l3_xyz.size()[0]
 
+        skel_combiner = torch.zeros(skel_xyz.size()[0], skel_xyz.size()[1]*30, skel_xyz.size()[2]+1).cuda()
+        skel_norir = torch.sum(weights[:, :, :, None] * skel_radius[:, None, :], dim=2)
+        for i in range(skel_xyz.size()[0]):
+            for j in range(skel_xyz.size()[1]):
+                for k in range(30):
+                    skel_combiner[i,j*30+k,0:3] = skel_combine[i,j*30+k,:]
+                    skel_combiner[i,j*30+k,3] = skel_radius[i,j] + (skel_norir[i,j] - skel_radius[i,j]) * k/ 30.0
 
+
+        cd_point2pshere1 = DF.point2sphere_distance_with_batch(shape_xyz, skel_combiner) / shape_pnum
+        cd_point2sphere2 = DF.sphere2point_distance_with_batch(skel_combiner, shape_xyz) / skel_combiner.size()[1]
+        loss_combinepoint2sphere = cd_point2pshere1 + cd_point2sphere2
 
 
 
@@ -473,7 +488,7 @@ class get_loss(nn.Module):
                 if skel_nori[i, j, :].norm() < 0.25:
                     loss_normal3 = loss_normal3 + penalty
                 # loss_normal3 = loss_normal3 + (skel_nori[i, j, :].norm() - 0.75) * (skel_nori[i, j, :].norm() - 0.75)
-        loss_normaldist = loss_normal3 / (skel_nori .size()[0] * skel_nori.size()[1])
+        loss_normaldist = loss_normal3 / ( skel_nori.size()[1])
 
         # loss_tmp =0
         # for i in range(skel_nori.size()[0]):
@@ -521,7 +536,7 @@ class get_loss(nn.Module):
             for j in range(skel_nori.size()[1]):
                 for k in range(3):
                     loss_normalsmooth = loss_normalsmooth + torch.cross(skel_nori[i, j, :],(skel_nori[i, knn_skel2skel[i, j, k], :])).norm()
-        loss_normalsmooth = loss_normalsmooth / (skel_nori.size()[0] * skel_nori.size()[1] * 3)
+        loss_normalsmooth = loss_normalsmooth / (skel_nori.size()[1] * 3)
 
 
         # Laplacian smoothness loss
@@ -539,7 +554,7 @@ class get_loss(nn.Module):
             dist = torch.tensor(dist).cuda()
             for j in range(skel_xyz.size()[1]):
                 loss_punet = loss_punet + torch.sum(torch.exp((-1.0*dist[j, 1:11]*dist[j, 1:11])/(h*h)))
-        loss_punet = loss_punet / (skel_xyz.size()[0] * skel_xyz.size()[1])
+        loss_punet = loss_punet / (skel_xyz.size()[1])
 
         # loss combination
         # print('loss_normal', loss_normal1-loss_normal11)
@@ -550,8 +565,9 @@ class get_loss(nn.Module):
                       loss_normal * w4 + \
                       loss_skelenormal * w5 + \
                       w6*loss_normaldist + \
-                      0.0*loss_normalsmooth + \
-                      0.1 * loss_punet
+                      0.1*loss_normalsmooth + \
+                      0.05 * loss_punet + \
+                      0.1*loss_combinepoint2sphere
 
         return final_loss
 
