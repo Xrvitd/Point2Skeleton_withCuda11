@@ -14,7 +14,7 @@ class get_model(nn.Module):
         super(get_model, self).__init__()
         in_channel = 3 if normal_channel else 0
         self.normal_channel = normal_channel
-        self.num_skel_points = 100
+        self.num_skel_points = 70
 
         self.sa0 = PointNetSetAbstractionMsg(1024, [0.1, 0.2], [16, 32], in_channel, [[16, 16, 32],[16, 16, 32]])
         self.sa1 = PointNetSetAbstractionMsg(768, [0.2, 0.4], [32, 64], 32*2, [[32, 32, 64],[32, 32, 64]])
@@ -446,13 +446,18 @@ class get_loss(nn.Module):
                 skel_combine[i,k*skel_xyz.size()[1]:(k+1)*skel_xyz.size()[1],:] = skel_k[k,i,:,:]
         #不能只有方差，还要有距离!!!!
         # loss_skelenormal = chamfer_distance(skel_combine, skel_xyz)[0]
-        loss_skelenormal = loss_skelenormal + 50*DF.closest_distance_with_batch(skel_combine, skel_xyz)/(skel_xyz.size()[0] * skel_xyz.size()[1] * 30)
+        loss_skelenormal = loss_skelenormal + 1*DF.closest_distance_with_batch(skel_combine, skel_xyz)/(skel_xyz.size()[0] * skel_xyz.size()[1] * 30)
         # loss_skelenormal = loss_skelenormal+ 10*DF.closest_distance_with_batch(skel_combine,l3_xyz)/(skel_xyz.size()[0] * skel_xyz.size()[1] * 30)
         # loss_skelenormal = loss_skelenormal+50*DF.closest_distance_with_batch( l3_xyz,skel_combine)/ ((l3_xyz.size()[0] * l3_xyz.size()[1]))
-        loss_skelenormal = loss_skelenormal + 500 * DF.closest_distance_variance_with_batch(skel_combine,l3_xyz).sum()/skel_combine.size()[0]
+        loss_skelenormal = loss_skelenormal + 1 * DF.closest_distance_variance_with_batch(skel_combine,shape_xyz).sum()/skel_combine.size()[0]
         # loss_skelenormal = loss_skelenormal + 500 * DF.closest_distance_variance_with_batch(skel_combine,skel_xyz).sum()/skel_combine.size()[0]
         # loss_skelenormal = loss_skelenormal + 300 * DF.closest_distance_variance_with_batch(skel_combine,skel_xyz).sum()/skel_combine.size()[0]
         # loss_skelenormal = loss_skelenormal + 500 * DF.closest_distance_variance_with_batch(l3_xyz,skel_combine).sum()/l3_xyz.size()[0]
+
+
+
+
+
         loss_normaldist = 0
         # for i in range(skel_nori.size()[0]):
         #     for j in range(skel_nori.size()[1]):
@@ -524,9 +529,21 @@ class get_loss(nn.Module):
         if lap_reg:
             loss_smooth = self.get_smoothness_loss(skel_xyzr, A) / skel_pnum
 
+
+        # pu-net point location loss
+        loss_punet = 0
+        h = 0.02
+        for i in range(skel_xyz.size()[0]):
+            tree = spatial.cKDTree(skel_xyz[i].cpu().detach().numpy())
+            dist, ind = tree.query(skel_xyz[i].cpu().detach().numpy(), k=11)
+            dist = torch.tensor(dist).cuda()
+            for j in range(skel_xyz.size()[1]):
+                loss_punet = loss_punet + torch.sum(torch.exp((-1.0*dist[j, 1:11]*dist[j, 1:11])/(h*h)))
+        loss_punet = loss_punet / (skel_xyz.size()[0] * skel_xyz.size()[1])
+
         # loss combination
         # print('loss_normal', loss_normal1-loss_normal11)
-        final_loss =  w0*loss_sample + \
+        final_loss  = w0*loss_sample + \
                       loss_point2sphere * w1 + \
                       loss_radius * w2 + \
                       loss_smooth * w3 + \
@@ -534,7 +551,7 @@ class get_loss(nn.Module):
                       loss_skelenormal * w5 + \
                       w6*loss_normaldist + \
                       0.0*loss_normalsmooth + \
-                      0.0
+                      0.1 * loss_punet
 
         return final_loss
 
