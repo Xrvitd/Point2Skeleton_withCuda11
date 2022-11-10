@@ -154,7 +154,7 @@ class get_model(nn.Module):
         context_features = l3_points
         weights = self.cvx_weights_mlp(context_features) #need transpose?
         l3_xyz = l3_xyz.transpose(1,2)
-        l3_normals = l3_xyz
+
         # Fnormals = self.cvx_weights_mlp_nor(context_features)
         # Fnormals = Fnormals[:, :3, :]
         # Dists = Fnormals[:, 3, :]
@@ -196,7 +196,7 @@ class get_model(nn.Module):
         # for i in range(skel_nori.size()[0]):
         #     for j in range(skel_nori.size()[1]):
         #         skel_nori[i, j, :] = skel_xyz[i, skel_norid[i, j], :] - skel_xyz[i, j, :]
-
+        l3_normals = torch.sum(weights[:, :, :, None].transpose(1,2) * skel_nori[:, None, :, :], dim=2)
 
         #change to combination of skeleton points
 
@@ -227,7 +227,7 @@ class get_model(nn.Module):
 
 
         # return x,l3_points
-        return skel_xyz, skel_r, shape_cmb_features, skel_nori,weights,l3_xyz,l3_normals
+        return skel_xyz, skel_r, shape_cmb_features, skel_nori,nor_weights,l3_xyz,l3_normals
 
 
 class get_loss_pre(nn.Module):
@@ -450,7 +450,7 @@ class get_loss(nn.Module):
         # loss_skelenormal = loss_skelenormal+ 10*DF.closest_distance_with_batch(skel_combine,l3_xyz)/(skel_xyz.size()[0] * skel_xyz.size()[1] * 30)
         # loss_skelenormal = loss_skelenormal+50*DF.closest_distance_with_batch( l3_xyz,skel_combine)/ ((l3_xyz.size()[0] * l3_xyz.size()[1]))
         loss_skelenormal = loss_skelenormal + 500 * DF.closest_distance_variance_with_batch(skel_combine,l3_xyz).sum()/skel_combine.size()[0]
-        loss_skelenormal = loss_skelenormal + 500 * DF.closest_distance_variance_with_batch(skel_combine,skel_xyz).sum()/skel_combine.size()[0]
+        # loss_skelenormal = loss_skelenormal + 500 * DF.closest_distance_variance_with_batch(skel_combine,skel_xyz).sum()/skel_combine.size()[0]
         # loss_skelenormal = loss_skelenormal + 300 * DF.closest_distance_variance_with_batch(skel_combine,skel_xyz).sum()/skel_combine.size()[0]
         # loss_skelenormal = loss_skelenormal + 500 * DF.closest_distance_variance_with_batch(l3_xyz,skel_combine).sum()/l3_xyz.size()[0]
         loss_normaldist = 0
@@ -478,6 +478,14 @@ class get_loss(nn.Module):
         # loss_tmp = loss_tmp / (skel_nori.size()[0] * skel_nori.size()[1])
         # loss_normaldist = loss_normaldist + 0.3*loss_tmp
 
+
+        # loss_weight
+        # loss_weight = 0
+        # weights = weights.transpose(1, 2)
+        # for i in range(weights.size()[0]):
+        #     for j in range(weights.size()[1]):
+        #         loss_weight = loss_weight + torch.sum(weights[i, j, :]*weights[i, j, :])
+        # loss_weight = loss_weight / (weights.size()[0] * weights.size()[1])
 
 
 
@@ -525,7 +533,8 @@ class get_loss(nn.Module):
                       loss_normal * w4 + \
                       loss_skelenormal * w5 + \
                       w6*loss_normaldist + \
-                      0.0*loss_normalsmooth
+                      0.0*loss_normalsmooth + \
+                      0.0
 
         return final_loss
 
