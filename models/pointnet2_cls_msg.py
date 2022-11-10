@@ -446,10 +446,11 @@ class get_loss(nn.Module):
                 skel_combine[i,k*skel_xyz.size()[1]:(k+1)*skel_xyz.size()[1],:] = skel_k[k,i,:,:]
         #不能只有方差，还要有距离!!!!
         # loss_skelenormal = chamfer_distance(skel_combine, skel_xyz)[0]
-        # loss_skelenormal = loss_skelenormal + 2.5*DF.closest_distance_with_batch(skel_combine, skel_xyz)/(skel_xyz.size()[0] * skel_xyz.size()[1] * 30)
-        loss_skelenormal = loss_skelenormal+ 50*DF.closest_distance_with_batch(skel_combine,l3_xyz)/(skel_xyz.size()[0] * skel_xyz.size()[1] * 30)
+        loss_skelenormal = loss_skelenormal + 50*DF.closest_distance_with_batch(skel_combine, skel_xyz)/(skel_xyz.size()[0] * skel_xyz.size()[1] * 30)
+        # loss_skelenormal = loss_skelenormal+ 10*DF.closest_distance_with_batch(skel_combine,l3_xyz)/(skel_xyz.size()[0] * skel_xyz.size()[1] * 30)
         # loss_skelenormal = loss_skelenormal+50*DF.closest_distance_with_batch( l3_xyz,skel_combine)/ ((l3_xyz.size()[0] * l3_xyz.size()[1]))
         loss_skelenormal = loss_skelenormal + 500 * DF.closest_distance_variance_with_batch(skel_combine,l3_xyz).sum()/skel_combine.size()[0]
+        loss_skelenormal = loss_skelenormal + 500 * DF.closest_distance_variance_with_batch(skel_combine,skel_xyz).sum()/skel_combine.size()[0]
         # loss_skelenormal = loss_skelenormal + 300 * DF.closest_distance_variance_with_batch(skel_combine,skel_xyz).sum()/skel_combine.size()[0]
         # loss_skelenormal = loss_skelenormal + 500 * DF.closest_distance_variance_with_batch(l3_xyz,skel_combine).sum()/l3_xyz.size()[0]
         loss_normaldist = 0
@@ -506,7 +507,7 @@ class get_loss(nn.Module):
         for i in range(skel_nori.size()[0]):
             for j in range(skel_nori.size()[1]):
                 for k in range(3):
-                    loss_normalsmooth = loss_normalsmooth + (skel_nori[i, j, :]-(skel_nori[i, knn_skel2skel[i, j, k], :])).norm()
+                    loss_normalsmooth = loss_normalsmooth + torch.cross(skel_nori[i, j, :],(skel_nori[i, knn_skel2skel[i, j, k], :])).norm()
         loss_normalsmooth = loss_normalsmooth / (skel_nori.size()[0] * skel_nori.size()[1] * 3)
 
 
@@ -524,7 +525,7 @@ class get_loss(nn.Module):
                       loss_normal * w4 + \
                       loss_skelenormal * w5 + \
                       w6*loss_normaldist + \
-                      0.1*loss_normalsmooth
+                      0.0*loss_normalsmooth
 
         return final_loss
 
