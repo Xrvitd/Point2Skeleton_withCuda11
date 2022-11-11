@@ -567,7 +567,7 @@ class get_loss(nn.Module):
                       w6*loss_normaldist + \
                       0.1*loss_normalsmooth + \
                       0.05 * loss_punet + \
-                      0.1*loss_combinepoint2sphere
+                      0.2*loss_combinepoint2sphere
 
         return final_loss
 
