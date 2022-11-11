@@ -489,9 +489,9 @@ class get_loss(nn.Module):
         h= 0.4
         for i in range(skel_nori.size()[0]):
             for j in range(skel_nori.size()[1]):
-                loss_normal3 = loss_normal3 + torch.exp(-1.0*(skel_nori[i, j, :].norm()*skel_nori[i, j, :].norm())/(h*h)) * (-1.0*skel_nori[i, j, :].norm())
-                # if skel_nori[i, j, :].norm() < 0.25:
-                #     loss_normal3 = loss_normal3 + penalty
+                loss_normal3 = loss_normal3 + torch.exp(-1.0*(skel_nori[i, j, :].norm()*skel_nori[i, j, :].norm())/(h*h)) * (-1.0*skel_nori[i, j, :].norm())+h
+                if skel_nori[i, j, :].norm() < 0.25:
+                    loss_normal3 = loss_normal3 + penalty
                 # loss_normal3 = loss_normal3 + (skel_nori[i, j, :].norm() - 0.75) * (skel_nori[i, j, :].norm() - 0.75)
         loss_normaldist = loss_normal3 / (skel_nori.size()[1])
 
@@ -570,9 +570,9 @@ class get_loss(nn.Module):
                       loss_normal * w4 + \
                       loss_skelenormal * w5 + \
                       w6*loss_normaldist + \
-                      0.1*loss_normalsmooth + \
-                      0.05 * loss_punet + \
-                      0.2*loss_combinepoint2sphere
+                      0.01*loss_normalsmooth + \
+                      0.01 * loss_punet + \
+                      0.01*loss_combinepoint2sphere
 
         return final_loss
 
