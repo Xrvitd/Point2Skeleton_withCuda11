@@ -444,9 +444,13 @@ class get_loss(nn.Module):
             skel_k[k] = skel_xyz + skel_nori * k/ 30.0
         skel_combine = torch.zeros(skel_xyz.size()[0], skel_xyz.size()[1]*30, skel_xyz.size()[2]).cuda()
 
+        # for i in range(skel_xyz.size()[0]):
+        #     for k in range(30):
+        #         skel_combine[i,k*skel_xyz.size()[1]:(k+1)*skel_xyz.size()[1],:] = skel_k[k,i,:,:]
         for i in range(skel_xyz.size()[0]):
-            for k in range(30):
-                skel_combine[i,k*skel_xyz.size()[1]:(k+1)*skel_xyz.size()[1],:] = skel_k[k,i,:,:]
+            for j in range(skel_xyz.size()[1]):
+                skel_combine[i,j*30:(j+1)*30,:] = skel_k[:,i,j,:]
+
 
         #不能只有方差，还要有距离!!!!
         # loss_skelenormal = chamfer_distance(skel_combine, skel_xyz)[0]
@@ -567,7 +571,7 @@ class get_loss(nn.Module):
                       w6*loss_normaldist + \
                       0.1*loss_normalsmooth + \
                       0.05 * loss_punet + \
-                      0.1*loss_combinepoint2sphere
+                      0.2*loss_combinepoint2sphere
 
         return final_loss
 
