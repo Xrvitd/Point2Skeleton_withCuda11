@@ -27,6 +27,7 @@ from data_utils.MyDataLoader import PCDataset
 from torch.utils.data import Dataset, DataLoader
 
 
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = BASE_DIR
 sys.path.append(os.path.join(ROOT_DIR, 'models'))
@@ -159,7 +160,7 @@ def main(args):
     # testDataLoader = torch.utils.data.DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=10)
     data_path = 'data/MyPoints/'
     # train_dataset = torch.utils.data.DataLoader( , batch_size=args.batch_size, shuffle=True, num_workers=10, drop_last=True)
-    pc_list_file = 'data/data-split/1000chair.txt'
+    pc_list_file = 'data/data-split/Single_human.txt'
     data_root = 'data/pointclouds/'
     pc_list = rw.load_data_id(pc_list_file)
     train_data = PCDataset(pc_list, data_root, args.num_point)
@@ -302,7 +303,7 @@ def main(args):
                 #     best_instance_acc_pre = 999999
                 loss = criterion(skel_xyz, skel_r, shape_cmb_features, skel_nori,
                                  weights, l3_xyz, l3_normals, target, None,
-                                 1.0, 0.4, 0.4, 0.1, 0.01, 0.3, 0.01)
+                                 1.0, 0.6, 0.2, 0.0, 0.01, 0.01, 0.01)
                 # loss = criterion(skel_xyz, skel_r, shape_cmb_features, skel_nori,
                 #                      weights, l3_xyz, l3_normals, target, None,
                 #                      0.3, 0.4, 0, 0.005, 1.0, 0.3)
@@ -353,6 +354,7 @@ def main(args):
                     torch.save(state, savepath)
                     # skel_nori = skel_nori / torch.norm(skel_nori, dim=2, keepdim=True)
                     for branch_idx in range(batch_size):
+                        rw.save_spheres(skel_xyz[branch_idx].cpu().detach().numpy(), skel_r[branch_idx].cpu().detach().numpy(), str(checkpoints_dir)+'/best_Radis%d.obj' % branch_idx)
                         with open(str(checkpoints_dir)+'/best_Points%d.xyz' % branch_idx, "w") as f:
                             for i in range(len(skel_xyz[branch_idx])):
                                 f.write("%f %f %f " % (skel_xyz[branch_idx][i][0], skel_xyz[branch_idx][i][1], skel_xyz[branch_idx][i][2]))
