@@ -198,6 +198,8 @@ class get_model(nn.Module):
         #         skel_nori[i, j, :] = skel_xyz[i, skel_norid[i, j], :] - skel_xyz[i, j, :]
         l3_normals = torch.sum(weights[:, :, :, None].transpose(1,2) * skel_nori[:, None, :, :], dim=2)
 
+
+
         #change to combination of skeleton points
 
         # x = l3_points.view(B, 1024)

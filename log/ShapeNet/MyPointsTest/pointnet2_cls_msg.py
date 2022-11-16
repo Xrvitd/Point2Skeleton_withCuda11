@@ -198,6 +198,8 @@ class get_model(nn.Module):
         #         skel_nori[i, j, :] = skel_xyz[i, skel_norid[i, j], :] - skel_xyz[i, j, :]
         l3_normals = torch.sum(weights[:, :, :, None].transpose(1,2) * skel_nori[:, None, :, :], dim=2)
 
+
+
         #change to combination of skeleton points
 
         # x = l3_points.view(B, 1024)
@@ -582,8 +584,8 @@ class get_loss(nn.Module):
                       loss_skelenormal * w5 + \
                       w6*loss_normaldist + \
                       0.00*loss_normalsmooth + \
-                      0.01 * loss_punet + \
-                      0.01*loss_combinepoint2sphere
+                      0.00 * loss_punet + \
+                      0.00*loss_combinepoint2sphere
 
         return final_loss
 

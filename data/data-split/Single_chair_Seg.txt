@@ -1,0 +1,8 @@
+SegSingleChair/best_Points0
+SegSingleChair/best_Points1
+SegSingleChair/best_Points2
+SegSingleChair/best_Points3
+SegSingleChair/best_Points4
+SegSingleChair/best_Points5
+SegSingleChair/best_Points6
+SegSingleChair/best_Points7
