@@ -1,10 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from pytorch3d.loss import chamfer_distance
 import DistFunc as DF
 import numpy as np
-import pytorch3d as p3d
 from pointnet2_utils import PointNetSetAbstractionMsg, PointNetSetAbstraction
 from scipy import spatial
 
@@ -21,91 +19,77 @@ class get_model(nn.Module):
         self.sa2 = PointNetSetAbstractionMsg(512, [0.4, 0.6], [32, 64], 64 * 2, [[64, 64, 128], [64, 64, 128]])
         self.sa3 = PointNetSetAbstractionMsg(512, [0.6, 0.8], [64, 128], 128 * 2, [[128, 128, 256], [128, 128, 256]])
 
-        input_channels = 6
+        input_channels = 256 + 256
         cvx_weights_modules = []
 
         cvx_weights_modules.append(nn.Dropout(0.2))
-        cvx_weights_modules.append(nn.Conv1d(in_channels=input_channels, out_channels=16, kernel_size=1))
-        cvx_weights_modules.append(nn.BatchNorm1d(16))
+        cvx_weights_modules.append(nn.Conv1d(in_channels=input_channels, out_channels=384, kernel_size=1))
+        cvx_weights_modules.append(nn.BatchNorm1d(384))
         cvx_weights_modules.append(nn.ReLU(inplace=True))
 
         cvx_weights_modules.append(nn.Dropout(0.2))
-        cvx_weights_modules.append(nn.Conv1d(in_channels=16, out_channels=64, kernel_size=1))
-        cvx_weights_modules.append(nn.BatchNorm1d(64))
+        cvx_weights_modules.append(nn.Conv1d(in_channels=384, out_channels=256, kernel_size=1))
+        cvx_weights_modules.append(nn.BatchNorm1d(256))
         cvx_weights_modules.append(nn.ReLU(inplace=True))
 
         cvx_weights_modules.append(nn.Dropout(0.2))
-        cvx_weights_modules.append(nn.Conv1d(in_channels=64, out_channels=64, kernel_size=1))
-        cvx_weights_modules.append(nn.BatchNorm1d(64))
+        cvx_weights_modules.append(nn.Conv1d(in_channels=256, out_channels=256, kernel_size=1))
+        cvx_weights_modules.append(nn.BatchNorm1d(256))
         cvx_weights_modules.append(nn.ReLU(inplace=True))
 
         cvx_weights_modules.append(nn.Dropout(0.2))
-        cvx_weights_modules.append(nn.Conv1d(in_channels=64, out_channels=16, kernel_size=1))
-        cvx_weights_modules.append(nn.BatchNorm1d(16))
+        cvx_weights_modules.append(nn.Conv1d(in_channels=256, out_channels=128, kernel_size=1))
+        cvx_weights_modules.append(nn.BatchNorm1d(128))
         cvx_weights_modules.append(nn.ReLU(inplace=True))
 
-        cvx_weights_modules.append(nn.Conv1d(in_channels=16, out_channels=num_class, kernel_size=1))
+        cvx_weights_modules.append(nn.Conv1d(in_channels=128, out_channels=num_class, kernel_size=1))
         cvx_weights_modules.append(nn.BatchNorm1d(num_class))
-        cvx_weights_modules.append(nn.Softmax(dim=1))
+        cvx_weights_modules.append(nn.Softmax(dim=2))
 
-        self.cvx_segmask_mlp = nn.Sequential(*cvx_weights_modules)
+        self.cvx_weights_mlp = nn.Sequential(*cvx_weights_modules)
 
 
     def forward(self, xyz,num_class):
         B, _, _ = xyz.shape
-        #B N=70 6
-        #combine dim 1 and 2
-        # xyz = xyz.view(B, -1)
+        if self.normal_channel:
+            norm = xyz[:, 3:, :]
+            xyz = xyz[:, :3, :]
+        else:
+            norm = None
+        l0_xyz, l0_points = self.sa0(xyz, norm)
+        l1_xyz, l1_points = self.sa1(l0_xyz, l0_points)
+        l2_xyz, l2_points = self.sa2(l1_xyz, l1_points)
+        l3_xyz, l3_points = self.sa3(l2_xyz, l2_points)
+        context_features = l3_points
+        weights = self.cvx_weights_mlp(context_features)  # need transpose?
+        l3_xyz = l3_xyz.transpose(1, 2)
+        skel_xyz = torch.sum(weights[:, :, :, None] * l3_xyz[:, None, :, :], dim=2)
 
-        # combine_feature = torch.zeros((B, num_class,self.num_skel_points*6)).cuda()
-        # for i in range(num_class):
-        #     combine_feature[:,i,:] = xyz
-        # combine_feature = combine_feature.transpose(1,2)
-
-
-        masks = self.cvx_segmask_mlp(xyz.transpose(1,2))  # need transpose?
-        # masks = masks.transpose(1,2)
-
-
-
-        return masks
+        return skel_xyz
 
 class get_loss(nn.Module):
     def __init__(self):
         super(get_loss, self).__init__()
 
-    def forward(self, xyz,num_class,masks):
+    def forward(self, xyz,num_class,skel_xyz):
         B, _, _ = xyz.shape
         norm = xyz[:, :, 3:6]
         xyz = xyz[:, :, :3]
         # B N=70 6   masks B num_class=10 70
         num_point = xyz.shape[1]
-        pointsWithLabel = torch.zeros((B, num_point, 7),requires_grad=True).cuda()
+        knn_shape = DF.knn_with_batch(xyz,xyz,15)
+        changingrate = torch.zeros((B,num_point),requires_grad=True).cuda()
+
         for i in range(B):
             for j in range(num_point):
-                pointsWithLabel[i, j, 0:3] = xyz[i, j, 0:3]
-                pointsWithLabel[i, j, 3:6] = norm[i, j, 0:3]
-                dist, idx = torch.max(masks[i, :, j], 0)
-                pointsWithLabel[i, j, 6] = idx
-        pointsByLabel = []
-        for i in range(B):
-            pointsByLabel.append([])
-            for j in range(num_class):
-                pointsByLabel[i].append(pointsWithLabel[i, pointsWithLabel[i, :, 6] == j, :])
-        loss_points = 0
-        loss_norm = 0
-        for i in range(B):
-            for j in range(num_class):
-                if pointsByLabel[i][j].shape[0] > 0:
-                    for k in range(pointsByLabel[i][j].shape[0]):
-                        loss_points += torch.sum(torch.norm(pointsByLabel[i][j][:, 0:3] - pointsByLabel[i][j][k, 0:3],dim = 1,keepdim= True )) / pointsByLabel[i][j].shape[0]
-                        loss_norm += torch.sum(torch.norm(pointsByLabel[i][j][:, 3:6] - pointsByLabel[i][j][k, 3:6],dim = 1,keepdim= True )) / pointsByLabel[i][j].shape[0]
-        loss_points = loss_points / (B*num_class)
-        loss_norm = loss_norm / (B*num_class)
+                changingrate[i,j]=torch.sum(torch.min(torch.norm(torch.linalg.cross(norm[i, j, None,:], norm[i, knn_shape[i, j, :], :]),dim = 1),torch.norm(torch.mul(norm[i, j, None,:], norm[i, knn_shape[i, j, :], :]),dim = 1)))
 
-
-
-
+        with open('changingrate.txt' , "w") as f:
+            i=0
+            for j in range(num_point):
+                f.write("%f %f %f %f %f %f\n" % (
+                xyz[i, j, 0], xyz[i, j, 1], xyz[i, j, 2],
+                (changingrate[i, j] - torch.min(changingrate[i, :])) / (torch.max(changingrate[i, :])- torch.min(changingrate[i, :]))*2,0,0))
 
         loss_cross =0
         # for i in range(xyz.shape[0]):

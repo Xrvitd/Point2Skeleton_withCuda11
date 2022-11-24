@@ -42,7 +42,7 @@ def parse_args():
     parser.add_argument('--num_category', default=6, type=int, help='training on ModelNet10/40')
     parser.add_argument('--epoch', default=10000, type=int, help='number of epoch in training')
     parser.add_argument('--learning_rate', default=0.01, type=float, help='learning rate in training')
-    parser.add_argument('--num_point', type=int, default=70, help='Point Number')
+    parser.add_argument('--num_point', type=int, default=2000, help='Point Number')
     parser.add_argument('--optimizer', type=str, default='Adam', help='optimizer for training')
     parser.add_argument('--log_dir', type=str, default=None, help='experiment root')
     parser.add_argument('--decay_rate', type=float, default=1e-5, help='decay rate')
@@ -160,7 +160,7 @@ def main(args):
     # testDataLoader = torch.utils.data.DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=10)
     data_path = 'data/MyPoints/'
     # train_dataset = torch.utils.data.DataLoader( , batch_size=args.batch_size, shuffle=True, num_workers=10, drop_last=True)
-    pc_list_file = 'data/data-split/Single_chair_Seg.txt'
+    pc_list_file = 'data/data-split/Single_chair.txt'
     data_root = 'data/pointclouds/'
     pc_list = rw.load_data_id(pc_list_file)
     train_data = PCDataset(pc_list, data_root, args.num_point)
@@ -269,7 +269,7 @@ def main(args):
             batch_pc = batch_pc.cuda().float()
             # global points, target
 
-            points = batch_pc
+            points = batch_pc[:,:,0:3]
             target = batch_pc
             # target = np.array(mypcs[batch_id*4:batch_id*4+4])
             # points = points.data.numpy()
@@ -277,7 +277,7 @@ def main(args):
             # points[:, :, 0:3] = provider.random_scale_point_cloud(points[:, :, 0:3])
             # points[:, :, 0:3] = provider.shift_point_cloud(points[:, :, 0:3])
             points = torch.Tensor(points)
-
+            points = points.transpose(2, 1)
             target = torch.Tensor(target) #.add.d
 
             if not args.use_cpu:
@@ -285,10 +285,10 @@ def main(args):
 
             # pred, trans_feat = classifier(points)
             # loss = criterion(pred, target, trans_feat)
-            masks = classifier(points,num_class)
+            skel_xyz = classifier(points,num_class)
 
 
-            loss = criterion(target,num_class,masks)
+            loss = criterion(target,num_class,skel_xyz)
             # loss.requires_grad = True
             loss_batch += loss.item()
             optimizer.zero_grad()

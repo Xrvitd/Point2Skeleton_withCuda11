@@ -4130,3 +4130,396 @@
 2022-11-16 01:48:49,913 - Model - INFO - Epoch 510 (510/10000):
 2022-11-16 01:48:50,037 - Model - INFO - Epoch 511 (511/10000):
 2022-11-16 01:48:50,163 - Model - INFO - Epoch 512 (512/10000):
+2022-11-24 15:36:51,473 - Model - INFO - PARAMETER ...
+2022-11-24 15:36:51,473 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=70, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 15:36:51,473 - Model - INFO - Load dataset ...
+2022-11-24 15:38:29,537 - Model - INFO - PARAMETER ...
+2022-11-24 15:38:29,537 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=70, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 15:38:29,537 - Model - INFO - Load dataset ...
+2022-11-24 15:41:57,338 - Model - INFO - PARAMETER ...
+2022-11-24 15:41:57,338 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=70, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 15:41:57,338 - Model - INFO - Load dataset ...
+2022-11-24 15:44:47,754 - Model - INFO - PARAMETER ...
+2022-11-24 15:44:47,754 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=70, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 15:44:47,754 - Model - INFO - Load dataset ...
+2022-11-24 15:44:53,910 - Model - INFO - PARAMETER ...
+2022-11-24 15:44:53,910 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=70, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 15:44:53,910 - Model - INFO - Load dataset ...
+2022-11-24 15:44:54,678 - Model - INFO - Start training...
+2022-11-24 15:44:54,678 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 15:44:58,103 - Model - INFO - Save model...
+2022-11-24 15:44:58,103 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 15:44:58,134 - Model - INFO - Epoch 2 (2/10000):
+2022-11-24 15:44:58,408 - Model - INFO - Epoch 3 (3/10000):
+2022-11-24 15:44:58,679 - Model - INFO - Save model...
+2022-11-24 15:44:58,679 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 15:44:58,705 - Model - INFO - Epoch 4 (4/10000):
+2022-11-24 15:44:58,979 - Model - INFO - Epoch 5 (5/10000):
+2022-11-24 15:44:59,251 - Model - INFO - Epoch 6 (6/10000):
+2022-11-24 15:44:59,525 - Model - INFO - Save model...
+2022-11-24 15:44:59,525 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 15:44:59,554 - Model - INFO - Epoch 7 (7/10000):
+2022-11-24 15:44:59,825 - Model - INFO - Epoch 8 (8/10000):
+2022-11-24 15:45:00,102 - Model - INFO - Epoch 9 (9/10000):
+2022-11-24 15:45:00,385 - Model - INFO - Epoch 10 (10/10000):
+2022-11-24 15:45:00,659 - Model - INFO - Epoch 11 (11/10000):
+2022-11-24 15:45:00,927 - Model - INFO - Epoch 12 (12/10000):
+2022-11-24 15:45:01,203 - Model - INFO - Epoch 13 (13/10000):
+2022-11-24 15:45:01,483 - Model - INFO - Epoch 14 (14/10000):
+2022-11-24 15:45:01,760 - Model - INFO - Epoch 15 (15/10000):
+2022-11-24 15:45:02,042 - Model - INFO - Epoch 16 (16/10000):
+2022-11-24 15:45:02,304 - Model - INFO - Epoch 17 (17/10000):
+2022-11-24 15:45:02,581 - Model - INFO - Epoch 18 (18/10000):
+2022-11-24 15:45:02,855 - Model - INFO - Epoch 19 (19/10000):
+2022-11-24 15:45:03,133 - Model - INFO - Epoch 20 (20/10000):
+2022-11-24 15:45:03,406 - Model - INFO - Epoch 21 (21/10000):
+2022-11-24 15:45:03,689 - Model - INFO - Epoch 22 (22/10000):
+2022-11-24 15:45:03,967 - Model - INFO - Epoch 23 (23/10000):
+2022-11-24 15:45:04,233 - Model - INFO - Save model...
+2022-11-24 15:45:04,234 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 15:45:04,262 - Model - INFO - Epoch 24 (24/10000):
+2022-11-24 15:45:04,536 - Model - INFO - Epoch 25 (25/10000):
+2022-11-24 15:45:04,809 - Model - INFO - Epoch 26 (26/10000):
+2022-11-24 15:45:05,083 - Model - INFO - Epoch 27 (27/10000):
+2022-11-24 15:45:05,376 - Model - INFO - Epoch 28 (28/10000):
+2022-11-24 15:45:05,635 - Model - INFO - Epoch 29 (29/10000):
+2022-11-24 15:45:05,919 - Model - INFO - Epoch 30 (30/10000):
+2022-11-24 15:45:06,199 - Model - INFO - Epoch 31 (31/10000):
+2022-11-24 15:45:06,475 - Model - INFO - Epoch 32 (32/10000):
+2022-11-24 15:45:06,747 - Model - INFO - Epoch 33 (33/10000):
+2022-11-24 15:45:07,009 - Model - INFO - Epoch 34 (34/10000):
+2022-11-24 15:45:07,279 - Model - INFO - Epoch 35 (35/10000):
+2022-11-24 15:45:07,549 - Model - INFO - Epoch 36 (36/10000):
+2022-11-24 15:45:07,824 - Model - INFO - Epoch 37 (37/10000):
+2022-11-24 15:45:08,103 - Model - INFO - Epoch 38 (38/10000):
+2022-11-24 15:45:08,383 - Model - INFO - Epoch 39 (39/10000):
+2022-11-24 15:45:08,650 - Model - INFO - Epoch 40 (40/10000):
+2022-11-24 15:45:08,926 - Model - INFO - Epoch 41 (41/10000):
+2022-11-24 15:45:09,198 - Model - INFO - Epoch 42 (42/10000):
+2022-11-24 15:45:09,472 - Model - INFO - Epoch 43 (43/10000):
+2022-11-24 15:45:09,753 - Model - INFO - Epoch 44 (44/10000):
+2022-11-24 15:45:10,044 - Model - INFO - Epoch 45 (45/10000):
+2022-11-24 15:45:10,324 - Model - INFO - Epoch 46 (46/10000):
+2022-11-24 15:45:10,601 - Model - INFO - Epoch 47 (47/10000):
+2022-11-24 15:45:10,887 - Model - INFO - Epoch 48 (48/10000):
+2022-11-24 15:45:11,175 - Model - INFO - Epoch 49 (49/10000):
+2022-11-24 15:45:11,492 - Model - INFO - Epoch 50 (50/10000):
+2022-11-24 15:45:11,792 - Model - INFO - Epoch 51 (51/10000):
+2022-11-24 15:45:12,110 - Model - INFO - Epoch 52 (52/10000):
+2022-11-24 15:45:12,386 - Model - INFO - Epoch 53 (53/10000):
+2022-11-24 15:45:12,665 - Model - INFO - Epoch 54 (54/10000):
+2022-11-24 15:45:12,939 - Model - INFO - Epoch 55 (55/10000):
+2022-11-24 15:45:13,236 - Model - INFO - Epoch 56 (56/10000):
+2022-11-24 15:45:13,550 - Model - INFO - Epoch 57 (57/10000):
+2022-11-24 15:45:13,823 - Model - INFO - Epoch 58 (58/10000):
+2022-11-24 15:45:14,097 - Model - INFO - Epoch 59 (59/10000):
+2022-11-24 15:45:14,371 - Model - INFO - Epoch 60 (60/10000):
+2022-11-24 15:45:14,633 - Model - INFO - Epoch 61 (61/10000):
+2022-11-24 15:45:14,898 - Model - INFO - Epoch 62 (62/10000):
+2022-11-24 15:45:15,177 - Model - INFO - Epoch 63 (63/10000):
+2022-11-24 15:45:15,462 - Model - INFO - Epoch 64 (64/10000):
+2022-11-24 15:45:15,730 - Model - INFO - Epoch 65 (65/10000):
+2022-11-24 15:45:16,001 - Model - INFO - Epoch 66 (66/10000):
+2022-11-24 15:45:16,289 - Model - INFO - Epoch 67 (67/10000):
+2022-11-24 15:45:16,580 - Model - INFO - Epoch 68 (68/10000):
+2022-11-24 15:45:16,860 - Model - INFO - Epoch 69 (69/10000):
+2022-11-24 15:45:17,146 - Model - INFO - Epoch 70 (70/10000):
+2022-11-24 15:45:17,413 - Model - INFO - Epoch 71 (71/10000):
+2022-11-24 15:45:17,683 - Model - INFO - Epoch 72 (72/10000):
+2022-11-24 15:45:17,952 - Model - INFO - Epoch 73 (73/10000):
+2022-11-24 15:45:18,222 - Model - INFO - Epoch 74 (74/10000):
+2022-11-24 15:45:18,505 - Model - INFO - Epoch 75 (75/10000):
+2022-11-24 15:45:18,784 - Model - INFO - Epoch 76 (76/10000):
+2022-11-24 15:45:19,067 - Model - INFO - Epoch 77 (77/10000):
+2022-11-24 15:45:19,339 - Model - INFO - Epoch 78 (78/10000):
+2022-11-24 15:45:19,597 - Model - INFO - Epoch 79 (79/10000):
+2022-11-24 15:45:19,896 - Model - INFO - Epoch 80 (80/10000):
+2022-11-24 15:45:20,217 - Model - INFO - Epoch 81 (81/10000):
+2022-11-24 15:45:20,483 - Model - INFO - Epoch 82 (82/10000):
+2022-11-24 15:45:20,756 - Model - INFO - Epoch 83 (83/10000):
+2022-11-24 15:45:21,047 - Model - INFO - Epoch 84 (84/10000):
+2022-11-24 15:45:21,318 - Model - INFO - Epoch 85 (85/10000):
+2022-11-24 15:45:21,577 - Model - INFO - Epoch 86 (86/10000):
+2022-11-24 15:45:21,840 - Model - INFO - Save model...
+2022-11-24 15:45:21,840 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 15:45:21,868 - Model - INFO - Epoch 87 (87/10000):
+2022-11-24 15:45:22,136 - Model - INFO - Epoch 88 (88/10000):
+2022-11-24 15:45:22,403 - Model - INFO - Epoch 89 (89/10000):
+2022-11-24 15:45:22,665 - Model - INFO - Epoch 90 (90/10000):
+2022-11-24 15:45:22,936 - Model - INFO - Epoch 91 (91/10000):
+2022-11-24 15:45:23,205 - Model - INFO - Epoch 92 (92/10000):
+2022-11-24 15:45:23,467 - Model - INFO - Save model...
+2022-11-24 15:45:23,468 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 15:45:23,498 - Model - INFO - Epoch 93 (93/10000):
+2022-11-24 15:45:23,786 - Model - INFO - Epoch 94 (94/10000):
+2022-11-24 15:45:24,072 - Model - INFO - Epoch 95 (95/10000):
+2022-11-24 15:45:24,372 - Model - INFO - Epoch 96 (96/10000):
+2022-11-24 15:45:24,761 - Model - INFO - Epoch 97 (97/10000):
+2022-11-24 15:45:25,040 - Model - INFO - Epoch 98 (98/10000):
+2022-11-24 15:45:25,314 - Model - INFO - Epoch 99 (99/10000):
+2022-11-24 15:45:25,596 - Model - INFO - Epoch 100 (100/10000):
+2022-11-24 15:45:25,892 - Model - INFO - Epoch 101 (101/10000):
+2022-11-24 15:45:26,167 - Model - INFO - Epoch 102 (102/10000):
+2022-11-24 15:45:26,452 - Model - INFO - Epoch 103 (103/10000):
+2022-11-24 15:45:26,741 - Model - INFO - Epoch 104 (104/10000):
+2022-11-24 15:45:27,028 - Model - INFO - Epoch 105 (105/10000):
+2022-11-24 15:45:27,310 - Model - INFO - Epoch 106 (106/10000):
+2022-11-24 15:45:27,600 - Model - INFO - Epoch 107 (107/10000):
+2022-11-24 15:45:27,911 - Model - INFO - Epoch 108 (108/10000):
+2022-11-24 15:45:28,207 - Model - INFO - Epoch 109 (109/10000):
+2022-11-24 15:45:28,500 - Model - INFO - Epoch 110 (110/10000):
+2022-11-24 15:45:28,828 - Model - INFO - Epoch 111 (111/10000):
+2022-11-24 15:45:29,122 - Model - INFO - Epoch 112 (112/10000):
+2022-11-24 15:45:29,401 - Model - INFO - Epoch 113 (113/10000):
+2022-11-24 15:45:29,674 - Model - INFO - Epoch 114 (114/10000):
+2022-11-24 15:45:29,964 - Model - INFO - Epoch 115 (115/10000):
+2022-11-24 15:45:30,255 - Model - INFO - Epoch 116 (116/10000):
+2022-11-24 15:45:30,539 - Model - INFO - Epoch 117 (117/10000):
+2022-11-24 15:45:30,823 - Model - INFO - Epoch 118 (118/10000):
+2022-11-24 15:45:31,106 - Model - INFO - Epoch 119 (119/10000):
+2022-11-24 15:45:31,392 - Model - INFO - Epoch 120 (120/10000):
+2022-11-24 15:45:31,681 - Model - INFO - Epoch 121 (121/10000):
+2022-11-24 15:45:31,964 - Model - INFO - Epoch 122 (122/10000):
+2022-11-24 15:45:32,245 - Model - INFO - Epoch 123 (123/10000):
+2022-11-24 15:45:32,525 - Model - INFO - Epoch 124 (124/10000):
+2022-11-24 15:45:32,814 - Model - INFO - Epoch 125 (125/10000):
+2022-11-24 15:45:33,113 - Model - INFO - Epoch 126 (126/10000):
+2022-11-24 15:45:33,391 - Model - INFO - Epoch 127 (127/10000):
+2022-11-24 15:45:33,677 - Model - INFO - Epoch 128 (128/10000):
+2022-11-24 15:45:33,962 - Model - INFO - Epoch 129 (129/10000):
+2022-11-24 15:45:34,243 - Model - INFO - Epoch 130 (130/10000):
+2022-11-24 15:45:34,532 - Model - INFO - Epoch 131 (131/10000):
+2022-11-24 15:45:34,817 - Model - INFO - Epoch 132 (132/10000):
+2022-11-24 15:45:35,096 - Model - INFO - Epoch 133 (133/10000):
+2022-11-24 15:45:35,377 - Model - INFO - Epoch 134 (134/10000):
+2022-11-24 15:45:35,649 - Model - INFO - Epoch 135 (135/10000):
+2022-11-24 15:45:35,936 - Model - INFO - Epoch 136 (136/10000):
+2022-11-24 15:45:36,212 - Model - INFO - Epoch 137 (137/10000):
+2022-11-24 15:45:36,478 - Model - INFO - Epoch 138 (138/10000):
+2022-11-24 15:45:36,756 - Model - INFO - Epoch 139 (139/10000):
+2022-11-24 15:45:37,034 - Model - INFO - Epoch 140 (140/10000):
+2022-11-24 15:45:37,323 - Model - INFO - Epoch 141 (141/10000):
+2022-11-24 15:45:37,612 - Model - INFO - Epoch 142 (142/10000):
+2022-11-24 15:45:37,905 - Model - INFO - Epoch 143 (143/10000):
+2022-11-24 15:45:38,202 - Model - INFO - Epoch 144 (144/10000):
+2022-11-24 15:45:38,481 - Model - INFO - Epoch 145 (145/10000):
+2022-11-24 15:45:38,758 - Model - INFO - Epoch 146 (146/10000):
+2022-11-24 15:45:39,030 - Model - INFO - Epoch 147 (147/10000):
+2022-11-24 15:45:39,303 - Model - INFO - Epoch 148 (148/10000):
+2022-11-24 15:45:39,570 - Model - INFO - Epoch 149 (149/10000):
+2022-11-24 15:45:39,838 - Model - INFO - Epoch 150 (150/10000):
+2022-11-24 15:45:40,125 - Model - INFO - Epoch 151 (151/10000):
+2022-11-24 15:45:40,419 - Model - INFO - Epoch 152 (152/10000):
+2022-11-24 15:45:40,694 - Model - INFO - Epoch 153 (153/10000):
+2022-11-24 15:45:40,962 - Model - INFO - Epoch 154 (154/10000):
+2022-11-24 15:45:41,242 - Model - INFO - Epoch 155 (155/10000):
+2022-11-24 15:45:41,536 - Model - INFO - Epoch 156 (156/10000):
+2022-11-24 15:45:41,818 - Model - INFO - Epoch 157 (157/10000):
+2022-11-24 15:45:42,098 - Model - INFO - Epoch 158 (158/10000):
+2022-11-24 15:45:42,359 - Model - INFO - Epoch 159 (159/10000):
+2022-11-24 15:45:42,628 - Model - INFO - Epoch 160 (160/10000):
+2022-11-24 15:45:42,899 - Model - INFO - Epoch 161 (161/10000):
+2022-11-24 15:45:43,168 - Model - INFO - Epoch 162 (162/10000):
+2022-11-24 15:45:43,442 - Model - INFO - Epoch 163 (163/10000):
+2022-11-24 15:45:43,718 - Model - INFO - Epoch 164 (164/10000):
+2022-11-24 15:45:44,008 - Model - INFO - Epoch 165 (165/10000):
+2022-11-24 15:45:44,277 - Model - INFO - Epoch 166 (166/10000):
+2022-11-24 15:45:44,546 - Model - INFO - Epoch 167 (167/10000):
+2022-11-24 15:45:44,817 - Model - INFO - Epoch 168 (168/10000):
+2022-11-24 15:45:45,095 - Model - INFO - Epoch 169 (169/10000):
+2022-11-24 15:45:45,365 - Model - INFO - Epoch 170 (170/10000):
+2022-11-24 15:45:45,632 - Model - INFO - Epoch 171 (171/10000):
+2022-11-24 15:45:45,899 - Model - INFO - Epoch 172 (172/10000):
+2022-11-24 15:45:46,181 - Model - INFO - Epoch 173 (173/10000):
+2022-11-24 15:45:46,459 - Model - INFO - Epoch 174 (174/10000):
+2022-11-24 15:45:46,754 - Model - INFO - Epoch 175 (175/10000):
+2022-11-24 15:45:47,047 - Model - INFO - Epoch 176 (176/10000):
+2022-11-24 15:45:47,316 - Model - INFO - Epoch 177 (177/10000):
+2022-11-24 15:45:47,590 - Model - INFO - Epoch 178 (178/10000):
+2022-11-24 15:45:47,870 - Model - INFO - Epoch 179 (179/10000):
+2022-11-24 15:45:48,135 - Model - INFO - Epoch 180 (180/10000):
+2022-11-24 15:45:48,404 - Model - INFO - Epoch 181 (181/10000):
+2022-11-24 15:45:48,677 - Model - INFO - Epoch 182 (182/10000):
+2022-11-24 15:45:48,947 - Model - INFO - Epoch 183 (183/10000):
+2022-11-24 15:45:49,210 - Model - INFO - Epoch 184 (184/10000):
+2022-11-24 15:45:49,483 - Model - INFO - Epoch 185 (185/10000):
+2022-11-24 15:45:49,763 - Model - INFO - Epoch 186 (186/10000):
+2022-11-24 15:45:50,052 - Model - INFO - Epoch 187 (187/10000):
+2022-11-24 15:45:50,323 - Model - INFO - Epoch 188 (188/10000):
+2022-11-24 15:45:50,602 - Model - INFO - Epoch 189 (189/10000):
+2022-11-24 15:45:50,881 - Model - INFO - Epoch 190 (190/10000):
+2022-11-24 15:45:51,159 - Model - INFO - Epoch 191 (191/10000):
+2022-11-24 15:45:51,435 - Model - INFO - Epoch 192 (192/10000):
+2022-11-24 15:45:51,704 - Model - INFO - Epoch 193 (193/10000):
+2022-11-24 15:45:51,978 - Model - INFO - Epoch 194 (194/10000):
+2022-11-24 15:45:52,240 - Model - INFO - Epoch 195 (195/10000):
+2022-11-24 15:45:52,501 - Model - INFO - Epoch 196 (196/10000):
+2022-11-24 15:45:52,772 - Model - INFO - Epoch 197 (197/10000):
+2022-11-24 15:45:53,052 - Model - INFO - Epoch 198 (198/10000):
+2022-11-24 15:45:53,331 - Model - INFO - Epoch 199 (199/10000):
+2022-11-24 15:45:53,624 - Model - INFO - Epoch 200 (200/10000):
+2022-11-24 15:45:53,899 - Model - INFO - Epoch 201 (201/10000):
+2022-11-24 15:45:54,178 - Model - INFO - Epoch 202 (202/10000):
+2022-11-24 15:45:54,467 - Model - INFO - Epoch 203 (203/10000):
+2022-11-24 15:45:54,750 - Model - INFO - Epoch 204 (204/10000):
+2022-11-24 15:45:55,029 - Model - INFO - Epoch 205 (205/10000):
+2022-11-24 15:45:55,307 - Model - INFO - Epoch 206 (206/10000):
+2022-11-24 15:45:55,586 - Model - INFO - Epoch 207 (207/10000):
+2022-11-24 15:45:55,860 - Model - INFO - Epoch 208 (208/10000):
+2022-11-24 15:45:56,138 - Model - INFO - Epoch 209 (209/10000):
+2022-11-24 15:45:56,422 - Model - INFO - Epoch 210 (210/10000):
+2022-11-24 15:45:56,698 - Model - INFO - Epoch 211 (211/10000):
+2022-11-24 15:45:56,989 - Model - INFO - Epoch 212 (212/10000):
+2022-11-24 15:45:57,270 - Model - INFO - Epoch 213 (213/10000):
+2022-11-24 15:45:57,551 - Model - INFO - Epoch 214 (214/10000):
+2022-11-24 15:45:57,826 - Model - INFO - Epoch 215 (215/10000):
+2022-11-24 15:45:58,104 - Model - INFO - Epoch 216 (216/10000):
+2022-11-24 15:45:58,389 - Model - INFO - Epoch 217 (217/10000):
+2022-11-24 15:45:58,670 - Model - INFO - Epoch 218 (218/10000):
+2022-11-24 15:45:58,972 - Model - INFO - Epoch 219 (219/10000):
+2022-11-24 15:45:59,260 - Model - INFO - Epoch 220 (220/10000):
+2022-11-24 15:45:59,538 - Model - INFO - Epoch 221 (221/10000):
+2022-11-24 15:45:59,811 - Model - INFO - Epoch 222 (222/10000):
+2022-11-24 15:46:00,096 - Model - INFO - Epoch 223 (223/10000):
+2022-11-24 15:46:00,384 - Model - INFO - Epoch 224 (224/10000):
+2022-11-24 15:46:00,647 - Model - INFO - Epoch 225 (225/10000):
+2022-11-24 15:46:00,917 - Model - INFO - Epoch 226 (226/10000):
+2022-11-24 15:46:01,203 - Model - INFO - Epoch 227 (227/10000):
+2022-11-24 15:46:01,504 - Model - INFO - Epoch 228 (228/10000):
+2022-11-24 15:46:01,772 - Model - INFO - Epoch 229 (229/10000):
+2022-11-24 15:46:02,059 - Model - INFO - Epoch 230 (230/10000):
+2022-11-24 15:46:02,347 - Model - INFO - Epoch 231 (231/10000):
+2022-11-24 15:46:02,620 - Model - INFO - Epoch 232 (232/10000):
+2022-11-24 15:46:02,891 - Model - INFO - Epoch 233 (233/10000):
+2022-11-24 15:46:03,163 - Model - INFO - Epoch 234 (234/10000):
+2022-11-24 15:46:03,444 - Model - INFO - Epoch 235 (235/10000):
+2022-11-24 15:46:03,734 - Model - INFO - Epoch 236 (236/10000):
+2022-11-24 15:46:04,011 - Model - INFO - Epoch 237 (237/10000):
+2022-11-24 15:46:04,281 - Model - INFO - Epoch 238 (238/10000):
+2022-11-24 15:46:04,554 - Model - INFO - Epoch 239 (239/10000):
+2022-11-24 15:46:04,846 - Model - INFO - Epoch 240 (240/10000):
+2022-11-24 15:46:05,117 - Model - INFO - Epoch 241 (241/10000):
+2022-11-24 15:46:05,397 - Model - INFO - Epoch 242 (242/10000):
+2022-11-24 15:46:05,686 - Model - INFO - Epoch 243 (243/10000):
+2022-11-24 15:46:05,971 - Model - INFO - Epoch 244 (244/10000):
+2022-11-24 15:46:06,265 - Model - INFO - Epoch 245 (245/10000):
+2022-11-24 15:46:06,556 - Model - INFO - Epoch 246 (246/10000):
+2022-11-24 15:46:06,833 - Model - INFO - Epoch 247 (247/10000):
+2022-11-24 15:46:07,123 - Model - INFO - Epoch 248 (248/10000):
+2022-11-24 15:46:07,392 - Model - INFO - Epoch 249 (249/10000):
+2022-11-24 15:46:07,659 - Model - INFO - Epoch 250 (250/10000):
+2022-11-24 15:46:07,935 - Model - INFO - Epoch 251 (251/10000):
+2022-11-24 15:46:08,227 - Model - INFO - Epoch 252 (252/10000):
+2022-11-24 15:46:08,512 - Model - INFO - Epoch 253 (253/10000):
+2022-11-24 15:46:08,783 - Model - INFO - Epoch 254 (254/10000):
+2022-11-24 15:46:09,063 - Model - INFO - Epoch 255 (255/10000):
+2022-11-24 15:46:09,338 - Model - INFO - Epoch 256 (256/10000):
+2022-11-24 15:46:09,612 - Model - INFO - Epoch 257 (257/10000):
+2022-11-24 15:46:09,898 - Model - INFO - Epoch 258 (258/10000):
+2022-11-24 15:46:10,178 - Model - INFO - Epoch 259 (259/10000):
+2022-11-24 15:46:10,451 - Model - INFO - Epoch 260 (260/10000):
+2022-11-24 15:46:10,741 - Model - INFO - Epoch 261 (261/10000):
+2022-11-24 15:46:11,025 - Model - INFO - Save model...
+2022-11-24 15:46:11,025 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 15:46:11,057 - Model - INFO - Epoch 262 (262/10000):
+2022-11-24 15:46:11,366 - Model - INFO - Epoch 263 (263/10000):
+2022-11-24 15:46:11,641 - Model - INFO - Epoch 264 (264/10000):
+2022-11-24 15:46:11,912 - Model - INFO - Epoch 265 (265/10000):
+2022-11-24 15:46:12,213 - Model - INFO - Epoch 266 (266/10000):
+2022-11-24 15:46:12,505 - Model - INFO - Epoch 267 (267/10000):
+2022-11-24 15:46:12,777 - Model - INFO - Epoch 268 (268/10000):
+2022-11-24 15:46:13,041 - Model - INFO - Epoch 269 (269/10000):
+2022-11-24 15:46:13,316 - Model - INFO - Epoch 270 (270/10000):
+2022-11-24 15:46:13,595 - Model - INFO - Epoch 271 (271/10000):
+2022-11-24 15:46:13,867 - Model - INFO - Epoch 272 (272/10000):
+2022-11-24 15:46:14,154 - Model - INFO - Epoch 273 (273/10000):
+2022-11-24 15:46:14,422 - Model - INFO - Epoch 274 (274/10000):
+2022-11-24 15:46:14,688 - Model - INFO - Epoch 275 (275/10000):
+2022-11-24 15:46:14,947 - Model - INFO - Epoch 276 (276/10000):
+2022-11-24 15:46:15,215 - Model - INFO - Epoch 277 (277/10000):
+2022-11-24 15:46:15,492 - Model - INFO - Epoch 278 (278/10000):
+2022-11-24 15:46:15,776 - Model - INFO - Epoch 279 (279/10000):
+2022-11-24 15:46:16,055 - Model - INFO - Epoch 280 (280/10000):
+2022-11-24 15:46:16,336 - Model - INFO - Epoch 281 (281/10000):
+2022-11-24 15:46:16,612 - Model - INFO - Epoch 282 (282/10000):
+2022-11-24 15:46:16,872 - Model - INFO - Epoch 283 (283/10000):
+2022-11-24 15:46:17,143 - Model - INFO - Epoch 284 (284/10000):
+2022-11-24 15:46:17,415 - Model - INFO - Epoch 285 (285/10000):
+2022-11-24 15:46:17,690 - Model - INFO - Epoch 286 (286/10000):
+2022-11-24 15:46:17,970 - Model - INFO - Epoch 287 (287/10000):
+2022-11-24 15:46:18,237 - Model - INFO - Epoch 288 (288/10000):
+2022-11-24 15:46:18,515 - Model - INFO - Epoch 289 (289/10000):
+2022-11-24 15:46:18,776 - Model - INFO - Epoch 290 (290/10000):
+2022-11-24 15:46:19,075 - Model - INFO - Epoch 291 (291/10000):
+2022-11-24 15:46:19,397 - Model - INFO - Epoch 292 (292/10000):
+2022-11-24 15:46:19,711 - Model - INFO - Epoch 293 (293/10000):
+2022-11-24 15:46:20,013 - Model - INFO - Epoch 294 (294/10000):
+2022-11-24 15:46:20,295 - Model - INFO - Epoch 295 (295/10000):
+2022-11-24 15:46:20,581 - Model - INFO - Epoch 296 (296/10000):
+2022-11-24 15:46:20,867 - Model - INFO - Epoch 297 (297/10000):
+2022-11-24 15:46:21,147 - Model - INFO - Epoch 298 (298/10000):
+2022-11-24 16:06:09,837 - Model - INFO - PARAMETER ...
+2022-11-24 16:06:09,837 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=70, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 16:06:09,837 - Model - INFO - Load dataset ...
+2022-11-24 16:06:10,629 - Model - INFO - Start training...
+2022-11-24 16:06:10,629 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 16:09:00,209 - Model - INFO - PARAMETER ...
+2022-11-24 16:09:00,209 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=70, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 16:09:00,209 - Model - INFO - Load dataset ...
+2022-11-24 16:09:00,919 - Model - INFO - Start training...
+2022-11-24 16:09:00,919 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 16:09:07,627 - Model - INFO - PARAMETER ...
+2022-11-24 16:09:07,627 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=70, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 16:09:07,627 - Model - INFO - Load dataset ...
+2022-11-24 16:09:08,322 - Model - INFO - Start training...
+2022-11-24 16:09:08,322 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 16:13:54,971 - Model - INFO - PARAMETER ...
+2022-11-24 16:13:54,971 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=70, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 16:13:54,971 - Model - INFO - Load dataset ...
+2022-11-24 16:13:55,669 - Model - INFO - Start training...
+2022-11-24 16:13:55,670 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 16:17:21,664 - Model - INFO - PARAMETER ...
+2022-11-24 16:17:21,664 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=70, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 16:17:21,664 - Model - INFO - Load dataset ...
+2022-11-24 16:17:22,354 - Model - INFO - Start training...
+2022-11-24 16:17:22,354 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 16:19:28,100 - Model - INFO - PARAMETER ...
+2022-11-24 16:19:28,100 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=2048, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 16:19:28,101 - Model - INFO - Load dataset ...
+2022-11-24 16:19:28,809 - Model - INFO - Start training...
+2022-11-24 16:19:28,809 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 16:31:17,374 - Model - INFO - PARAMETER ...
+2022-11-24 16:31:17,374 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=2048, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 16:31:17,374 - Model - INFO - Load dataset ...
+2022-11-24 16:31:18,080 - Model - INFO - Start training...
+2022-11-24 16:31:18,081 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 16:37:20,699 - Model - INFO - PARAMETER ...
+2022-11-24 16:37:20,699 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=2048, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 16:37:20,699 - Model - INFO - Load dataset ...
+2022-11-24 16:37:21,404 - Model - INFO - Start training...
+2022-11-24 16:37:21,404 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 16:40:20,598 - Model - INFO - PARAMETER ...
+2022-11-24 16:40:20,599 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=2048, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 16:40:20,599 - Model - INFO - Load dataset ...
+2022-11-24 16:40:21,283 - Model - INFO - Start training...
+2022-11-24 16:40:21,283 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 16:59:12,439 - Model - INFO - PARAMETER ...
+2022-11-24 16:59:12,439 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 16:59:12,440 - Model - INFO - Load dataset ...
+2022-11-24 16:59:13,161 - Model - INFO - Start training...
+2022-11-24 16:59:13,161 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 17:06:45,298 - Model - INFO - PARAMETER ...
+2022-11-24 17:06:45,298 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 17:06:45,298 - Model - INFO - Load dataset ...
+2022-11-24 17:06:45,984 - Model - INFO - Start training...
+2022-11-24 17:06:45,984 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 17:08:38,977 - Model - INFO - PARAMETER ...
+2022-11-24 17:08:38,977 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 17:08:38,977 - Model - INFO - Load dataset ...
+2022-11-24 17:08:39,691 - Model - INFO - Start training...
+2022-11-24 17:08:39,692 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 17:08:56,209 - Model - INFO - PARAMETER ...
+2022-11-24 17:08:56,210 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=6, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 17:08:56,210 - Model - INFO - Load dataset ...
+2022-11-24 17:08:56,935 - Model - INFO - Start training...
+2022-11-24 17:08:56,935 - Model - INFO - Epoch 1 (1/10000):
