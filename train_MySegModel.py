@@ -39,7 +39,7 @@ def parse_args():
     parser.add_argument('--gpu', type=str, default='0', help='specify gpu device')
     parser.add_argument('--batch_size', type=int, default=2, help='batch size in training')
     parser.add_argument('--model', default='pointnet_cls', help='model name [default: pointnet_cls]')
-    parser.add_argument('--num_category', default=6, type=int, help='training on ModelNet10/40')
+    parser.add_argument('--num_category', default=8, type=int, help='training on ModelNet10/40')
     parser.add_argument('--epoch', default=10000, type=int, help='number of epoch in training')
     parser.add_argument('--learning_rate', default=0.01, type=float, help='learning rate in training')
     parser.add_argument('--num_point', type=int, default=2000, help='Point Number')
@@ -316,10 +316,11 @@ def main(args):
                 torch.save(state, savepath)
 
                 pointsWithLabel = torch.zeros((batch_size, args.num_point, 4))
+                points = points.transpose(1,2)
                 for i in range(batch_size):
                     for j in range(args.num_point):
                         pointsWithLabel[i, j, 0:3] = points[i, j, 0:3]
-                        dist, idx = torch.max(masks[i, :, j],0)
+                        dist, idx = torch.min(torch.norm(skel_xyz[i]-points[i, j, 0:3],dim=1)**2,0)
                         pointsWithLabel[i, j, 3] = idx
                 #write different color for different class
                 colorbar = np.zeros((num_class, 3))
@@ -330,9 +331,11 @@ def main(args):
                 for i in range(batch_size):
                     with open(str(checkpoints_dir) + '/best_SegColors%d.txt' % i, "w") as f:
                         for j in range(args.num_point):
-
                             f.write("%f %f %f %d %d %d\n" % (pointsWithLabel[i, j, 0], pointsWithLabel[i, j, 1], pointsWithLabel[i, j, 2], colorbar[int(pointsWithLabel[i, j, 3]), 0], colorbar[int(pointsWithLabel[i, j, 3]), 1], colorbar[int(pointsWithLabel[i, j, 3]), 2]))
-
+                for i in range(batch_size):
+                    with open(str(checkpoints_dir) + '/best_CellCenters%d.xyz' % i, "w") as f:
+                        for j in range(skel_xyz.shape[1]):
+                            f.write("%f %f %f\n" % (skel_xyz[i, j, 0], skel_xyz[i, j, 1], skel_xyz[i, j, 2]))
         print('Skeletal training loss: %f' % loss_batch, 'Bestloss: %f' % best_instance_acc)
 
 

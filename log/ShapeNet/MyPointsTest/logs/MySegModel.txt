@@ -4523,3 +4523,1052 @@
 2022-11-24 17:08:56,210 - Model - INFO - Load dataset ...
 2022-11-24 17:08:56,935 - Model - INFO - Start training...
 2022-11-24 17:08:56,935 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 17:31:24,660 - Model - INFO - PARAMETER ...
+2022-11-24 17:31:24,660 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 17:31:24,660 - Model - INFO - Load dataset ...
+2022-11-24 17:31:25,330 - Model - INFO - Start training...
+2022-11-24 17:31:25,330 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 17:31:30,033 - Model - INFO - Save model...
+2022-11-24 17:31:30,033 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:32:35,973 - Model - INFO - PARAMETER ...
+2022-11-24 17:32:35,973 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 17:32:35,973 - Model - INFO - Load dataset ...
+2022-11-24 17:32:36,646 - Model - INFO - Start training...
+2022-11-24 17:32:36,646 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 17:32:41,073 - Model - INFO - Save model...
+2022-11-24 17:32:41,073 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:33:10,837 - Model - INFO - PARAMETER ...
+2022-11-24 17:33:10,837 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 17:33:10,837 - Model - INFO - Load dataset ...
+2022-11-24 17:33:11,529 - Model - INFO - Start training...
+2022-11-24 17:33:11,529 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 17:33:15,938 - Model - INFO - Save model...
+2022-11-24 17:33:15,939 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:33:16,780 - Model - INFO - Epoch 2 (2/10000):
+2022-11-24 17:33:19,699 - Model - INFO - Save model...
+2022-11-24 17:33:19,699 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:33:20,568 - Model - INFO - Epoch 3 (3/10000):
+2022-11-24 17:33:23,434 - Model - INFO - Save model...
+2022-11-24 17:33:23,434 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:33:24,309 - Model - INFO - Epoch 4 (4/10000):
+2022-11-24 17:33:27,177 - Model - INFO - Save model...
+2022-11-24 17:33:27,177 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:33:28,052 - Model - INFO - Epoch 5 (5/10000):
+2022-11-24 17:33:30,917 - Model - INFO - Save model...
+2022-11-24 17:33:30,917 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:33:31,784 - Model - INFO - Epoch 6 (6/10000):
+2022-11-24 17:33:34,653 - Model - INFO - Save model...
+2022-11-24 17:33:34,653 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:33:35,528 - Model - INFO - Epoch 7 (7/10000):
+2022-11-24 17:33:38,470 - Model - INFO - Save model...
+2022-11-24 17:33:38,470 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:33:39,442 - Model - INFO - Epoch 8 (8/10000):
+2022-11-24 17:33:42,452 - Model - INFO - Save model...
+2022-11-24 17:33:42,452 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:33:43,355 - Model - INFO - Epoch 9 (9/10000):
+2022-11-24 17:33:46,338 - Model - INFO - Save model...
+2022-11-24 17:33:46,338 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:33:47,252 - Model - INFO - Epoch 10 (10/10000):
+2022-11-24 17:33:50,201 - Model - INFO - Save model...
+2022-11-24 17:33:50,201 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:33:51,096 - Model - INFO - Epoch 11 (11/10000):
+2022-11-24 17:33:54,028 - Model - INFO - Save model...
+2022-11-24 17:33:54,028 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:33:54,909 - Model - INFO - Epoch 12 (12/10000):
+2022-11-24 17:33:57,847 - Model - INFO - Save model...
+2022-11-24 17:33:57,847 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:33:58,710 - Model - INFO - Epoch 13 (13/10000):
+2022-11-24 17:34:01,659 - Model - INFO - Save model...
+2022-11-24 17:34:01,659 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:34:02,575 - Model - INFO - Epoch 14 (14/10000):
+2022-11-24 17:34:05,512 - Model - INFO - Save model...
+2022-11-24 17:34:05,512 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:34:06,416 - Model - INFO - Epoch 15 (15/10000):
+2022-11-24 17:34:09,392 - Model - INFO - Epoch 16 (16/10000):
+2022-11-24 17:34:12,348 - Model - INFO - Save model...
+2022-11-24 17:34:12,348 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:34:13,229 - Model - INFO - Epoch 17 (17/10000):
+2022-11-24 17:34:16,137 - Model - INFO - Save model...
+2022-11-24 17:34:16,137 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:34:17,037 - Model - INFO - Epoch 18 (18/10000):
+2022-11-24 17:34:20,000 - Model - INFO - Save model...
+2022-11-24 17:34:20,000 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:34:20,926 - Model - INFO - Epoch 19 (19/10000):
+2022-11-24 17:34:23,954 - Model - INFO - Epoch 20 (20/10000):
+2022-11-24 17:34:26,886 - Model - INFO - Save model...
+2022-11-24 17:34:26,886 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:34:27,757 - Model - INFO - Epoch 21 (21/10000):
+2022-11-24 17:34:30,571 - Model - INFO - Save model...
+2022-11-24 17:34:30,571 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:34:31,399 - Model - INFO - Epoch 22 (22/10000):
+2022-11-24 17:34:34,240 - Model - INFO - Save model...
+2022-11-24 17:34:34,240 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:34:35,075 - Model - INFO - Epoch 23 (23/10000):
+2022-11-24 17:34:38,383 - Model - INFO - Save model...
+2022-11-24 17:34:38,383 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:34:39,281 - Model - INFO - Epoch 24 (24/10000):
+2022-11-24 17:34:43,021 - Model - INFO - Save model...
+2022-11-24 17:34:43,021 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:34:43,940 - Model - INFO - Epoch 25 (25/10000):
+2022-11-24 17:34:47,001 - Model - INFO - Save model...
+2022-11-24 17:34:47,001 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:34:47,865 - Model - INFO - Epoch 26 (26/10000):
+2022-11-24 17:34:51,214 - Model - INFO - Save model...
+2022-11-24 17:34:51,214 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:34:52,104 - Model - INFO - Epoch 27 (27/10000):
+2022-11-24 17:34:55,062 - Model - INFO - Save model...
+2022-11-24 17:34:55,062 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:34:55,936 - Model - INFO - Epoch 28 (28/10000):
+2022-11-24 17:34:58,897 - Model - INFO - Epoch 29 (29/10000):
+2022-11-24 17:35:01,828 - Model - INFO - Epoch 30 (30/10000):
+2022-11-24 17:35:04,774 - Model - INFO - Epoch 31 (31/10000):
+2022-11-24 17:35:07,674 - Model - INFO - Save model...
+2022-11-24 17:35:07,674 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:35:08,548 - Model - INFO - Epoch 32 (32/10000):
+2022-11-24 17:35:11,439 - Model - INFO - Epoch 33 (33/10000):
+2022-11-24 17:35:14,348 - Model - INFO - Save model...
+2022-11-24 17:35:14,348 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:35:15,238 - Model - INFO - Epoch 34 (34/10000):
+2022-11-24 17:35:18,278 - Model - INFO - Epoch 35 (35/10000):
+2022-11-24 17:35:21,556 - Model - INFO - Save model...
+2022-11-24 17:35:21,556 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:35:22,437 - Model - INFO - Epoch 36 (36/10000):
+2022-11-24 17:35:25,605 - Model - INFO - Save model...
+2022-11-24 17:35:25,605 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:35:26,535 - Model - INFO - Epoch 37 (37/10000):
+2022-11-24 17:35:32,032 - Model - INFO - Epoch 38 (38/10000):
+2022-11-24 17:35:36,596 - Model - INFO - Epoch 39 (39/10000):
+2022-11-24 17:35:41,412 - Model - INFO - Save model...
+2022-11-24 17:35:41,412 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:35:43,244 - Model - INFO - Epoch 40 (40/10000):
+2022-11-24 17:35:46,264 - Model - INFO - Epoch 41 (41/10000):
+2022-11-24 17:35:49,212 - Model - INFO - Epoch 42 (42/10000):
+2022-11-24 17:35:52,208 - Model - INFO - Save model...
+2022-11-24 17:35:52,208 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:35:53,095 - Model - INFO - Epoch 43 (43/10000):
+2022-11-24 17:35:56,460 - Model - INFO - Epoch 44 (44/10000):
+2022-11-24 17:36:00,043 - Model - INFO - Epoch 45 (45/10000):
+2022-11-24 17:36:03,623 - Model - INFO - Epoch 46 (46/10000):
+2022-11-24 17:36:11,038 - Model - INFO - Epoch 47 (47/10000):
+2022-11-24 17:36:16,739 - Model - INFO - Epoch 48 (48/10000):
+2022-11-24 17:36:22,463 - Model - INFO - Epoch 49 (49/10000):
+2022-11-24 17:36:26,551 - Model - INFO - Epoch 50 (50/10000):
+2022-11-24 17:36:30,163 - Model - INFO - Epoch 51 (51/10000):
+2022-11-24 17:36:32,964 - Model - INFO - Epoch 52 (52/10000):
+2022-11-24 17:36:35,768 - Model - INFO - Epoch 53 (53/10000):
+2022-11-24 17:36:38,655 - Model - INFO - Save model...
+2022-11-24 17:36:38,656 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:36:39,551 - Model - INFO - Epoch 54 (54/10000):
+2022-11-24 17:41:12,017 - Model - INFO - PARAMETER ...
+2022-11-24 17:41:12,017 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 17:41:12,017 - Model - INFO - Load dataset ...
+2022-11-24 17:41:12,720 - Model - INFO - Start training...
+2022-11-24 17:41:12,720 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 17:41:23,120 - Model - INFO - Save model...
+2022-11-24 17:41:23,120 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:41:23,960 - Model - INFO - Epoch 2 (2/10000):
+2022-11-24 17:41:33,092 - Model - INFO - Save model...
+2022-11-24 17:41:33,093 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:41:33,950 - Model - INFO - Epoch 3 (3/10000):
+2022-11-24 17:41:42,951 - Model - INFO - Save model...
+2022-11-24 17:41:42,952 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:41:43,813 - Model - INFO - Epoch 4 (4/10000):
+2022-11-24 17:41:52,770 - Model - INFO - Save model...
+2022-11-24 17:41:52,770 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:41:53,612 - Model - INFO - Epoch 5 (5/10000):
+2022-11-24 17:42:02,542 - Model - INFO - Save model...
+2022-11-24 17:42:02,542 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:42:03,379 - Model - INFO - Epoch 6 (6/10000):
+2022-11-24 17:42:12,340 - Model - INFO - Save model...
+2022-11-24 17:42:12,340 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:42:13,174 - Model - INFO - Epoch 7 (7/10000):
+2022-11-24 17:42:22,180 - Model - INFO - Save model...
+2022-11-24 17:42:22,180 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:42:23,022 - Model - INFO - Epoch 8 (8/10000):
+2022-11-24 17:42:31,999 - Model - INFO - Save model...
+2022-11-24 17:42:31,999 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:42:32,840 - Model - INFO - Epoch 9 (9/10000):
+2022-11-24 17:42:41,829 - Model - INFO - Save model...
+2022-11-24 17:42:41,830 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:42:42,686 - Model - INFO - Epoch 10 (10/10000):
+2022-11-24 17:42:51,699 - Model - INFO - Save model...
+2022-11-24 17:42:51,699 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:42:52,537 - Model - INFO - Epoch 11 (11/10000):
+2022-11-24 17:43:01,834 - Model - INFO - Save model...
+2022-11-24 17:43:01,835 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:43:02,711 - Model - INFO - Epoch 12 (12/10000):
+2022-11-24 17:43:11,749 - Model - INFO - Save model...
+2022-11-24 17:43:11,750 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:43:12,597 - Model - INFO - Epoch 13 (13/10000):
+2022-11-24 17:43:21,668 - Model - INFO - Save model...
+2022-11-24 17:43:21,668 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:43:22,510 - Model - INFO - Epoch 14 (14/10000):
+2022-11-24 17:43:31,565 - Model - INFO - Save model...
+2022-11-24 17:43:31,566 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:43:32,419 - Model - INFO - Epoch 15 (15/10000):
+2022-11-24 17:43:41,465 - Model - INFO - Save model...
+2022-11-24 17:43:41,465 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:43:42,316 - Model - INFO - Epoch 16 (16/10000):
+2022-11-24 17:43:51,427 - Model - INFO - Save model...
+2022-11-24 17:43:51,428 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:43:52,280 - Model - INFO - Epoch 17 (17/10000):
+2022-11-24 17:44:01,354 - Model - INFO - Epoch 18 (18/10000):
+2022-11-24 17:44:10,424 - Model - INFO - Save model...
+2022-11-24 17:44:10,424 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:44:11,263 - Model - INFO - Epoch 19 (19/10000):
+2022-11-24 17:44:20,333 - Model - INFO - Save model...
+2022-11-24 17:44:20,334 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:44:21,178 - Model - INFO - Epoch 20 (20/10000):
+2022-11-24 17:44:30,263 - Model - INFO - Epoch 21 (21/10000):
+2022-11-24 17:44:39,328 - Model - INFO - Save model...
+2022-11-24 17:44:39,328 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:44:40,174 - Model - INFO - Epoch 22 (22/10000):
+2022-11-24 17:44:49,293 - Model - INFO - Save model...
+2022-11-24 17:44:49,293 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:44:50,135 - Model - INFO - Epoch 23 (23/10000):
+2022-11-24 17:44:59,232 - Model - INFO - Save model...
+2022-11-24 17:44:59,232 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:45:00,085 - Model - INFO - Epoch 24 (24/10000):
+2022-11-24 17:45:09,083 - Model - INFO - Epoch 25 (25/10000):
+2022-11-24 17:45:18,133 - Model - INFO - Epoch 26 (26/10000):
+2022-11-24 17:45:27,191 - Model - INFO - Save model...
+2022-11-24 17:45:27,191 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:45:28,029 - Model - INFO - Epoch 27 (27/10000):
+2022-11-24 17:45:37,130 - Model - INFO - Save model...
+2022-11-24 17:45:37,131 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:45:37,982 - Model - INFO - Epoch 28 (28/10000):
+2022-11-24 17:45:47,077 - Model - INFO - Save model...
+2022-11-24 17:45:47,077 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:45:47,924 - Model - INFO - Epoch 29 (29/10000):
+2022-11-24 17:45:56,968 - Model - INFO - Save model...
+2022-11-24 17:45:56,968 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:45:57,821 - Model - INFO - Epoch 30 (30/10000):
+2022-11-24 17:46:06,887 - Model - INFO - Save model...
+2022-11-24 17:46:06,887 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:46:07,732 - Model - INFO - Epoch 31 (31/10000):
+2022-11-24 17:46:16,805 - Model - INFO - Save model...
+2022-11-24 17:46:16,805 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:46:17,653 - Model - INFO - Epoch 32 (32/10000):
+2022-11-24 17:46:26,757 - Model - INFO - Save model...
+2022-11-24 17:46:26,757 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:46:27,611 - Model - INFO - Epoch 33 (33/10000):
+2022-11-24 17:46:36,739 - Model - INFO - Epoch 34 (34/10000):
+2022-11-24 17:46:45,879 - Model - INFO - Save model...
+2022-11-24 17:46:45,880 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:46:46,725 - Model - INFO - Epoch 35 (35/10000):
+2022-11-24 17:46:55,839 - Model - INFO - Save model...
+2022-11-24 17:46:55,839 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:46:56,683 - Model - INFO - Epoch 36 (36/10000):
+2022-11-24 17:47:05,750 - Model - INFO - Save model...
+2022-11-24 17:47:05,750 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:47:06,589 - Model - INFO - Epoch 37 (37/10000):
+2022-11-24 17:47:15,674 - Model - INFO - Save model...
+2022-11-24 17:47:15,674 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:47:16,512 - Model - INFO - Epoch 38 (38/10000):
+2022-11-24 17:47:25,600 - Model - INFO - Epoch 39 (39/10000):
+2022-11-24 17:47:34,691 - Model - INFO - Save model...
+2022-11-24 17:47:34,692 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:47:35,537 - Model - INFO - Epoch 40 (40/10000):
+2022-11-24 17:47:44,616 - Model - INFO - Save model...
+2022-11-24 17:47:44,616 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:47:45,463 - Model - INFO - Epoch 41 (41/10000):
+2022-11-24 17:47:54,563 - Model - INFO - Epoch 42 (42/10000):
+2022-11-24 17:48:03,614 - Model - INFO - Save model...
+2022-11-24 17:48:03,614 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:48:04,463 - Model - INFO - Epoch 43 (43/10000):
+2022-11-24 17:48:13,546 - Model - INFO - Epoch 44 (44/10000):
+2022-11-24 17:48:22,627 - Model - INFO - Epoch 45 (45/10000):
+2022-11-24 17:48:31,675 - Model - INFO - Save model...
+2022-11-24 17:48:31,675 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:48:32,518 - Model - INFO - Epoch 46 (46/10000):
+2022-11-24 17:48:41,613 - Model - INFO - Epoch 47 (47/10000):
+2022-11-24 17:48:50,812 - Model - INFO - Epoch 48 (48/10000):
+2022-11-24 17:48:59,871 - Model - INFO - Epoch 49 (49/10000):
+2022-11-24 17:49:08,974 - Model - INFO - Epoch 50 (50/10000):
+2022-11-24 17:49:17,995 - Model - INFO - Epoch 51 (51/10000):
+2022-11-24 17:49:27,117 - Model - INFO - Save model...
+2022-11-24 17:49:27,118 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:49:27,963 - Model - INFO - Epoch 52 (52/10000):
+2022-11-24 17:49:37,080 - Model - INFO - Epoch 53 (53/10000):
+2022-11-24 17:49:46,209 - Model - INFO - Epoch 54 (54/10000):
+2022-11-24 17:49:55,350 - Model - INFO - Epoch 55 (55/10000):
+2022-11-24 17:50:04,490 - Model - INFO - Epoch 56 (56/10000):
+2022-11-24 17:50:13,625 - Model - INFO - Epoch 57 (57/10000):
+2022-11-24 17:50:22,706 - Model - INFO - Save model...
+2022-11-24 17:50:22,706 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:50:23,552 - Model - INFO - Epoch 58 (58/10000):
+2022-11-24 17:50:32,661 - Model - INFO - Epoch 59 (59/10000):
+2022-11-24 17:50:41,800 - Model - INFO - Epoch 60 (60/10000):
+2022-11-24 17:50:50,962 - Model - INFO - Save model...
+2022-11-24 17:50:50,963 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:50:51,808 - Model - INFO - Epoch 61 (61/10000):
+2022-11-24 17:51:00,945 - Model - INFO - Epoch 62 (62/10000):
+2022-11-24 17:51:10,035 - Model - INFO - Epoch 63 (63/10000):
+2022-11-24 17:51:19,112 - Model - INFO - Save model...
+2022-11-24 17:51:19,112 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:51:19,956 - Model - INFO - Epoch 64 (64/10000):
+2022-11-24 17:51:28,992 - Model - INFO - Epoch 65 (65/10000):
+2022-11-24 17:51:38,014 - Model - INFO - Epoch 66 (66/10000):
+2022-11-24 17:51:47,107 - Model - INFO - Epoch 67 (67/10000):
+2022-11-24 17:51:56,171 - Model - INFO - Epoch 68 (68/10000):
+2022-11-24 17:52:05,230 - Model - INFO - Epoch 69 (69/10000):
+2022-11-24 17:52:14,319 - Model - INFO - Epoch 70 (70/10000):
+2022-11-24 17:52:23,400 - Model - INFO - Save model...
+2022-11-24 17:52:23,400 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:52:24,245 - Model - INFO - Epoch 71 (71/10000):
+2022-11-24 17:52:33,300 - Model - INFO - Epoch 72 (72/10000):
+2022-11-24 17:52:42,371 - Model - INFO - Epoch 73 (73/10000):
+2022-11-24 17:52:51,422 - Model - INFO - Epoch 74 (74/10000):
+2022-11-24 17:53:00,486 - Model - INFO - Epoch 75 (75/10000):
+2022-11-24 17:53:09,561 - Model - INFO - Epoch 76 (76/10000):
+2022-11-24 17:53:18,668 - Model - INFO - Save model...
+2022-11-24 17:53:18,668 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:53:19,513 - Model - INFO - Epoch 77 (77/10000):
+2022-11-24 17:53:28,611 - Model - INFO - Epoch 78 (78/10000):
+2022-11-24 17:53:37,750 - Model - INFO - Epoch 79 (79/10000):
+2022-11-24 17:53:46,858 - Model - INFO - Epoch 80 (80/10000):
+2022-11-24 17:53:55,943 - Model - INFO - Epoch 81 (81/10000):
+2022-11-24 17:54:05,052 - Model - INFO - Epoch 82 (82/10000):
+2022-11-24 17:54:14,156 - Model - INFO - Epoch 83 (83/10000):
+2022-11-24 17:54:23,665 - Model - INFO - Epoch 84 (84/10000):
+2022-11-24 17:54:33,549 - Model - INFO - Save model...
+2022-11-24 17:54:33,550 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:54:34,450 - Model - INFO - Epoch 85 (85/10000):
+2022-11-24 17:54:45,127 - Model - INFO - Epoch 86 (86/10000):
+2022-11-24 17:54:59,306 - Model - INFO - Epoch 87 (87/10000):
+2022-11-24 17:55:10,503 - Model - INFO - Epoch 88 (88/10000):
+2022-11-24 17:55:20,010 - Model - INFO - Save model...
+2022-11-24 17:55:20,010 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:55:20,862 - Model - INFO - Epoch 89 (89/10000):
+2022-11-24 17:55:30,352 - Model - INFO - Epoch 90 (90/10000):
+2022-11-24 17:55:39,729 - Model - INFO - Epoch 91 (91/10000):
+2022-11-24 17:55:49,098 - Model - INFO - Epoch 92 (92/10000):
+2022-11-24 17:55:58,347 - Model - INFO - Epoch 93 (93/10000):
+2022-11-24 17:56:07,831 - Model - INFO - Save model...
+2022-11-24 17:56:07,831 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:56:08,684 - Model - INFO - Epoch 94 (94/10000):
+2022-11-24 17:56:18,397 - Model - INFO - Epoch 95 (95/10000):
+2022-11-24 17:56:27,695 - Model - INFO - Epoch 96 (96/10000):
+2022-11-24 17:56:37,673 - Model - INFO - Epoch 97 (97/10000):
+2022-11-24 17:56:47,254 - Model - INFO - Epoch 98 (98/10000):
+2022-11-24 17:56:55,035 - Model - INFO - PARAMETER ...
+2022-11-24 17:56:55,035 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 17:56:55,035 - Model - INFO - Load dataset ...
+2022-11-24 17:56:55,711 - Model - INFO - Start training...
+2022-11-24 17:56:55,711 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 17:57:07,307 - Model - INFO - Save model...
+2022-11-24 17:57:07,307 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:57:08,175 - Model - INFO - Epoch 2 (2/10000):
+2022-11-24 17:57:18,335 - Model - INFO - Save model...
+2022-11-24 17:57:18,335 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:57:19,213 - Model - INFO - Epoch 3 (3/10000):
+2022-11-24 17:57:29,439 - Model - INFO - Save model...
+2022-11-24 17:57:29,439 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:57:30,310 - Model - INFO - Epoch 4 (4/10000):
+2022-11-24 17:57:40,435 - Model - INFO - Save model...
+2022-11-24 17:57:40,436 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:57:41,308 - Model - INFO - Epoch 5 (5/10000):
+2022-11-24 17:57:51,392 - Model - INFO - Save model...
+2022-11-24 17:57:51,394 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:57:52,262 - Model - INFO - Epoch 6 (6/10000):
+2022-11-24 17:58:02,412 - Model - INFO - Epoch 7 (7/10000):
+2022-11-24 17:58:12,614 - Model - INFO - Save model...
+2022-11-24 17:58:12,614 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:58:13,484 - Model - INFO - Epoch 8 (8/10000):
+2022-11-24 17:58:23,618 - Model - INFO - Save model...
+2022-11-24 17:58:23,618 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:58:24,492 - Model - INFO - Epoch 9 (9/10000):
+2022-11-24 17:58:34,656 - Model - INFO - Save model...
+2022-11-24 17:58:34,656 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:58:35,529 - Model - INFO - Epoch 10 (10/10000):
+2022-11-24 17:58:46,081 - Model - INFO - Save model...
+2022-11-24 17:58:46,081 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:58:47,326 - Model - INFO - Epoch 11 (11/10000):
+2022-11-24 17:59:00,459 - Model - INFO - Save model...
+2022-11-24 17:59:00,459 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:59:02,034 - Model - INFO - Epoch 12 (12/10000):
+2022-11-24 17:59:15,222 - Model - INFO - Save model...
+2022-11-24 17:59:15,222 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:59:16,083 - Model - INFO - Epoch 13 (13/10000):
+2022-11-24 17:59:26,204 - Model - INFO - Epoch 14 (14/10000):
+2022-11-24 17:59:36,364 - Model - INFO - Save model...
+2022-11-24 17:59:36,364 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 17:59:37,229 - Model - INFO - Epoch 15 (15/10000):
+2022-11-24 17:59:48,226 - Model - INFO - Epoch 16 (16/10000):
+2022-11-24 18:00:00,630 - Model - INFO - Save model...
+2022-11-24 18:00:00,630 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:00:01,522 - Model - INFO - Epoch 17 (17/10000):
+2022-11-24 18:00:17,613 - Model - INFO - Save model...
+2022-11-24 18:00:17,613 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:00:18,565 - Model - INFO - Epoch 18 (18/10000):
+2022-11-24 18:00:29,494 - Model - INFO - Save model...
+2022-11-24 18:00:29,494 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:00:30,402 - Model - INFO - Epoch 19 (19/10000):
+2022-11-24 18:00:40,704 - Model - INFO - Save model...
+2022-11-24 18:00:40,704 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:00:41,661 - Model - INFO - Epoch 20 (20/10000):
+2022-11-24 18:00:51,969 - Model - INFO - Save model...
+2022-11-24 18:00:51,969 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:00:52,903 - Model - INFO - Epoch 21 (21/10000):
+2022-11-24 18:01:00,936 - Model - INFO - PARAMETER ...
+2022-11-24 18:01:00,936 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-24 18:01:00,937 - Model - INFO - Load dataset ...
+2022-11-24 18:01:01,629 - Model - INFO - Start training...
+2022-11-24 18:01:01,629 - Model - INFO - Epoch 1 (1/10000):
+2022-11-24 18:01:12,967 - Model - INFO - Save model...
+2022-11-24 18:01:12,968 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:01:13,777 - Model - INFO - Epoch 2 (2/10000):
+2022-11-24 18:01:23,750 - Model - INFO - Epoch 3 (3/10000):
+2022-11-24 18:01:33,751 - Model - INFO - Epoch 4 (4/10000):
+2022-11-24 18:01:43,691 - Model - INFO - Save model...
+2022-11-24 18:01:43,691 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:01:44,534 - Model - INFO - Epoch 5 (5/10000):
+2022-11-24 18:01:54,453 - Model - INFO - Save model...
+2022-11-24 18:01:54,453 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:01:55,306 - Model - INFO - Epoch 6 (6/10000):
+2022-11-24 18:02:05,238 - Model - INFO - Save model...
+2022-11-24 18:02:05,238 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:02:06,094 - Model - INFO - Epoch 7 (7/10000):
+2022-11-24 18:02:16,030 - Model - INFO - Save model...
+2022-11-24 18:02:16,030 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:02:16,871 - Model - INFO - Epoch 8 (8/10000):
+2022-11-24 18:02:26,820 - Model - INFO - Save model...
+2022-11-24 18:02:26,820 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:02:27,664 - Model - INFO - Epoch 9 (9/10000):
+2022-11-24 18:02:37,606 - Model - INFO - Save model...
+2022-11-24 18:02:37,606 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:02:38,463 - Model - INFO - Epoch 10 (10/10000):
+2022-11-24 18:02:48,473 - Model - INFO - Save model...
+2022-11-24 18:02:48,473 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:02:49,327 - Model - INFO - Epoch 11 (11/10000):
+2022-11-24 18:02:59,392 - Model - INFO - Save model...
+2022-11-24 18:02:59,392 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:03:00,284 - Model - INFO - Epoch 12 (12/10000):
+2022-11-24 18:03:10,332 - Model - INFO - Epoch 13 (13/10000):
+2022-11-24 18:03:20,406 - Model - INFO - Save model...
+2022-11-24 18:03:20,406 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:03:21,305 - Model - INFO - Epoch 14 (14/10000):
+2022-11-24 18:03:31,369 - Model - INFO - Save model...
+2022-11-24 18:03:31,369 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:03:32,252 - Model - INFO - Epoch 15 (15/10000):
+2022-11-24 18:03:42,351 - Model - INFO - Save model...
+2022-11-24 18:03:42,351 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:03:43,231 - Model - INFO - Epoch 16 (16/10000):
+2022-11-24 18:03:53,331 - Model - INFO - Save model...
+2022-11-24 18:03:53,331 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:03:54,209 - Model - INFO - Epoch 17 (17/10000):
+2022-11-24 18:04:04,279 - Model - INFO - Epoch 18 (18/10000):
+2022-11-24 18:04:14,386 - Model - INFO - Epoch 19 (19/10000):
+2022-11-24 18:04:24,441 - Model - INFO - Save model...
+2022-11-24 18:04:24,442 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:04:25,326 - Model - INFO - Epoch 20 (20/10000):
+2022-11-24 18:04:35,406 - Model - INFO - Save model...
+2022-11-24 18:04:35,406 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:04:36,303 - Model - INFO - Epoch 21 (21/10000):
+2022-11-24 18:04:46,351 - Model - INFO - Save model...
+2022-11-24 18:04:46,351 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:04:47,241 - Model - INFO - Epoch 22 (22/10000):
+2022-11-24 18:04:57,329 - Model - INFO - Save model...
+2022-11-24 18:04:57,329 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:04:58,213 - Model - INFO - Epoch 23 (23/10000):
+2022-11-24 18:05:08,297 - Model - INFO - Save model...
+2022-11-24 18:05:08,298 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-24 18:05:09,219 - Model - INFO - Epoch 24 (24/10000):
+2022-11-24 18:05:20,628 - Model - INFO - Epoch 25 (25/10000):
+2022-11-24 18:05:31,537 - Model - INFO - Epoch 26 (26/10000):
+2022-11-24 18:05:44,288 - Model - INFO - Epoch 27 (27/10000):
+2022-11-25 10:51:45,949 - Model - INFO - PARAMETER ...
+2022-11-25 10:51:45,949 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-25 10:51:45,949 - Model - INFO - Load dataset ...
+2022-11-25 10:51:46,633 - Model - INFO - Start training...
+2022-11-25 10:51:46,633 - Model - INFO - Epoch 1 (1/10000):
+2022-11-25 10:52:55,458 - Model - INFO - PARAMETER ...
+2022-11-25 10:52:55,459 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-25 10:52:55,459 - Model - INFO - Load dataset ...
+2022-11-25 10:52:56,144 - Model - INFO - Start training...
+2022-11-25 10:52:56,144 - Model - INFO - Epoch 1 (1/10000):
+2022-11-25 10:53:12,995 - Model - INFO - PARAMETER ...
+2022-11-25 10:53:12,995 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-25 10:53:12,995 - Model - INFO - Load dataset ...
+2022-11-25 10:53:13,815 - Model - INFO - Start training...
+2022-11-25 10:53:13,815 - Model - INFO - Epoch 1 (1/10000):
+2022-11-25 10:53:48,895 - Model - INFO - PARAMETER ...
+2022-11-25 10:53:48,896 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-25 10:53:48,896 - Model - INFO - Load dataset ...
+2022-11-25 10:53:49,581 - Model - INFO - Start training...
+2022-11-25 10:53:49,581 - Model - INFO - Epoch 1 (1/10000):
+2022-11-25 10:54:15,600 - Model - INFO - PARAMETER ...
+2022-11-25 10:54:15,600 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-25 10:54:15,600 - Model - INFO - Load dataset ...
+2022-11-25 10:54:16,288 - Model - INFO - Start training...
+2022-11-25 10:54:16,288 - Model - INFO - Epoch 1 (1/10000):
+2022-11-25 10:54:49,701 - Model - INFO - PARAMETER ...
+2022-11-25 10:54:49,701 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-25 10:54:49,702 - Model - INFO - Load dataset ...
+2022-11-25 10:54:50,409 - Model - INFO - Start training...
+2022-11-25 10:54:50,409 - Model - INFO - Epoch 1 (1/10000):
+2022-11-25 10:55:17,822 - Model - INFO - PARAMETER ...
+2022-11-25 10:55:17,822 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-25 10:55:17,822 - Model - INFO - Load dataset ...
+2022-11-25 10:55:18,489 - Model - INFO - Start training...
+2022-11-25 10:55:18,489 - Model - INFO - Epoch 1 (1/10000):
+2022-11-25 10:58:33,624 - Model - INFO - PARAMETER ...
+2022-11-25 10:58:33,624 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-25 10:58:33,624 - Model - INFO - Load dataset ...
+2022-11-25 10:58:34,297 - Model - INFO - Start training...
+2022-11-25 10:58:34,297 - Model - INFO - Epoch 1 (1/10000):
+2022-11-25 10:58:48,384 - Model - INFO - Save model...
+2022-11-25 10:58:48,385 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 10:58:49,302 - Model - INFO - Epoch 2 (2/10000):
+2022-11-25 10:59:02,155 - Model - INFO - Save model...
+2022-11-25 10:59:02,156 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 10:59:03,089 - Model - INFO - Epoch 3 (3/10000):
+2022-11-25 10:59:15,965 - Model - INFO - Save model...
+2022-11-25 10:59:15,965 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 10:59:16,894 - Model - INFO - Epoch 4 (4/10000):
+2022-11-25 10:59:29,738 - Model - INFO - Save model...
+2022-11-25 10:59:29,738 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 10:59:30,731 - Model - INFO - Epoch 5 (5/10000):
+2022-11-25 10:59:43,677 - Model - INFO - Save model...
+2022-11-25 10:59:43,678 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 10:59:44,606 - Model - INFO - Epoch 6 (6/10000):
+2022-11-25 10:59:57,695 - Model - INFO - Save model...
+2022-11-25 10:59:57,695 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 10:59:58,628 - Model - INFO - Epoch 7 (7/10000):
+2022-11-25 11:00:11,662 - Model - INFO - Save model...
+2022-11-25 11:00:11,663 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:00:12,600 - Model - INFO - Epoch 8 (8/10000):
+2022-11-25 11:00:25,726 - Model - INFO - Save model...
+2022-11-25 11:00:25,727 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:00:26,666 - Model - INFO - Epoch 9 (9/10000):
+2022-11-25 11:00:39,697 - Model - INFO - Save model...
+2022-11-25 11:00:39,697 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:00:40,635 - Model - INFO - Epoch 10 (10/10000):
+2022-11-25 11:00:53,782 - Model - INFO - Save model...
+2022-11-25 11:00:53,784 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:00:54,720 - Model - INFO - Epoch 11 (11/10000):
+2022-11-25 11:01:07,841 - Model - INFO - Save model...
+2022-11-25 11:01:07,841 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:01:08,780 - Model - INFO - Epoch 12 (12/10000):
+2022-11-25 11:01:21,895 - Model - INFO - Save model...
+2022-11-25 11:01:21,896 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:01:22,831 - Model - INFO - Epoch 13 (13/10000):
+2022-11-25 11:01:35,895 - Model - INFO - Save model...
+2022-11-25 11:01:35,896 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:01:36,839 - Model - INFO - Epoch 14 (14/10000):
+2022-11-25 11:01:49,947 - Model - INFO - Save model...
+2022-11-25 11:01:49,948 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:01:50,895 - Model - INFO - Epoch 15 (15/10000):
+2022-11-25 11:02:03,999 - Model - INFO - Save model...
+2022-11-25 11:02:04,000 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:02:04,936 - Model - INFO - Epoch 16 (16/10000):
+2022-11-25 11:02:18,027 - Model - INFO - Save model...
+2022-11-25 11:02:18,028 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:02:18,967 - Model - INFO - Epoch 17 (17/10000):
+2022-11-25 11:02:32,012 - Model - INFO - Save model...
+2022-11-25 11:02:32,013 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:02:32,955 - Model - INFO - Epoch 18 (18/10000):
+2022-11-25 11:02:46,180 - Model - INFO - Save model...
+2022-11-25 11:02:46,180 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:02:47,145 - Model - INFO - Epoch 19 (19/10000):
+2022-11-25 11:03:01,271 - Model - INFO - Epoch 20 (20/10000):
+2022-11-25 11:03:14,967 - Model - INFO - Epoch 21 (21/10000):
+2022-11-25 11:03:28,644 - Model - INFO - Save model...
+2022-11-25 11:03:28,644 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:03:29,617 - Model - INFO - Epoch 22 (22/10000):
+2022-11-25 11:03:43,529 - Model - INFO - Epoch 23 (23/10000):
+2022-11-25 11:03:57,292 - Model - INFO - Save model...
+2022-11-25 11:03:57,293 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:03:58,232 - Model - INFO - Epoch 24 (24/10000):
+2022-11-25 11:04:11,433 - Model - INFO - Epoch 25 (25/10000):
+2022-11-25 11:04:24,462 - Model - INFO - Epoch 26 (26/10000):
+2022-11-25 11:04:37,529 - Model - INFO - Save model...
+2022-11-25 11:04:37,529 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:04:38,467 - Model - INFO - Epoch 27 (27/10000):
+2022-11-25 11:04:51,527 - Model - INFO - Save model...
+2022-11-25 11:04:51,527 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:04:52,457 - Model - INFO - Epoch 28 (28/10000):
+2022-11-25 11:05:05,556 - Model - INFO - Save model...
+2022-11-25 11:05:05,556 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:05:06,497 - Model - INFO - Epoch 29 (29/10000):
+2022-11-25 11:05:20,392 - Model - INFO - Save model...
+2022-11-25 11:05:20,392 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:05:21,364 - Model - INFO - Epoch 30 (30/10000):
+2022-11-25 11:07:40,248 - Model - INFO - PARAMETER ...
+2022-11-25 11:07:40,249 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-25 11:07:40,249 - Model - INFO - Load dataset ...
+2022-11-25 11:07:40,901 - Model - INFO - Start training...
+2022-11-25 11:07:40,902 - Model - INFO - Epoch 1 (1/10000):
+2022-11-25 11:07:52,171 - Model - INFO - Save model...
+2022-11-25 11:07:52,172 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:07:52,965 - Model - INFO - Epoch 2 (2/10000):
+2022-11-25 11:08:02,879 - Model - INFO - Epoch 3 (3/10000):
+2022-11-25 11:08:12,846 - Model - INFO - Epoch 4 (4/10000):
+2022-11-25 11:08:22,749 - Model - INFO - Save model...
+2022-11-25 11:08:22,749 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:08:23,558 - Model - INFO - Epoch 5 (5/10000):
+2022-11-25 11:08:33,475 - Model - INFO - Save model...
+2022-11-25 11:08:33,475 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:08:34,306 - Model - INFO - Epoch 6 (6/10000):
+2022-11-25 11:08:44,233 - Model - INFO - Save model...
+2022-11-25 11:08:44,233 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:08:45,074 - Model - INFO - Epoch 7 (7/10000):
+2022-11-25 11:08:55,137 - Model - INFO - Save model...
+2022-11-25 11:08:55,137 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:08:55,971 - Model - INFO - Epoch 8 (8/10000):
+2022-11-25 11:09:05,950 - Model - INFO - Save model...
+2022-11-25 11:09:05,951 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:09:06,788 - Model - INFO - Epoch 9 (9/10000):
+2022-11-25 11:09:16,777 - Model - INFO - Save model...
+2022-11-25 11:09:16,777 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:09:17,608 - Model - INFO - Epoch 10 (10/10000):
+2022-11-25 11:09:27,565 - Model - INFO - Save model...
+2022-11-25 11:09:27,566 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:09:28,409 - Model - INFO - Epoch 11 (11/10000):
+2022-11-25 11:09:38,465 - Model - INFO - Save model...
+2022-11-25 11:09:38,465 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:09:39,303 - Model - INFO - Epoch 12 (12/10000):
+2022-11-25 11:09:49,261 - Model - INFO - Epoch 13 (13/10000):
+2022-11-25 11:09:59,207 - Model - INFO - Save model...
+2022-11-25 11:09:59,207 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:10:00,043 - Model - INFO - Epoch 14 (14/10000):
+2022-11-25 11:10:10,048 - Model - INFO - Save model...
+2022-11-25 11:10:10,048 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:10:10,897 - Model - INFO - Epoch 15 (15/10000):
+2022-11-25 11:10:20,928 - Model - INFO - Epoch 16 (16/10000):
+2022-11-25 11:10:30,961 - Model - INFO - Save model...
+2022-11-25 11:10:30,961 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:10:31,816 - Model - INFO - Epoch 17 (17/10000):
+2022-11-25 11:10:41,872 - Model - INFO - Save model...
+2022-11-25 11:10:41,872 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:10:42,681 - Model - INFO - Epoch 18 (18/10000):
+2022-11-25 11:10:52,750 - Model - INFO - Save model...
+2022-11-25 11:10:52,750 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:10:53,579 - Model - INFO - Epoch 19 (19/10000):
+2022-11-25 11:11:03,711 - Model - INFO - Save model...
+2022-11-25 11:11:03,711 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:11:04,539 - Model - INFO - Epoch 20 (20/10000):
+2022-11-25 11:11:14,566 - Model - INFO - Save model...
+2022-11-25 11:11:14,567 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:11:15,367 - Model - INFO - Epoch 21 (21/10000):
+2022-11-25 11:11:25,710 - Model - INFO - Save model...
+2022-11-25 11:11:25,710 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:11:26,579 - Model - INFO - Epoch 22 (22/10000):
+2022-11-25 11:11:36,995 - Model - INFO - Epoch 23 (23/10000):
+2022-11-25 11:11:47,575 - Model - INFO - Save model...
+2022-11-25 11:11:47,575 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:11:48,434 - Model - INFO - Epoch 24 (24/10000):
+2022-11-25 11:11:58,990 - Model - INFO - Save model...
+2022-11-25 11:11:58,990 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:11:59,816 - Model - INFO - Epoch 25 (25/10000):
+2022-11-25 11:12:09,798 - Model - INFO - Epoch 26 (26/10000):
+2022-11-25 11:12:19,806 - Model - INFO - Save model...
+2022-11-25 11:12:19,806 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:12:20,637 - Model - INFO - Epoch 27 (27/10000):
+2022-11-25 11:12:30,980 - Model - INFO - Save model...
+2022-11-25 11:12:30,980 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:12:31,828 - Model - INFO - Epoch 28 (28/10000):
+2022-11-25 11:12:42,115 - Model - INFO - Save model...
+2022-11-25 11:12:42,115 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:12:42,969 - Model - INFO - Epoch 29 (29/10000):
+2022-11-25 11:12:53,292 - Model - INFO - Save model...
+2022-11-25 11:12:53,293 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:12:54,135 - Model - INFO - Epoch 30 (30/10000):
+2022-11-25 11:13:04,793 - Model - INFO - Save model...
+2022-11-25 11:13:04,793 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:13:05,704 - Model - INFO - Epoch 31 (31/10000):
+2022-11-25 11:13:16,293 - Model - INFO - Epoch 32 (32/10000):
+2022-11-25 11:13:26,844 - Model - INFO - Save model...
+2022-11-25 11:13:26,844 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:13:27,735 - Model - INFO - Epoch 33 (33/10000):
+2022-11-25 11:13:39,760 - Model - INFO - Epoch 34 (34/10000):
+2022-11-25 11:13:54,147 - Model - INFO - Epoch 35 (35/10000):
+2022-11-25 11:14:10,184 - Model - INFO - Epoch 36 (36/10000):
+2022-11-25 11:14:25,476 - Model - INFO - Epoch 37 (37/10000):
+2022-11-25 11:14:37,138 - Model - INFO - Save model...
+2022-11-25 11:14:37,138 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:14:37,987 - Model - INFO - Epoch 38 (38/10000):
+2022-11-25 11:14:48,114 - Model - INFO - Save model...
+2022-11-25 11:14:48,114 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:14:48,975 - Model - INFO - Epoch 39 (39/10000):
+2022-11-25 11:15:00,662 - Model - INFO - Epoch 40 (40/10000):
+2022-11-25 11:15:11,970 - Model - INFO - Save model...
+2022-11-25 11:15:11,970 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:15:12,825 - Model - INFO - Epoch 41 (41/10000):
+2022-11-25 11:16:38,546 - Model - INFO - PARAMETER ...
+2022-11-25 11:16:38,546 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-25 11:16:38,546 - Model - INFO - Load dataset ...
+2022-11-25 11:16:39,232 - Model - INFO - Start training...
+2022-11-25 11:16:39,232 - Model - INFO - Epoch 1 (1/10000):
+2022-11-25 11:16:50,584 - Model - INFO - Save model...
+2022-11-25 11:16:50,585 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:16:51,432 - Model - INFO - Epoch 2 (2/10000):
+2022-11-25 11:17:01,444 - Model - INFO - Epoch 3 (3/10000):
+2022-11-25 11:17:11,494 - Model - INFO - Epoch 4 (4/10000):
+2022-11-25 11:17:21,421 - Model - INFO - Epoch 5 (5/10000):
+2022-11-25 11:17:31,408 - Model - INFO - Save model...
+2022-11-25 11:17:31,409 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:17:32,309 - Model - INFO - Epoch 6 (6/10000):
+2022-11-25 11:17:42,591 - Model - INFO - Save model...
+2022-11-25 11:17:42,591 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:17:43,434 - Model - INFO - Epoch 7 (7/10000):
+2022-11-25 11:17:53,496 - Model - INFO - Save model...
+2022-11-25 11:17:53,497 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:17:54,344 - Model - INFO - Epoch 8 (8/10000):
+2022-11-25 11:18:04,670 - Model - INFO - Save model...
+2022-11-25 11:18:04,670 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:18:05,609 - Model - INFO - Epoch 9 (9/10000):
+2022-11-25 11:18:23,863 - Model - INFO - Save model...
+2022-11-25 11:18:23,863 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:18:27,542 - Model - INFO - Epoch 10 (10/10000):
+2022-11-25 11:18:38,977 - Model - INFO - Save model...
+2022-11-25 11:18:38,978 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:18:41,154 - Model - INFO - Epoch 11 (11/10000):
+2022-11-25 11:18:55,347 - Model - INFO - Save model...
+2022-11-25 11:18:55,347 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:18:56,202 - Model - INFO - Epoch 12 (12/10000):
+2022-11-25 11:19:08,315 - Model - INFO - PARAMETER ...
+2022-11-25 11:19:08,315 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-25 11:19:08,315 - Model - INFO - Load dataset ...
+2022-11-25 11:19:09,004 - Model - INFO - Start training...
+2022-11-25 11:19:09,004 - Model - INFO - Epoch 1 (1/10000):
+2022-11-25 11:19:20,467 - Model - INFO - Save model...
+2022-11-25 11:19:20,468 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:19:21,333 - Model - INFO - Epoch 2 (2/10000):
+2022-11-25 11:19:31,547 - Model - INFO - Epoch 3 (3/10000):
+2022-11-25 11:19:41,772 - Model - INFO - Save model...
+2022-11-25 11:19:41,773 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:19:42,637 - Model - INFO - Epoch 4 (4/10000):
+2022-11-25 11:19:52,780 - Model - INFO - Save model...
+2022-11-25 11:19:52,780 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:19:53,645 - Model - INFO - Epoch 5 (5/10000):
+2022-11-25 11:20:03,812 - Model - INFO - Save model...
+2022-11-25 11:20:03,812 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:20:04,672 - Model - INFO - Epoch 6 (6/10000):
+2022-11-25 11:20:14,841 - Model - INFO - Save model...
+2022-11-25 11:20:14,841 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:20:15,698 - Model - INFO - Epoch 7 (7/10000):
+2022-11-25 11:20:25,924 - Model - INFO - Save model...
+2022-11-25 11:20:25,924 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:20:26,792 - Model - INFO - Epoch 8 (8/10000):
+2022-11-25 11:20:37,015 - Model - INFO - Save model...
+2022-11-25 11:20:37,015 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:20:37,886 - Model - INFO - Epoch 9 (9/10000):
+2022-11-25 11:20:48,329 - Model - INFO - Save model...
+2022-11-25 11:20:48,330 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:20:49,203 - Model - INFO - Epoch 10 (10/10000):
+2022-11-25 11:20:59,854 - Model - INFO - Save model...
+2022-11-25 11:20:59,854 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:21:00,743 - Model - INFO - Epoch 11 (11/10000):
+2022-11-25 11:21:11,592 - Model - INFO - Save model...
+2022-11-25 11:21:11,592 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:21:12,471 - Model - INFO - Epoch 12 (12/10000):
+2022-11-25 11:21:23,032 - Model - INFO - Save model...
+2022-11-25 11:21:23,032 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:21:23,952 - Model - INFO - Epoch 13 (13/10000):
+2022-11-25 11:21:34,656 - Model - INFO - Save model...
+2022-11-25 11:21:34,656 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:21:35,575 - Model - INFO - Epoch 14 (14/10000):
+2022-11-25 11:21:47,378 - Model - INFO - Epoch 15 (15/10000):
+2022-11-25 11:22:03,598 - Model - INFO - Save model...
+2022-11-25 11:22:03,598 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:22:06,065 - Model - INFO - Epoch 16 (16/10000):
+2022-11-25 11:22:23,941 - Model - INFO - Epoch 17 (17/10000):
+2022-11-25 11:22:43,169 - Model - INFO - Save model...
+2022-11-25 11:22:43,169 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:22:44,849 - Model - INFO - Epoch 18 (18/10000):
+2022-11-25 11:23:03,827 - Model - INFO - Epoch 19 (19/10000):
+2022-11-25 11:23:16,573 - Model - INFO - Epoch 20 (20/10000):
+2022-11-25 11:23:27,264 - Model - INFO - Save model...
+2022-11-25 11:23:27,264 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:24:05,725 - Model - INFO - PARAMETER ...
+2022-11-25 11:24:05,725 - Model - INFO - Namespace(batch_size=2, decay_rate=1e-05, epoch=10000, gpu='0', learning_rate=0.01, log_dir='MyPointsTest', model='MySegModel', num_category=8, num_point=2000, optimizer='Adam', process_data=False, use_cpu=False, use_normals=False, use_uniform_sample=False)
+2022-11-25 11:24:05,725 - Model - INFO - Load dataset ...
+2022-11-25 11:24:06,395 - Model - INFO - Start training...
+2022-11-25 11:24:06,395 - Model - INFO - Epoch 1 (1/10000):
+2022-11-25 11:24:17,586 - Model - INFO - Save model...
+2022-11-25 11:24:17,586 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:24:18,392 - Model - INFO - Epoch 2 (2/10000):
+2022-11-25 11:24:28,280 - Model - INFO - Epoch 3 (3/10000):
+2022-11-25 11:24:38,033 - Model - INFO - Save model...
+2022-11-25 11:24:38,034 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:24:38,835 - Model - INFO - Epoch 4 (4/10000):
+2022-11-25 11:24:48,558 - Model - INFO - Save model...
+2022-11-25 11:24:48,558 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:24:49,365 - Model - INFO - Epoch 5 (5/10000):
+2022-11-25 11:24:59,141 - Model - INFO - Save model...
+2022-11-25 11:24:59,141 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:24:59,930 - Model - INFO - Epoch 6 (6/10000):
+2022-11-25 11:25:09,671 - Model - INFO - Save model...
+2022-11-25 11:25:09,671 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:25:10,464 - Model - INFO - Epoch 7 (7/10000):
+2022-11-25 11:25:20,243 - Model - INFO - Save model...
+2022-11-25 11:25:20,243 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:25:21,042 - Model - INFO - Epoch 8 (8/10000):
+2022-11-25 11:25:30,820 - Model - INFO - Save model...
+2022-11-25 11:25:30,820 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:25:31,644 - Model - INFO - Epoch 9 (9/10000):
+2022-11-25 11:25:41,494 - Model - INFO - Save model...
+2022-11-25 11:25:41,494 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:25:42,308 - Model - INFO - Epoch 10 (10/10000):
+2022-11-25 11:25:52,162 - Model - INFO - Save model...
+2022-11-25 11:25:52,162 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:25:52,981 - Model - INFO - Epoch 11 (11/10000):
+2022-11-25 11:26:02,882 - Model - INFO - Epoch 12 (12/10000):
+2022-11-25 11:26:12,708 - Model - INFO - Save model...
+2022-11-25 11:26:12,709 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:26:13,530 - Model - INFO - Epoch 13 (13/10000):
+2022-11-25 11:26:23,328 - Model - INFO - Epoch 14 (14/10000):
+2022-11-25 11:26:33,172 - Model - INFO - Save model...
+2022-11-25 11:26:33,172 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:26:33,999 - Model - INFO - Epoch 15 (15/10000):
+2022-11-25 11:26:43,880 - Model - INFO - Save model...
+2022-11-25 11:26:43,880 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:26:44,709 - Model - INFO - Epoch 16 (16/10000):
+2022-11-25 11:26:54,554 - Model - INFO - Save model...
+2022-11-25 11:26:54,554 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:26:55,394 - Model - INFO - Epoch 17 (17/10000):
+2022-11-25 11:27:05,263 - Model - INFO - Epoch 18 (18/10000):
+2022-11-25 11:27:15,110 - Model - INFO - Epoch 19 (19/10000):
+2022-11-25 11:27:24,943 - Model - INFO - Save model...
+2022-11-25 11:27:24,943 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:27:25,791 - Model - INFO - Epoch 20 (20/10000):
+2022-11-25 11:27:35,684 - Model - INFO - Save model...
+2022-11-25 11:27:35,684 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:27:36,516 - Model - INFO - Epoch 21 (21/10000):
+2022-11-25 11:27:46,405 - Model - INFO - Epoch 22 (22/10000):
+2022-11-25 11:27:56,271 - Model - INFO - Epoch 23 (23/10000):
+2022-11-25 11:28:06,148 - Model - INFO - Save model...
+2022-11-25 11:28:06,148 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:28:06,981 - Model - INFO - Epoch 24 (24/10000):
+2022-11-25 11:28:16,933 - Model - INFO - Save model...
+2022-11-25 11:28:16,933 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:28:17,770 - Model - INFO - Epoch 25 (25/10000):
+2022-11-25 11:28:27,676 - Model - INFO - Save model...
+2022-11-25 11:28:27,676 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:28:28,509 - Model - INFO - Epoch 26 (26/10000):
+2022-11-25 11:28:38,419 - Model - INFO - Save model...
+2022-11-25 11:28:38,419 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:28:39,261 - Model - INFO - Epoch 27 (27/10000):
+2022-11-25 11:28:49,124 - Model - INFO - Save model...
+2022-11-25 11:28:49,124 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:28:49,962 - Model - INFO - Epoch 28 (28/10000):
+2022-11-25 11:28:59,896 - Model - INFO - Epoch 29 (29/10000):
+2022-11-25 11:29:09,770 - Model - INFO - Epoch 30 (30/10000):
+2022-11-25 11:29:19,627 - Model - INFO - Save model...
+2022-11-25 11:29:19,628 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:29:20,470 - Model - INFO - Epoch 31 (31/10000):
+2022-11-25 11:29:30,358 - Model - INFO - Epoch 32 (32/10000):
+2022-11-25 11:29:40,231 - Model - INFO - Epoch 33 (33/10000):
+2022-11-25 11:29:50,194 - Model - INFO - Save model...
+2022-11-25 11:29:50,194 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:29:51,029 - Model - INFO - Epoch 34 (34/10000):
+2022-11-25 11:30:00,970 - Model - INFO - Epoch 35 (35/10000):
+2022-11-25 11:30:10,873 - Model - INFO - Epoch 36 (36/10000):
+2022-11-25 11:30:20,735 - Model - INFO - Epoch 37 (37/10000):
+2022-11-25 11:30:30,631 - Model - INFO - Save model...
+2022-11-25 11:30:30,631 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:30:31,517 - Model - INFO - Epoch 38 (38/10000):
+2022-11-25 11:30:41,380 - Model - INFO - Save model...
+2022-11-25 11:30:41,380 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:30:42,215 - Model - INFO - Epoch 39 (39/10000):
+2022-11-25 11:30:52,066 - Model - INFO - Epoch 40 (40/10000):
+2022-11-25 11:31:01,961 - Model - INFO - Epoch 41 (41/10000):
+2022-11-25 11:31:11,851 - Model - INFO - Epoch 42 (42/10000):
+2022-11-25 11:31:21,785 - Model - INFO - Epoch 43 (43/10000):
+2022-11-25 11:31:31,667 - Model - INFO - Epoch 44 (44/10000):
+2022-11-25 11:31:41,575 - Model - INFO - Epoch 45 (45/10000):
+2022-11-25 11:31:51,502 - Model - INFO - Epoch 46 (46/10000):
+2022-11-25 11:32:01,400 - Model - INFO - Save model...
+2022-11-25 11:32:01,400 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:32:02,250 - Model - INFO - Epoch 47 (47/10000):
+2022-11-25 11:32:12,204 - Model - INFO - Save model...
+2022-11-25 11:32:12,204 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:32:13,042 - Model - INFO - Epoch 48 (48/10000):
+2022-11-25 11:32:22,961 - Model - INFO - Epoch 49 (49/10000):
+2022-11-25 11:32:32,793 - Model - INFO - Epoch 50 (50/10000):
+2022-11-25 11:32:42,652 - Model - INFO - Epoch 51 (51/10000):
+2022-11-25 11:32:52,486 - Model - INFO - Epoch 52 (52/10000):
+2022-11-25 11:33:02,409 - Model - INFO - Save model...
+2022-11-25 11:33:02,409 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:33:03,255 - Model - INFO - Epoch 53 (53/10000):
+2022-11-25 11:33:13,091 - Model - INFO - Epoch 54 (54/10000):
+2022-11-25 11:33:22,984 - Model - INFO - Epoch 55 (55/10000):
+2022-11-25 11:33:32,877 - Model - INFO - Epoch 56 (56/10000):
+2022-11-25 11:33:42,836 - Model - INFO - Epoch 57 (57/10000):
+2022-11-25 11:33:52,731 - Model - INFO - Epoch 58 (58/10000):
+2022-11-25 11:34:02,636 - Model - INFO - Epoch 59 (59/10000):
+2022-11-25 11:34:12,525 - Model - INFO - Epoch 60 (60/10000):
+2022-11-25 11:34:22,437 - Model - INFO - Epoch 61 (61/10000):
+2022-11-25 11:34:32,426 - Model - INFO - Epoch 62 (62/10000):
+2022-11-25 11:34:42,333 - Model - INFO - Epoch 63 (63/10000):
+2022-11-25 11:34:52,191 - Model - INFO - Epoch 64 (64/10000):
+2022-11-25 11:35:02,108 - Model - INFO - Epoch 65 (65/10000):
+2022-11-25 11:35:11,999 - Model - INFO - Epoch 66 (66/10000):
+2022-11-25 11:35:21,956 - Model - INFO - Save model...
+2022-11-25 11:35:21,957 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:35:22,798 - Model - INFO - Epoch 67 (67/10000):
+2022-11-25 11:35:32,696 - Model - INFO - Epoch 68 (68/10000):
+2022-11-25 11:35:42,598 - Model - INFO - Save model...
+2022-11-25 11:35:42,598 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:35:43,435 - Model - INFO - Epoch 69 (69/10000):
+2022-11-25 11:35:53,305 - Model - INFO - Epoch 70 (70/10000):
+2022-11-25 11:36:03,145 - Model - INFO - Epoch 71 (71/10000):
+2022-11-25 11:36:13,070 - Model - INFO - Epoch 72 (72/10000):
+2022-11-25 11:36:22,925 - Model - INFO - Save model...
+2022-11-25 11:36:22,925 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:36:23,768 - Model - INFO - Epoch 73 (73/10000):
+2022-11-25 11:36:33,636 - Model - INFO - Epoch 74 (74/10000):
+2022-11-25 11:36:43,460 - Model - INFO - Epoch 75 (75/10000):
+2022-11-25 11:36:53,326 - Model - INFO - Epoch 76 (76/10000):
+2022-11-25 11:37:03,160 - Model - INFO - Epoch 77 (77/10000):
+2022-11-25 11:37:12,976 - Model - INFO - Epoch 78 (78/10000):
+2022-11-25 11:37:22,849 - Model - INFO - Save model...
+2022-11-25 11:37:22,849 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:37:23,667 - Model - INFO - Epoch 79 (79/10000):
+2022-11-25 11:37:33,510 - Model - INFO - Save model...
+2022-11-25 11:37:33,510 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:37:34,343 - Model - INFO - Epoch 80 (80/10000):
+2022-11-25 11:37:44,207 - Model - INFO - Epoch 81 (81/10000):
+2022-11-25 11:37:54,110 - Model - INFO - Epoch 82 (82/10000):
+2022-11-25 11:38:03,932 - Model - INFO - Epoch 83 (83/10000):
+2022-11-25 11:38:13,760 - Model - INFO - Epoch 84 (84/10000):
+2022-11-25 11:38:23,625 - Model - INFO - Epoch 85 (85/10000):
+2022-11-25 11:38:33,543 - Model - INFO - Epoch 86 (86/10000):
+2022-11-25 11:38:43,353 - Model - INFO - Save model...
+2022-11-25 11:38:43,353 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:38:44,194 - Model - INFO - Epoch 87 (87/10000):
+2022-11-25 11:38:54,114 - Model - INFO - Epoch 88 (88/10000):
+2022-11-25 11:39:04,008 - Model - INFO - Epoch 89 (89/10000):
+2022-11-25 11:39:13,899 - Model - INFO - Epoch 90 (90/10000):
+2022-11-25 11:39:23,742 - Model - INFO - Epoch 91 (91/10000):
+2022-11-25 11:39:33,584 - Model - INFO - Epoch 92 (92/10000):
+2022-11-25 11:39:43,392 - Model - INFO - Save model...
+2022-11-25 11:39:43,393 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:39:44,227 - Model - INFO - Epoch 93 (93/10000):
+2022-11-25 11:39:54,076 - Model - INFO - Epoch 94 (94/10000):
+2022-11-25 11:40:03,961 - Model - INFO - Epoch 95 (95/10000):
+2022-11-25 11:40:13,812 - Model - INFO - Epoch 96 (96/10000):
+2022-11-25 11:40:23,634 - Model - INFO - Epoch 97 (97/10000):
+2022-11-25 11:40:33,463 - Model - INFO - Epoch 98 (98/10000):
+2022-11-25 11:40:43,305 - Model - INFO - Save model...
+2022-11-25 11:40:43,305 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:40:44,140 - Model - INFO - Epoch 99 (99/10000):
+2022-11-25 11:40:54,050 - Model - INFO - Epoch 100 (100/10000):
+2022-11-25 11:41:03,897 - Model - INFO - Epoch 101 (101/10000):
+2022-11-25 11:41:13,722 - Model - INFO - Save model...
+2022-11-25 11:41:13,723 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:41:14,562 - Model - INFO - Epoch 102 (102/10000):
+2022-11-25 11:41:24,374 - Model - INFO - Epoch 103 (103/10000):
+2022-11-25 11:41:34,423 - Model - INFO - Epoch 104 (104/10000):
+2022-11-25 11:41:44,247 - Model - INFO - Epoch 105 (105/10000):
+2022-11-25 11:41:54,031 - Model - INFO - Epoch 106 (106/10000):
+2022-11-25 11:42:03,795 - Model - INFO - Epoch 107 (107/10000):
+2022-11-25 11:42:13,604 - Model - INFO - Save model...
+2022-11-25 11:42:13,604 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:42:14,429 - Model - INFO - Epoch 108 (108/10000):
+2022-11-25 11:42:24,270 - Model - INFO - Epoch 109 (109/10000):
+2022-11-25 11:42:34,085 - Model - INFO - Epoch 110 (110/10000):
+2022-11-25 11:42:43,902 - Model - INFO - Epoch 111 (111/10000):
+2022-11-25 11:42:53,706 - Model - INFO - Epoch 112 (112/10000):
+2022-11-25 11:43:03,484 - Model - INFO - Epoch 113 (113/10000):
+2022-11-25 11:43:13,340 - Model - INFO - Epoch 114 (114/10000):
+2022-11-25 11:43:23,161 - Model - INFO - Epoch 115 (115/10000):
+2022-11-25 11:43:32,932 - Model - INFO - Epoch 116 (116/10000):
+2022-11-25 11:43:42,800 - Model - INFO - Epoch 117 (117/10000):
+2022-11-25 11:43:52,609 - Model - INFO - Epoch 118 (118/10000):
+2022-11-25 11:44:02,500 - Model - INFO - Epoch 119 (119/10000):
+2022-11-25 11:44:12,317 - Model - INFO - Epoch 120 (120/10000):
+2022-11-25 11:44:22,104 - Model - INFO - Epoch 121 (121/10000):
+2022-11-25 11:44:31,890 - Model - INFO - Save model...
+2022-11-25 11:44:31,890 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:44:32,733 - Model - INFO - Epoch 122 (122/10000):
+2022-11-25 11:44:42,502 - Model - INFO - Epoch 123 (123/10000):
+2022-11-25 11:44:52,367 - Model - INFO - Epoch 124 (124/10000):
+2022-11-25 11:45:02,193 - Model - INFO - Epoch 125 (125/10000):
+2022-11-25 11:45:11,968 - Model - INFO - Epoch 126 (126/10000):
+2022-11-25 11:45:21,803 - Model - INFO - Epoch 127 (127/10000):
+2022-11-25 11:45:31,622 - Model - INFO - Epoch 128 (128/10000):
+2022-11-25 11:45:41,451 - Model - INFO - Save model...
+2022-11-25 11:45:41,451 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:45:42,263 - Model - INFO - Epoch 129 (129/10000):
+2022-11-25 11:45:52,034 - Model - INFO - Save model...
+2022-11-25 11:45:52,034 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:45:52,850 - Model - INFO - Epoch 130 (130/10000):
+2022-11-25 11:46:02,623 - Model - INFO - Save model...
+2022-11-25 11:46:02,623 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:46:03,431 - Model - INFO - Epoch 131 (131/10000):
+2022-11-25 11:46:13,236 - Model - INFO - Epoch 132 (132/10000):
+2022-11-25 11:46:23,094 - Model - INFO - Epoch 133 (133/10000):
+2022-11-25 11:46:32,892 - Model - INFO - Epoch 134 (134/10000):
+2022-11-25 11:46:42,653 - Model - INFO - Epoch 135 (135/10000):
+2022-11-25 11:46:52,477 - Model - INFO - Epoch 136 (136/10000):
+2022-11-25 11:47:02,426 - Model - INFO - Epoch 137 (137/10000):
+2022-11-25 11:47:12,281 - Model - INFO - Epoch 138 (138/10000):
+2022-11-25 11:47:22,130 - Model - INFO - Epoch 139 (139/10000):
+2022-11-25 11:47:32,063 - Model - INFO - Epoch 140 (140/10000):
+2022-11-25 11:47:41,987 - Model - INFO - Epoch 141 (141/10000):
+2022-11-25 11:47:51,875 - Model - INFO - Epoch 142 (142/10000):
+2022-11-25 11:48:01,812 - Model - INFO - Epoch 143 (143/10000):
+2022-11-25 11:48:11,728 - Model - INFO - Epoch 144 (144/10000):
+2022-11-25 11:48:21,593 - Model - INFO - Epoch 145 (145/10000):
+2022-11-25 11:48:31,462 - Model - INFO - Epoch 146 (146/10000):
+2022-11-25 11:48:41,353 - Model - INFO - Epoch 147 (147/10000):
+2022-11-25 11:48:51,217 - Model - INFO - Epoch 148 (148/10000):
+2022-11-25 11:49:01,041 - Model - INFO - Epoch 149 (149/10000):
+2022-11-25 11:49:10,822 - Model - INFO - Epoch 150 (150/10000):
+2022-11-25 11:49:20,664 - Model - INFO - Epoch 151 (151/10000):
+2022-11-25 11:49:30,434 - Model - INFO - Epoch 152 (152/10000):
+2022-11-25 11:49:40,290 - Model - INFO - Epoch 153 (153/10000):
+2022-11-25 11:49:50,095 - Model - INFO - Epoch 154 (154/10000):
+2022-11-25 11:49:59,937 - Model - INFO - Epoch 155 (155/10000):
+2022-11-25 11:50:09,802 - Model - INFO - Epoch 156 (156/10000):
+2022-11-25 11:50:19,642 - Model - INFO - Epoch 157 (157/10000):
+2022-11-25 11:50:29,504 - Model - INFO - Epoch 158 (158/10000):
+2022-11-25 11:50:39,296 - Model - INFO - Epoch 159 (159/10000):
+2022-11-25 11:50:49,118 - Model - INFO - Epoch 160 (160/10000):
+2022-11-25 11:50:58,953 - Model - INFO - Epoch 161 (161/10000):
+2022-11-25 11:51:08,771 - Model - INFO - Epoch 162 (162/10000):
+2022-11-25 11:51:18,619 - Model - INFO - Epoch 163 (163/10000):
+2022-11-25 11:51:28,418 - Model - INFO - Epoch 164 (164/10000):
+2022-11-25 11:51:38,220 - Model - INFO - Epoch 165 (165/10000):
+2022-11-25 11:51:48,055 - Model - INFO - Epoch 166 (166/10000):
+2022-11-25 11:51:57,920 - Model - INFO - Epoch 167 (167/10000):
+2022-11-25 11:52:07,720 - Model - INFO - Save model...
+2022-11-25 11:52:07,720 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:52:08,526 - Model - INFO - Epoch 168 (168/10000):
+2022-11-25 11:52:18,346 - Model - INFO - Epoch 169 (169/10000):
+2022-11-25 11:52:28,181 - Model - INFO - Epoch 170 (170/10000):
+2022-11-25 11:52:37,963 - Model - INFO - Epoch 171 (171/10000):
+2022-11-25 11:52:47,958 - Model - INFO - Epoch 172 (172/10000):
+2022-11-25 11:52:57,763 - Model - INFO - Epoch 173 (173/10000):
+2022-11-25 11:53:07,554 - Model - INFO - Epoch 174 (174/10000):
+2022-11-25 11:53:17,371 - Model - INFO - Epoch 175 (175/10000):
+2022-11-25 11:53:27,196 - Model - INFO - Epoch 176 (176/10000):
+2022-11-25 11:53:37,083 - Model - INFO - Epoch 177 (177/10000):
+2022-11-25 11:53:46,872 - Model - INFO - Epoch 178 (178/10000):
+2022-11-25 11:53:56,691 - Model - INFO - Save model...
+2022-11-25 11:53:56,691 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:53:57,499 - Model - INFO - Epoch 179 (179/10000):
+2022-11-25 11:54:07,340 - Model - INFO - Epoch 180 (180/10000):
+2022-11-25 11:54:17,220 - Model - INFO - Epoch 181 (181/10000):
+2022-11-25 11:54:27,151 - Model - INFO - Epoch 182 (182/10000):
+2022-11-25 11:54:36,950 - Model - INFO - Epoch 183 (183/10000):
+2022-11-25 11:54:46,814 - Model - INFO - Epoch 184 (184/10000):
+2022-11-25 11:54:56,663 - Model - INFO - Epoch 185 (185/10000):
+2022-11-25 11:55:06,498 - Model - INFO - Epoch 186 (186/10000):
+2022-11-25 11:55:16,423 - Model - INFO - Epoch 187 (187/10000):
+2022-11-25 11:55:26,260 - Model - INFO - Epoch 188 (188/10000):
+2022-11-25 11:55:36,089 - Model - INFO - Epoch 189 (189/10000):
+2022-11-25 11:55:45,951 - Model - INFO - Epoch 190 (190/10000):
+2022-11-25 11:55:55,762 - Model - INFO - Epoch 191 (191/10000):
+2022-11-25 11:56:05,732 - Model - INFO - Epoch 192 (192/10000):
+2022-11-25 11:56:15,481 - Model - INFO - Epoch 193 (193/10000):
+2022-11-25 11:56:25,331 - Model - INFO - Epoch 194 (194/10000):
+2022-11-25 11:56:35,101 - Model - INFO - Epoch 195 (195/10000):
+2022-11-25 11:56:44,862 - Model - INFO - Save model...
+2022-11-25 11:56:44,862 - Model - INFO - Saving at log/ShapeNet/MyPointsTest/test_out/best_model_MySegSingleChair.pth
+2022-11-25 11:56:45,802 - Model - INFO - Epoch 196 (196/10000):
+2022-11-25 11:56:56,470 - Model - INFO - Epoch 197 (197/10000):
+2022-11-25 11:57:06,733 - Model - INFO - Epoch 198 (198/10000):
+2022-11-25 11:57:17,588 - Model - INFO - Epoch 199 (199/10000):

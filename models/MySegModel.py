@@ -84,31 +84,34 @@ class get_loss(nn.Module):
             for j in range(num_point):
                 changingrate[i,j]=torch.sum(torch.min(torch.norm(torch.linalg.cross(norm[i, j, None,:], norm[i, knn_shape[i, j, :], :]),dim = 1),torch.norm(torch.mul(norm[i, j, None,:], norm[i, knn_shape[i, j, :], :]),dim = 1)))
 
-        with open('changingrate.txt' , "w") as f:
-            i=0
-            for j in range(num_point):
-                f.write("%f %f %f %f %f %f\n" % (
-                xyz[i, j, 0], xyz[i, j, 1], xyz[i, j, 2],
-                (changingrate[i, j] - torch.min(changingrate[i, :])) / (torch.max(changingrate[i, :])- torch.min(changingrate[i, :]))*2,0,0))
 
-        loss_cross =0
-        # for i in range(xyz.shape[0]):
-        #     for j in range(num_class):
-        #         norm_tmp = norm[i,:,:]*masks[i,j,:].view(-1,1)  #?
-        #         norm_tmp = norm_tmp*xyz.shape[1]
-        #         loss_nor = torch.zeros(int((norm_tmp.shape[0]* (norm_tmp.shape[0]-1))/2),3).cuda()
-        #         id =0
-        #         for k in range(norm_tmp.shape[0]):
-        #             for l in range(k + 1, norm_tmp.shape[0]):
-        #                 loss_nor[id, :] = torch.cross(norm_tmp[k,:],norm_tmp[l,:])
-        #                 id = id+1
-        #         avg_nor = torch.mean(loss_nor,0)
-        #         for k in range(loss_nor.shape[0]):
-        #             loss_cross += torch.cross(loss_nor[k,:],avg_nor).norm()
-        #
-        # loss_cross = loss_cross/(xyz.shape[0]*num_class*loss_nor.shape[0])
+
+
+        # with open('changingrate.txt' , "w") as f:
+        #     i=0
+        #     for j in range(num_point):
+        #         f.write("%f %f %f %f %f %f\n" % (
+        #         xyz[i, j, 0], xyz[i, j, 1], xyz[i, j, 2],
+        #         (changingrate[i, j] - torch.min(changingrate[i, :])) / (torch.max(changingrate[i, :])- torch.min(changingrate[i, :]))*2,0,0))
+
+        # loss_cd = DF.closest_distance_with_batch(xyz,skel_xyz) / num_point
+        loss_voronoi = 0
+        knn_voroi = DF.knn_with_batch(xyz, skel_xyz, 2)
+        for i in range(B):
+            for j in range(num_point):
+                dis1 = torch.norm(xyz[i, j, :] - skel_xyz[i, knn_voroi[i, j, 0], :], dim=0) ** 2
+                dis2 = torch.norm(xyz[i, j, :] - skel_xyz[i, knn_voroi[i, j, 1], :], dim=0) ** 2
+                loss_voronoi += changingrate[i,j] * torch.abs((dis1-dis2))
+        loss_voronoi = loss_voronoi / (num_point)
 
         loss_chosen = 0
+
+        knn_skele = DF.knn_with_batch(skel_xyz, skel_xyz, 2)
+        for i in range(B):
+            for j in range(num_class):
+                loss_chosen += torch.norm(skel_xyz[i, j, :] - skel_xyz[i, knn_skele[i, j, 1], :], dim=0) ** 2
+
+
         # for i in range(xyz.shape[0]):
         #     for k in range(xyz.shape[1]):
         #         # maskkk = 0
@@ -120,7 +123,9 @@ class get_loss(nn.Module):
 
         # loss combination
         # print('loss_normal', loss_normal1-loss_normal11)
-        final_loss = 1.0*loss_points + 1.5*loss_norm
+        final_loss = 5*loss_chosen + 1.0*loss_voronoi
+        print('loss_chosen',loss_chosen)
+        print('loss_voronoi',loss_voronoi)
         # final_loss = 1.0*loss_cross + 1.0*loss_chosen
 
 
