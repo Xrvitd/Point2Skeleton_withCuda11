@@ -39,7 +39,7 @@ def parse_args():
     parser.add_argument('--gpu', type=str, default='0', help='specify gpu device')
     parser.add_argument('--batch_size', type=int, default=2, help='batch size in training')
     parser.add_argument('--model', default='pointnet_cls', help='model name [default: pointnet_cls]')
-    parser.add_argument('--num_category', default=8, type=int, help='training on ModelNet10/40')
+    parser.add_argument('--num_category', default=20, type=int, help='training on ModelNet10/40')
     parser.add_argument('--epoch', default=10000, type=int, help='number of epoch in training')
     parser.add_argument('--learning_rate', default=0.01, type=float, help='learning rate in training')
     parser.add_argument('--num_point', type=int, default=2000, help='Point Number')
