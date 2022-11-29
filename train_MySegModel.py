@@ -39,9 +39,9 @@ def parse_args():
     parser.add_argument('--gpu', type=str, default='0', help='specify gpu device')
     parser.add_argument('--batch_size', type=int, default=2, help='batch size in training')
     parser.add_argument('--model', default='pointnet_cls', help='model name [default: pointnet_cls]')
-    parser.add_argument('--num_category', default=20, type=int, help='training on ModelNet10/40')
+    parser.add_argument('--num_category', default=10, type=int, help='training on ModelNet10/40')
     parser.add_argument('--epoch', default=10000, type=int, help='number of epoch in training')
-    parser.add_argument('--learning_rate', default=0.01, type=float, help='learning rate in training')
+    parser.add_argument('--learning_rate', default=0.001, type=float, help='learning rate in training')
     parser.add_argument('--num_point', type=int, default=2000, help='Point Number')
     parser.add_argument('--optimizer', type=str, default='Adam', help='optimizer for training')
     parser.add_argument('--log_dir', type=str, default=None, help='experiment root')
@@ -121,7 +121,7 @@ def main(args):
 
     '''HYPER PARAMETER'''
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
-    batch_size = 4
+    batch_size = 2
     '''CREATE DIR'''
     timestr = str(datetime.datetime.now().strftime('%Y-%m-%d_%H-%M'))
     exp_dir = Path('./log/')
@@ -160,7 +160,7 @@ def main(args):
     # testDataLoader = torch.utils.data.DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=10)
     data_path = 'data/MyPoints/'
     # train_dataset = torch.utils.data.DataLoader( , batch_size=args.batch_size, shuffle=True, num_workers=10, drop_last=True)
-    pc_list_file = 'data/data-split/Single_plane.txt'
+    pc_list_file = 'data/data-split/Single_chair.txt'
     data_root = 'data/pointclouds/'
     pc_list = rw.load_data_id(pc_list_file)
     train_data = PCDataset(pc_list, data_root, args.num_point)
@@ -192,12 +192,13 @@ def main(args):
     classifier = model.get_model(num_class, normal_channel=args.use_normals)
     # classifier = model.get_model(num_class, normal_channel=args.use_normals)
     criterion = model.get_loss()
-
+    criterion_pre = model.get_loss_pre()
     classifier.apply(inplace_relu)
 
     if not args.use_cpu:
         classifier = classifier.cuda()
         criterion = criterion.cuda()
+        criterion_pre = criterion_pre.cuda()
 
 
 
@@ -285,57 +286,82 @@ def main(args):
 
             # pred, trans_feat = classifier(points)
             # loss = criterion(pred, target, trans_feat)
-            skel_xyz = classifier(points,num_class)
+            skel_xyz,weights = classifier(points,num_class)
 
 
-            loss = criterion(target,num_class,skel_xyz)
-            # loss.requires_grad = True
-            loss_batch += loss.item()
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
-            global_step += 1
+            if epoch<25:
+                loss_pre = criterion_pre(target,skel_xyz)
+                loss_batch += loss_pre.item()
+                optimizer.zero_grad()
+                loss_pre.backward()
+                optimizer.step()
+                global_step += 1
+                # log_string('loss_pre: %f' % (loss_pre.item()))
+            else:
+                loss = criterion(target, num_class, skel_xyz, weights)
+                # loss.requires_grad = True
+                loss_batch += loss.item()
+                optimizer.zero_grad()
+                loss.backward()
+                optimizer.step()
+                global_step += 1
 
-        loss_batch = loss_batch/batch_size
+        loss_batch = loss_batch/(len(train_loader))
                 # log_string('loss: %f' % (loss.item()))
 
         '''TESTING'''
-        with torch.no_grad():
-            if (loss_batch <= best_instance_acc):
-                best_instance_acc = loss_batch
-                best_epoch = epoch + 1
-                logger.info('Save model...')
-                savepath = str(checkpoints_dir) + '/best_model_MySegSingleChair.pth'
-                log_string('Saving at %s' % savepath)
-                state = {
-                    'epoch': best_epoch,
-                    'best_loss': best_instance_acc,
-                    'model_state_dict': classifier.state_dict(),
-                    'optimizer_state_dict': optimizer.state_dict(),
-                }
-                torch.save(state, savepath)
+        if epoch>25:
+            with torch.no_grad():
+                if (loss_batch <= best_instance_acc):
+                    best_instance_acc = loss_batch
+                    best_epoch = epoch + 1
+                    logger.info('Save model...')
+                    savepath = str(checkpoints_dir) + '/best_model_MySegSingleChair.pth'
+                    log_string('Saving at %s' % savepath)
+                    state = {
+                        'epoch': best_epoch,
+                        'best_loss': best_instance_acc,
+                        'model_state_dict': classifier.state_dict(),
+                        'optimizer_state_dict': optimizer.state_dict(),
+                    }
+                    torch.save(state, savepath)
 
-                pointsWithLabel = torch.zeros((batch_size, args.num_point, 4))
-                points = points.transpose(1,2)
-                for i in range(batch_size):
-                    for j in range(args.num_point):
-                        pointsWithLabel[i, j, 0:3] = points[i, j, 0:3]
-                        dist, idx = torch.min(torch.norm(skel_xyz[i]-points[i, j, 0:3],dim=1)**2,0)
-                        pointsWithLabel[i, j, 3] = idx
-                #write different color for different class
-                colorbar = np.zeros((num_class, 3))
-                for i in range(num_class):
-                    colorbar[i, 0] = random.randint(0,255)
-                    colorbar[i, 1] = random.randint(0,255)
-                    colorbar[i, 2] = random.randint(0,255)
-                for i in range(batch_size):
-                    with open(str(checkpoints_dir) + '/best_SegColors%d.txt' % i, "w") as f:
-                        for j in range(args.num_point):
-                            f.write("%f %f %f %d %d %d\n" % (pointsWithLabel[i, j, 0], pointsWithLabel[i, j, 1], pointsWithLabel[i, j, 2], colorbar[int(pointsWithLabel[i, j, 3]), 0], colorbar[int(pointsWithLabel[i, j, 3]), 1], colorbar[int(pointsWithLabel[i, j, 3]), 2]))
-                for i in range(batch_size):
-                    with open(str(checkpoints_dir) + '/best_CellCenters%d.xyz' % i, "w") as f:
-                        for j in range(skel_xyz.shape[1]):
-                            f.write("%f %f %f\n" % (skel_xyz[i, j, 0], skel_xyz[i, j, 1], skel_xyz[i, j, 2]))
+                    points = points.transpose(1, 2)
+                    colorbar = np.zeros((num_class, 3))
+                    for i in range(num_class):
+                        colorbar[i, 0] = random.randint(0, 255)
+                        colorbar[i, 1] = random.randint(0, 255)
+                        colorbar[i, 2] = random.randint(0, 255)
+                    convex_k = 10
+                    convex_points = np.zeros((batch_size, num_class, convex_k, 3))
+                    pointsWithLabel = torch.zeros((batch_size, num_class * convex_k, 4))
+                    for i in range(batch_size):
+                        for j in range(num_class):
+                            pointsWithLabel[i, j * convex_k:(j + 1) * convex_k, 0:3] = skel_xyz[i,
+                                                                                       j * convex_k:(j + 1) * convex_k,
+                                                                                       0:3]
+                            pointsWithLabel[i, j * convex_k:(j + 1) * convex_k, 3] = j
+
+                    # points = points.transpose(1,2)
+                    # for i in range(batch_size):
+                    #     for j in range(args.num_point):
+                    #         pointsWithLabel[i, j, 0:3] = points[i, j, 0:3]
+                    #         dist, idx = torch.min(torch.norm(skel_xyz[i]-points[i, j, 0:3],dim=1)**2,0)
+                    #         pointsWithLabel[i, j, 3] = idx
+                    # write different color for different class
+
+                    for i in range(batch_size):
+                        with open(str(checkpoints_dir) + '/best_ConvexColors%d.txt' % i, "w") as f:
+                            for j in range(num_class * convex_k):
+                                f.write("%f %f %f %d %d %d\n" % (
+                                pointsWithLabel[i, j, 0], pointsWithLabel[i, j, 1], pointsWithLabel[i, j, 2],
+                                colorbar[int(pointsWithLabel[i, j, 3]), 0], colorbar[int(pointsWithLabel[i, j, 3]), 1],
+                                colorbar[int(pointsWithLabel[i, j, 3]), 2]))
+                    # for i in range(batch_size):
+                    #     with open(str(checkpoints_dir) + '/best_CellCenters%d.xyz' % i, "w") as f:
+                    #         for j in range(skel_xyz.shape[1]):
+                    #             f.write("%f %f %f\n" % (skel_xyz[i, j, 0], skel_xyz[i, j, 1], skel_xyz[i, j, 2]))
+
         print('Skeletal training loss: %f' % loss_batch, 'Bestloss: %f' % best_instance_acc)
 
 

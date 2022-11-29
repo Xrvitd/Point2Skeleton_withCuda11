@@ -212,6 +212,7 @@ def main(args):
     # classifier = model.get_model(num_class, normal_channel=args.use_normals)
     criterion = model.get_loss()
     criterion_pre = model.get_loss_pre()
+
     classifier.apply(inplace_relu)
 
     if not args.use_cpu:
