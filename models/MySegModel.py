@@ -85,23 +85,23 @@ class get_loss(nn.Module):
                 changingrate[i,j]=torch.sum(torch.min(torch.norm(torch.linalg.cross(norm[i, j, None,:], norm[i, knn_shape[i, j, :], :]),dim = 1),torch.norm(torch.mul(norm[i, j, None,:], norm[i, knn_shape[i, j, :], :]),dim = 1)))
 
         loss_cd = DF.closest_distance_with_batch(xyz, skel_xyz) / num_point
-        loss_cd += DF.closest_distance_with_batch(skel_xyz, xyz) / num_class
+        # loss_cd += DF.closest_distance_with_batch(skel_xyz, xyz) / num_class
 
         knn_voroi = DF.knn_with_batch(xyz, skel_xyz, 2)
 
-        # with open('changingrate.txt' , "w") as f:
-        #     i=0
-        #     for j in range(num_point):
-        #         dis1 = torch.norm(xyz[i, j, :] - skel_xyz[i, knn_voroi[i, j, 0], :], dim=0) ** 2
-        #         dis2 = torch.norm(xyz[i, j, :] - skel_xyz[i, knn_voroi[i, j, 1], :], dim=0) ** 2
-        #         if torch.abs((dis1-dis2))<0.005:
-        #             f.write("%f %f %f %f %f %f\n" % (
-        #                 xyz[i, j, 0], xyz[i, j, 1], xyz[i, j, 2],
-        #                 (1), 0, 0))
-                # if (changingrate[i,j]/torch.max(changingrate[i,:]))>0.25:
+        with open('changingrate.txt' , "w") as f:
+            i=0
+            for j in range(num_point):
+                dis1 = torch.norm(xyz[i, j, :] - skel_xyz[i, knn_voroi[i, j, 0], :], dim=0) ** 2
+                dis2 = torch.norm(xyz[i, j, :] - skel_xyz[i, knn_voroi[i, j, 1], :], dim=0) ** 2
+                # if torch.abs((dis1-dis2))<0.005:
                 #     f.write("%f %f %f %f %f %f\n" % (
-                #     xyz[i, j, 0], xyz[i, j, 1], xyz[i, j, 2],
-                #     (changingrate[i, j] - torch.min(changingrate[i, :])) / (torch.max(changingrate[i, :])- torch.min(changingrate[i, :])),0,0))
+                #         xyz[i, j, 0], xyz[i, j, 1], xyz[i, j, 2],
+                #         (1), 0, 0))
+                if (changingrate[i,j]/torch.max(changingrate[i,:]))>0.25:
+                    f.write("%f %f %f %f %f %f\n" % (
+                    xyz[i, j, 0], xyz[i, j, 1], xyz[i, j, 2],
+                    (changingrate[i, j] - torch.min(changingrate[i, :])) / (torch.max(changingrate[i, :])- torch.min(changingrate[i, :])),0,0))
 
         # select the points with the smallest distance to the skeleton
         loss_voronoi = 0
@@ -155,8 +155,8 @@ class get_loss(nn.Module):
 
         # loss combination
         # print('loss_normal', loss_normal1-loss_normal11)
-        final_loss = 1.0*loss_voronoi - 0.5*loss_chosen
-        # print('loss_cd',loss_cd)
+        final_loss = 0.3*loss_voronoi - 0.1*loss_chosen + 1.0*loss_cd
+        print('loss_cd',loss_cd)
         print('loss_chosen',-0.5*loss_chosen)
         print('loss_voronoi',loss_voronoi)
         # final_loss = 1.0*loss_cross + 1.0*loss_chosen
